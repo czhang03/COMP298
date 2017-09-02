@@ -31,14 +31,16 @@ Start-Process "git" -ArgumentList "commit -am `"deploying $deploymentPath`"" -No
 Start-Process "git" -ArgumentList "push" -NoNewWindow -Wait
 Write-Host "push successful" -ForegroundColor Green
 Write-Host
+Write-Host
 
 # connecting
-Write-Host "connecting to remote"
+Write-Host "connecting to remote" -ForegroundColor Yellow
 Write-Verbose "remote computer name: $remoteComputerName"
 Write-Verbose "remote user name:  $remoteUserName"
 Write-Verbose "password: $password"
 $session = New-SSHSession -ComputerName $remoteComputerName -Credential $credential
 Write-Host "connection successful" -ForegroundColor Green
+Write-Host
 Write-Host
 
 
@@ -62,9 +64,9 @@ Invoke-RemoteCommand -command "cd ~/COMP298/ && git pull"
 $success = Remove-SSHSession -SSHSession $session
 if ($success)
 {
-  Write-Host "connection closed successfully, exiting"
+  Write-Host "connection closed successfully, exiting" -ForegroundColor Green
 }
 else
 {
-  Write-Host "fail to close connection. Please close it yourself."
+  Write-Host "fail to close connection. Please close it yourself." -ForegroundColor Red
 }
