@@ -63,6 +63,7 @@ Invoke-RemoteCommand -command "cd ~/COMP298/ && git pull"
 Write-Host
 
 # End connection
+Write-Host "trying to close remote connection" -ForegroundColor Yellow
 $success = Remove-SSHSession -SSHSession $session
 if ($success)
 {
