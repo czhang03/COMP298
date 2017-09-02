@@ -43,7 +43,8 @@ function Invoke-RemoteCommand ($command)
   Write-Verbose "excuting command: $command"
   $responce = Invoke-SSHCommand -SSHSession $session -Command $command
 
-  $responce.output | ForEach-Object {Write-Host $_}
+  $responce.output | ForEach-Object {Write-Host $_ -ForegroundColor Gray}
+  $responce.error | ForEach-Object {Write-Host $_ -ForegroundColor Red}
 
   Write-Verbose "exit code: $($responce.ExitStatus)"
 }
