@@ -58,7 +58,9 @@ function Invoke-RemoteCommand ($command)
 }
 
 # update the repo
+Write-Host "updating remote repo" -ForegroundColor Yellow
 Invoke-RemoteCommand -command "cd ~/COMP298/ && git pull"
+Write-Host
 
 # End connection
 $success = Remove-SSHSession -SSHSession $session
