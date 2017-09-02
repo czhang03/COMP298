@@ -25,15 +25,21 @@ $password = Get-Content -Path "$PSScriptRoot/pass.secret"
 $securePass =ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential ($remoteUserName, $securePass)
 
+# commiting and pushing to git
+Write-Host "commiting and pushing to git" -ForegroundColor Yellow
 Start-Process "git" -ArgumentList "commit -am `"deploying $deploymentPath`"" -NoNewWindow -Wait
 Start-Process "git" -ArgumentList "push" -NoNewWindow -Wait
+Write-Host "push successful" -ForegroundColor Green
+Write-Host
 
 # connecting
 Write-Host "connecting to remote"
 Write-Verbose "remote computer name: $remoteComputerName"
-Write-Verbose "credential:  $credential"
+Write-Verbose "remote user name:  $remoteUserName"
+Write-Verbose "password: $password"
 $session = New-SSHSession -ComputerName $remoteComputerName -Credential $credential
 Write-Host "connection successful" -ForegroundColor Green
+Write-Host
 
 
 # helper function
