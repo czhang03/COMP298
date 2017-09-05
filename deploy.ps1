@@ -36,6 +36,7 @@ else
 {
   $remoteUserName = Read-Host "please input the username on the server"
   $remoteUserName | Out-File $usernamePath -Encoding utf8
+  Write-Host "your username is succefully cached in $usernamePath" -ForegroundColor Green
 }
 if (Test-Path $passwordPath)
 {
@@ -45,6 +46,7 @@ else
 {
   $password = Read-Host "please input your password on the server"
   $password | Out-File $passwordPath -Encoding utf8
+  Write-Host "your password is succefully cached in $passwordPath" -ForegroundColor Green
 }
 
 # make credential
@@ -58,6 +60,7 @@ if (-not $noGitSync)
   if ( -not (Test-Path "$PSScriptRoot\.gitignore"))
   {
     "*.secret" | Out-File -FilePath "$PSScriptRoot\.gitignore" -Encoding utf8
+    Write-Host "your gitignore file is created to avoid uploading your password and username to git" -ForegroundColor Green
   }
 
   Write-Host "commiting and pushing to git" -ForegroundColor Yellow
