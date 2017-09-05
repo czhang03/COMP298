@@ -82,7 +82,7 @@ Write-Host
 Write-Host
 
 Write-Host "pushing file to the server" -ForegroundColor Yellow
-Set-SFTPFile -SFTPSession $seesion -RemotePath 'www' -LocalFile $deploymentPaths -Overwrite
+Set-SFTPFile -SFTPSession $session -RemotePath 'www' -LocalFile $deploymentPaths -Overwrite
 Write-Host "push sucess" -ForegroundColor Green
 Write-Host
 Write-Host
