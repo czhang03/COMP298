@@ -89,7 +89,7 @@ Write-Host
 
 # End connection
 Write-Host "trying to close remote connection" -ForegroundColor Yellow
-$success = Remove-SFTPSession -SSHSession $session
+$success = Remove-SFTPSession -SFTPSession $session
 if ($success)
 {
   Write-Host "connection closed successfully, exiting" -ForegroundColor Green
