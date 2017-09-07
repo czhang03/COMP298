@@ -4,7 +4,6 @@ param (
   # enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any
   # characters as escape sequences.
   [Parameter(Mandatory=$true,
-             Position=0,
              ParameterSetName="deploymentPath",
              ValueFromPipelineByPropertyName=$true,
              HelpMessage="Literal path to one or more locations.")]
