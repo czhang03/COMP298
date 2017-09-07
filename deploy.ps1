@@ -20,6 +20,10 @@ param (
 $ErrorActionPreference = "stop"
 Import-Module Posh-SSH
 
+Write-Verbose "deploying following paths: "
+$deploymentPaths | ForEach-Object {Write-Verbose $_}
+Write-Verbose ""
+
 # remote names
 $remoteComputerName = "cs.wheatoncollege.edu"
 
