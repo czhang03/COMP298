@@ -5,6 +5,7 @@ param (
   # characters as escape sequences.
   [Parameter(Mandatory=$true,
              ParameterSetName="deploymentPath",
+             ValueFromPipeline=$true,
              ValueFromPipelineByPropertyName=$true,
              HelpMessage="Literal path to one or more locations.")]
   [Alias("Path")]
