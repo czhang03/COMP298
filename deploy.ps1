@@ -1,3 +1,4 @@
+[CmdletBinding()]
 param (
   # Specifies a path to one or more locations. Unlike the Path parameter, the value of the LiteralPath parameter is
   # used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters,
@@ -5,6 +6,7 @@ param (
   # characters as escape sequences.
   [Parameter(Mandatory=$true,
              ParameterSetName="deploymentPath",
+             Position=0,
              ValueFromPipeline=$true,
              ValueFromPipelineByPropertyName=$true,
              HelpMessage="Literal path to one or more locations.")]
