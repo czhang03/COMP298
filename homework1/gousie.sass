@@ -21,11 +21,25 @@
 h5
   font-weight: bold
 
-// header#intro
-//   background-image: url("../material.png")
-//   background: linear-gradient(to right, rgba(255,255,255,0) 70%, rgba(255,255,255,1))
-//   background-size: contain
+ul
+  margin-top: 0px
 
+.center-div
+  margin-right: auto
+  margin-left: auto
+
+div#contact
+  margin-top: 20px
+  margin-left: 10%
+
+div#footer-nav
+  margin-top: 20px
+  margin-left: 10%
+
+footer a
+  @extend .blue-text
+  @extend .text-lighten-5
+  text-decoration: underline
 
 header#intro
   padding-left: 30px
@@ -33,9 +47,10 @@ header#intro
   padding-bottom: 5px
 
 div#content
+  @extend .center-div
   max-width: 80%
-  margin-left: auto
-  margin-right: auto
+  margin-top: 50px
+  margin-bottom: 50px
 
 td a
   display: block
