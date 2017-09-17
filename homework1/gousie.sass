@@ -18,15 +18,18 @@
 .collapsible
   @extend .z-depth-3
 
+.card
+  width: 95%
+  height: 95%
+  @extend .z-depth-2
+  @extend .center-div
+
 .center-div
   margin-right: auto
   margin-left: auto
 
 h5
   font-weight: bold
-
-ul
-  margin-top: 0px
 
 iframe
   @extend .center-div
@@ -36,19 +39,6 @@ iframe
   margin-bottom: 30px
   width: 80%
   min-height: 1000px
-
-div#contact
-  margin-top: 20px
-  margin-left: 10%
-
-div#footer-nav
-  margin-top: 20px
-  margin-left: 10%
-
-footer a
-  @extend .blue-text
-  @extend .text-lighten-5
-  text-decoration: underline
 
 header#intro
   padding-left: 30px
@@ -60,6 +50,22 @@ div#comp298
   max-width: 80%
   margin-top: 50px
   margin-bottom: 50px
+
+#core-material
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+
+#core-material .card-title i
+  padding: 2px
+  @extend .small
+
+#core-material ul
+  padding-top: 5px
+
+#core-material li
+  margin-left: 5px
+  margin-top: 15px
 
 td a
   display: block
@@ -74,3 +80,16 @@ td a
 
 .browser-default
   list-style: square
+
+div#contact
+  margin-top: 20px
+  margin-left: 10%
+
+div#footer-nav
+  margin-top: 20px
+  margin-left: 10%
+
+footer a
+  @extend .blue-text
+  @extend .text-lighten-5
+  text-decoration: underline
