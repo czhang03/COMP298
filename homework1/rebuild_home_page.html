@@ -25,18 +25,29 @@
       <nav class="blue darken-3">
         <div class="nav-content">
           <ul class="tabs blue darken-3">
-            <li class="tab"><a href="#">Home</a></li>
-            <li class="tab"><a href="#">Comp 115</a></li>
-            <li class="tab"><a href="#" class="active">Comp 298</a></li>
-            <li class="tab"><a href="#">Research</a></li>
-            <li class="tab"><a href="#">Anti-Research</a></li>
+            <li class="tab"><a href="#home">Home</a></li>
+            <li class="tab"><a href="#comp115">Comp 115</a></li>
+            <li class="tab"><a href="#comp298" class="active">Comp 298</a></li>
+            <li class="tab"><a href="#research">Research</a></li>
+            <li class="tab"><a href="#antiresearch">Anti-Research</a></li>
           </ul>
         </div>
       </nav>
     </div>
 
 
-    <div id="content">
+    <!-- content for home -->
+    <div id="home">
+      <iframe src="http://cs.wheatoncollege.edu/mgousie/index.html" frameborder="0"></iframe>
+    </div>
+
+    <!-- content for comp115 -->
+    <div id="comp115">
+      <iframe src="http://cs.wheatoncollege.edu/mgousie/comp115.html" frameborder="0"></iframe>
+    </div>
+
+    <!-- content for comp298 -->
+    <div id="comp298">
       <h2>Comp 298 - Web Development (Fall 2017)</h2>
       <div id="core-material">
         <ul class="collapsible" data-collapsible="expandable">
@@ -192,6 +203,16 @@
       </div>
     </div>
 
+    <!-- content for research -->
+    <div id="research">
+      <iframe src="http://cs.wheatoncollege.edu/mgousie/research.html" frameborder="0"></iframe>
+    </div>
+
+    <!-- content for antiresearch -->
+    <div id="antiresearch">
+      <iframe src="http://cs.wheatoncollege.edu/mgousie/antiresearch.html" frameborder="0"></iframe>
+    </div>
+
     <footer class="page-footer blue darken-2">
       <div class="row">
 
@@ -219,11 +240,11 @@
             <h5> <i class="tiny material-icons">explore</i> Navigation</h5>
             <div class="col">
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">COMP 115</a></li>
-                <li><a href="#">COMP 298</a></li>
-                <li><a href="#">Research</a></li>
-                <li><a href="#">Anti-Research</a></li>
+                <li><a onclick="$('ul.tabs').tabs('select_tab', 'home');" href="#">Home</a></li>
+                <li><a onclick="$('ul.tabs').tabs('select_tab', 'comp115');" href="#">COMP 115</a></li>
+                <li><a onclick="$('ul.tabs').tabs('select_tab', 'comp298');" href="#">COMP 298</a></li>
+                <li><a onclick="$('ul.tabs').tabs('select_tab', 'research');" href="#">Research</a></li>
+                <li><a onclick="$('ul.tabs').tabs('select_tab', 'antiresearch');" href="#">Anti-Research</a></li>
               </ul>
             </div>
           </div>
