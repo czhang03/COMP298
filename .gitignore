@@ -3,3 +3,5 @@
 .idea/workspace.xml
 test/
 *.css
+node_modules/
+package-lock.json
