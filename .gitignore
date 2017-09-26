@@ -1,5 +1,5 @@
 ﻿*.secret
 .vscode
-.idea/
+.idea/workspace.xml
 test/
 *.css
