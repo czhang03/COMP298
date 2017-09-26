@@ -4,6 +4,7 @@
 test/
 *.css
 *.css.map
+*.js
 node_modules/
 package-lock.json
 .sass-cache
