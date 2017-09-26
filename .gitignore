@@ -3,5 +3,7 @@
 .idea/workspace.xml
 test/
 *.css
+*.css.map
 node_modules/
 package-lock.json
+.sass-cache
