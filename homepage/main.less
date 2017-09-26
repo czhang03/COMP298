@@ -1,0 +1,103 @@
+// global style
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-seri, serif;
+}
+
+h2 {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+ul {
+  padding-left: 17px;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+// general mixin
+.circular(@size) {
+  width: @size;
+  height: @size;
+  border-radius: calc(@size / 2);
+}
+
+
+// elements style
+#everything {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+#subtitle {
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: fit-content;
+}
+
+#about-me {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin-right: 50px;
+  font-size: 12pt;
+}
+
+#head-shot {
+  .circular(150px);
+  box-shadow: 0 0 15px black;
+  margin: 20px auto 20px;
+}
+
+#projects {
+  height: fit-content;
+}
+
+.project-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 30px;
+  border: 1.5px solid black;
+  padding: 15px 30px;
+  margin-top: 30px;
+}
+
+.project-description {
+  width: 300px;
+}
+
+.project-title {
+  font-weight: bold;
+  color: black;
+}
+
+.project-detail {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.project-img {
+  .circular(80px);
+  box-shadow: 0 0 15px black;
+  margin-left: 30px;
+}
