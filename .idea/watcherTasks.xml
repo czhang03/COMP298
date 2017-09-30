@@ -9,7 +9,7 @@
       <option name="fileExtension" value="less" />
       <option name="immediateSync" value="true" />
       <option name="name" value="Less" />
-      <option name="output" value="$FileNameWithoutExtension$.css" />
+      <option name="output" value="$FileNameWithoutExtension$_build.css" />
       <option name="outputFilters">
         <array>
           <FilterInfo>
@@ -27,14 +27,14 @@
       <envs />
     </TaskOptions>
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="--no-cache --update $FileName$:$FileNameWithoutExtension$.css" />
+      <option name="arguments" value="--no-cache --update $FileName$:./build/$FileNameWithoutExtension$.css" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="sass" />
       <option name="immediateSync" value="true" />
       <option name="name" value="Sass" />
-      <option name="output" value="$FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map" />
+      <option name="output" value="./build/$FileNameWithoutExtension$.css:./build/$FileNameWithoutExtension$.css.map" />
       <option name="outputFilters">
         <array />
       </option>
