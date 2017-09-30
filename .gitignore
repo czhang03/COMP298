@@ -2,10 +2,7 @@
 .vscode
 .idea/workspace.xml
 test/
-*.css
-*.css.map
-*.js
-*.js.map
+build
 node_modules/
 package-lock.json
 .sass-cache
