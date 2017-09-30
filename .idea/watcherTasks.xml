@@ -45,5 +45,24 @@
       <option name="workingDir" value="$FileDir$" />
       <envs />
     </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="$FilePathRelativeToProjectRoot$ --out-dir build --source-maps --presets env" />
+      <option name="checkSyntaxErrors" value="true" />
+      <option name="description" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="js" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="Babel" />
+      <option name="output" value="build\$FileDirRelativeToProjectRoot$\$FileNameWithoutExtension$.js:build\$FileDirRelativeToProjectRoot$\$FileNameWithoutExtension$.js.map" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="program" value="$USER_HOME$/AppData/Roaming/npm/babel.cmd" />
+      <option name="scopeName" value="Project Files" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="$ContentRoot$" />
+      <envs />
+    </TaskOptions>
   </component>
 </project>
