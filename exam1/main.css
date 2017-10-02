@@ -1,0 +1,53 @@
+#all {
+    max-width: 1000px;
+}
+
+#name {
+    display: flex;
+    align-content: flex-end;
+    height: 150pt;
+    background: url(http://cs.wheatoncollege.edu/mgousie/comp298/exam1/headerBG.jpg) no-repeat;
+}
+
+h1 {
+    color: #6b3646;
+    font-size: 3.75pc;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.sub {
+    color: #6b3646;
+    font-size: 1.25pc;
+}
+
+.nav {
+    margin-left: -30px;
+    margin-top: 40px;
+}
+
+.nav li {
+    display: inline;
+    color: #333333;
+    font-size: 1.875pc;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    background-color: #aaa;
+    padding: .208333333in;
+}
+
+.nav li:hover {
+    background-color: #6b3646;
+    color: #aaa;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+.text-description {
+    margin-right: 70px;
+}
