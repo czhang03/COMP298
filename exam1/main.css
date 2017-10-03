@@ -4,9 +4,9 @@
 
 #name {
     display: flex;
-    align-content: flex-end;
     height: 150pt;
     background: url(http://cs.wheatoncollege.edu/mgousie/comp298/exam1/headerBG.jpg) no-repeat;
+    align-items: flex-end;
 }
 
 h1 {
@@ -14,6 +14,8 @@ h1 {
     font-size: 3.75pc;
     font-family: sans-serif;
     font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 20px;
 }
 
 .sub {
