@@ -1,0 +1,99 @@
+// general style
+
+body
+  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-seri, serif
+
+img
+  max-width: 100%
+  max-height: 100%
+
+#all
+  max-width: 1400px
+  min-width: 800px
+  margin-left: auto
+  margin-right: auto
+
+.section
+  padding-top: 60px
+  padding-bottom: 60px
+
+// navigation
+nav
+  background-color: whitesmoke
+  display: flex
+  align-items: center
+  font-family: "Century Gothic", serif
+  font-weight: bold
+  justify-content: space-between
+  padding-left: 20px
+  padding-right: 20px
+  box-shadow: 0 5px 5px #888
+
+#brand
+  display: flex
+  align-items: center
+  text-decoration: underline
+  text-decoration-color: purple
+  color: black
+
+#logo
+  height: 50px
+  margin-right: 20px
+
+.menu-list
+  display: flex
+  height: 100%
+
+.menu-list > .menu-item
+  align-self: stretch
+  height: 100%
+  border-right: white solid
+
+
+.sub-items-trigger
+  text-align: center
+  padding: 20px
+  width: 90px
+
+.sub-items
+  width: 90px
+  padding-right: 20px
+  padding-left: 20px
+  display: none
+  position: absolute
+  list-style: none
+  margin-top: 0
+  margin-bottom: 0
+  background-color: whitesmoke
+  min-width: 100px
+
+ul.sub-items > li
+  width: 100%
+  text-align: center
+  vertical-align: middle
+  padding-top: 10px
+  padding-bottom: 10px
+  border-top: white solid
+  border-bottom: white solid
+
+ul.sub-items > li a
+  color: black
+  text-decoration: none
+
+.menu-item:hover > .sub-items
+  display: block
+
+
+// footer
+
+footer
+  display: flex
+  justify-content: space-around
+  box-shadow: 0 -5px 5px #888
+  background-color: whitesmoke
+
+footer > #about
+  width: 50%
+
+footer > #contact
+  width: 30%

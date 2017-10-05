@@ -1,0 +1,41 @@
+@import "../general"
+
+#two-news
+  display: flex
+  justify-content: space-around
+  align-items: stretch
+
+.news
+  display: flex
+  flex-direction: column
+  width: 40%
+
+.news > img
+  width: 80%
+  justify-self: center
+
+.news > h1
+  margin-top: 0
+  margin-bottom: 0
+
+.news > .subtitle
+  margin-bottom: 20px
+  margin-top: 10px
+
+#event-posters
+  padding-left: 20px
+  padding-right: 20px
+
+#poster-imgs
+  height: fit-content
+
+#poster-imgs > a > .poster
+  width: 200px
+  vertical-align: middle
+  margin: 20px
+  transition: width 0.5s, margin 0.5s
+
+#poster-imgs > a > .poster:hover
+  width: 240px
+  margin: 0
+
