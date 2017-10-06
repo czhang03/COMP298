@@ -61,12 +61,31 @@
 
   </nav>
 
+  <div class="section" id="contact-form">
+    <form action="#">
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname">
 
+      <label for="fname">First Name</label>
+      <input type="text" id="fname">
 
+      <label for="problem-type">Problem Type</label>
+      <select name="problem-type" id="problem-type">
+        <option value="!">Site is Too Pretty</option>
+        <option value=".">Site Owner is too Handsome</option>
+        <option value="?">A is Too Easy</option>
+        <option value="_">I don't want to contact anymore</option>
+      </select>
 
+      <label for="description">Problem Description</label>
+      <input type="text" id="description" size="40">
 
+      <label for="detail">Detail Description</label>
+      <textarea name="detail" id="detail" cols="80" rows="10"></textarea>
 
-
+      <button value="submit" type="submit">Submit</button>
+    </form>
+  </div>
 
 
   <footer id="footer">
