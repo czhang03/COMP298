@@ -32,6 +32,10 @@ export class canvasModel {
         this.canvasContext.restore()
     }
 
+    protected drawCircleHere(params: {radius: number, color: string}) {
+        this.drawCircle({center: {x: 0, y: 0}, radius: params.radius, color: params.color})
+    }
+
     protected drawRectagle(options: {topLeft: point, width: number, height: number, color: string}) {
         this.canvasContext.save();
 

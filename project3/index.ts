@@ -1,6 +1,7 @@
-import "./canvasModel"
-import "./EModel"
+import {EbbinghausModel} from "./EModel"
 
-$(document).ready(()=> {
-
+$(()=> {
+    if ($('#ebbinghaus-illusion').hasClass("active")) {
+        new EbbinghausModel(new Date()).draw()
+    }
 });

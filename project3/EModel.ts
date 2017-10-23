@@ -18,7 +18,7 @@ export class EbbinghausModel extends canvasModel {
     private readonly innerRadius = 20;
 
     // the time of one round
-    private readonly oneRoundTimeInSeconds = 8;
+    private readonly oneRoundTimeInSeconds = 10; // this value needs to be divisible by 60
 
     // the start position of the guide lines
     private readonly guideStartposition = Math.sqrt(2) * this.innerRadius;
@@ -26,7 +26,11 @@ export class EbbinghausModel extends canvasModel {
     // number of outer ball
     private readonly numOuterBall = 6;
 
+    // the time that this application has started
     private timeStart: Date;
+
+    // the whether to drawGuide
+    private drawGuide: boolean = false;
 
     constructor (timeStart: Date) {
         super();
@@ -69,7 +73,7 @@ export class EbbinghausModel extends canvasModel {
         return this.getCurInnerBallCenterXCoor(process) / this.activeDisplayCanvas.width * this.activeDisplayCanvas.height
     }
 
-    protected drawInnerCircleWithDot() {
+    protected drawIllusionFrame() {
         let angle;
         this.canvasContext.save();
 
@@ -84,19 +88,35 @@ export class EbbinghausModel extends canvasModel {
         this.canvasContext.translate(innerBallCenterX, innerBallCenterY);
 
         // draw the inner circle with dot
-        this.drawCircle({center: {x: 0, y: 0}, radius: this.innerRadius, color: "orange"});
-        this.drawCircle({center: {x: 0, y: 0}, radius: 10, color: "blue"});
+        this.drawCircleHere({radius: this.innerRadius, color: "orange"});
+        this.drawCircleHere({radius: 10, color: "blue"});
 
         // draw the outer circles with dot
         for (angle = 0; angle <= 2*Math.PI; angle += 2*Math.PI/this.numOuterBall)
+
             this.canvasContext.save();
             this.canvasContext.rotate(angle);
             this.canvasContext.translate(0, - distOuterInner);
-            this.drawCircle({center: {x: 0, y: 0}, radius: outerRadius, color: "blue"});
-            this.drawCircle({center: {x: 0, y: 0}, radius: 10, color: "orange"});
+            this.drawCircleHere({radius: outerRadius, color: "blue"});
+            this.drawCircleHere({radius: 10, color: "orange"});
             this.canvasContext.restore();
 
         this.canvasContext.restore();
+    }
+
+    protected drawGuideLinesFrame(){
+
+    }
+
+    public draw(){
+
+        if (this.drawGuide)
+            this.drawGuideLinesFrame();
+
+        this.drawIllusionFrame();
+
+        window.requestAnimationFrame(this.draw);
+
     }
 
 
