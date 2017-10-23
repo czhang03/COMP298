@@ -13,9 +13,6 @@
     ]
   },
   "files": [
-    "canvasModel.ts",
-    "EModel.ts",
-    "index.ts",
-    "MWModel.ts"
+    "index.ts"
   ]
 }
