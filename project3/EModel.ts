@@ -109,6 +109,7 @@ export class EbbinghausModel extends canvasModel {
     }
 
     public draw(){
+        this.clearCanvas();
 
         if (this.drawGuide)
             this.drawGuideLinesFrame();
