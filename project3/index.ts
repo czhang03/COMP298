@@ -1,6 +1,6 @@
 /// <reference path="../node_modules/@types/jquery/index.d.ts"/>
 
-type point = {x: number, y: number}
+type point = { x: number, y: number }
 
 /**
  * the model to control the canvas
@@ -23,7 +23,7 @@ class canvasModel {
         this.canvasContext.clearRect(0, 0, this.activeDisplayCanvas.width, this.activeDisplayCanvas.height);
     }
 
-    protected drawCircle(params: {center: point, radius: number, color: string}) {
+    protected drawCircle(params: { center: point, radius: number, color: string }) {
         this.canvasContext.save();
 
         this.canvasContext.beginPath();
@@ -36,11 +36,11 @@ class canvasModel {
         this.canvasContext.restore()
     }
 
-    protected drawCircleHere(params: {radius: number, color: string}) {
+    protected drawCircleHere(params: { radius: number, color: string }) {
         this.drawCircle({center: {x: 0, y: 0}, radius: params.radius, color: params.color})
     }
 
-    protected drawRectagle(options: {topLeft: point, width: number, height: number, color: string}) {
+    protected drawRectagle(options: { topLeft: point, width: number, height: number, color: string }) {
         this.canvasContext.save();
 
         this.canvasContext.beginPath();
@@ -70,7 +70,6 @@ class EbbinghausModel extends canvasModel {
     private readonly leftMostInnerCenterXCoord = 50;
     private readonly rightMostInnerCenterXCoord = 400;
 
-
     // the radius of the inner ball
     private readonly innerRadius = 20;
 
@@ -78,7 +77,7 @@ class EbbinghausModel extends canvasModel {
     private readonly oneRoundTimeInSeconds = 10; // this value needs to be divisible by 60
 
     // the start position of the guide lines, this require minor geometry calculation
-    private readonly guideStartPositionX = Math.sqrt((this.innerRadius) ** 2 + (this.innerRadius/this.canvasHeight*this.canvasWidth) ** 2);
+    private readonly guideStartPositionX = Math.sqrt((this.innerRadius) ** 2 + (this.innerRadius / this.canvasHeight * this.canvasWidth) ** 2);
     private readonly guideStartPositionY = this.guideStartPositionX / this.canvasWidth * this.canvasHeight;
 
     // number of outer ball
@@ -93,7 +92,7 @@ class EbbinghausModel extends canvasModel {
     // whether to draw the next frame
     private keepDraw: boolean = true;
 
-    constructor (startTime: Date) {
+    constructor(startTime: Date) {
         super();
         this.startTime = startTime;
     }
@@ -106,7 +105,7 @@ class EbbinghausModel extends canvasModel {
         return (totalMilliSecPassed % oneRoundTimeInMilliSec) / oneRoundTimeInMilliSec
     }
 
-    private static getValFromProcessMinToMax(param:{process: number, min: number, max: number}): number {
+    private static getValFromProcessMinToMax(param: { process: number, min: number, max: number }): number {
         if (param.process <= 0.5 && param.process >= 0)  // going forward
             return param.process * 2 * (param.max - param.min) + param.min;
         else if (param.process <= 1)  // going back
@@ -152,7 +151,7 @@ class EbbinghausModel extends canvasModel {
 
         // draw the outer circles with dot
         let angle;
-        for (angle = 0; angle <= 2*Math.PI; angle += 2*Math.PI/this.numOuterBall) {
+        for (angle = 0; angle <= 2 * Math.PI; angle += 2 * Math.PI / this.numOuterBall) {
             this.canvasContext.save();
             this.canvasContext.rotate(angle);
             this.canvasContext.translate(0, -distOuterInner);
@@ -164,7 +163,7 @@ class EbbinghausModel extends canvasModel {
         this.canvasContext.restore();
     }
 
-    protected drawGuideLinesFrame(){
+    protected drawGuideLinesFrame() {
 
         // draw the guide line on above
         this.canvasContext.save();
@@ -191,7 +190,7 @@ class EbbinghausModel extends canvasModel {
 
     private draw() {
 
-        if(this.keepDraw){
+        if (this.keepDraw) {
             this.canvasContext.save();
 
             // clear canvas
@@ -220,7 +219,6 @@ class EbbinghausModel extends canvasModel {
     }
 
 }
-
 
 
 $(() => {
