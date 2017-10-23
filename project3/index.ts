@@ -54,6 +54,9 @@ class canvasModel {
 
 }
 
+/**
+ * the model to contorl the Ebbinghaus illusion
+ */
 class EbbinghausModel extends canvasModel {
     // the distant between the center of the inner ball and the outer ball
     private readonly maxDist = 150;
@@ -162,6 +165,8 @@ class EbbinghausModel extends canvasModel {
     }
 
     protected drawGuideLinesFrame(){
+
+        // draw the guide line on above
         this.canvasContext.save();
 
         this.canvasContext.beginPath();
@@ -172,6 +177,7 @@ class EbbinghausModel extends canvasModel {
 
         this.canvasContext.restore();
 
+        // draw the guide line on the bottom
         this.canvasContext.save();
 
         this.canvasContext.beginPath();
@@ -213,8 +219,9 @@ class EbbinghausModel extends canvasModel {
         this.keepDraw = false;
     }
 
-
 }
+
+
 
 $(() => {
     if ($('#ebbinghaus-illusion').hasClass("active")) {
