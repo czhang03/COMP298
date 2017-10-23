@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/chantisnake/COMP298.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "chantisnake",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/chantisnake/COMP298/issues"
   },
-  "homepage": "https://github.com/chantisnake/COMP298#readme"
+  "homepage": "https://github.com/chantisnake/COMP298#readme",
+  "dependencies": {
+    "@types/jquery": "^3.2.15",
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.100.2"
+  }
 }
