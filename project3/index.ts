@@ -8,11 +8,13 @@ type point = { x: number, y: number }
  * @export
  * @class canvasModel - the canvas model
  */
-class canvasModel {
+abstract class canvasModel {
     private readonly activeDisplayCanvas = <HTMLCanvasElement> $(".active .display canvas").get(0);
     protected readonly activeDisplayConfig = <HTMLFormElement> $(".active .display form").get(0);
     protected canvasWidth = this.activeDisplayCanvas.width;
     protected canvasHeight = this.activeDisplayCanvas.height;
+
+    protected keepDraw: boolean = true;
 
     protected readonly canvasContext = this.activeDisplayCanvas.getContext('2d');
 
@@ -52,6 +54,18 @@ class canvasModel {
         this.canvasContext.restore();
     }
 
+    abstract draw(): void;
+
+    public startDraw() {
+        this.keepDraw = true;
+        this.draw();
+    }
+
+    public stopDraw() {
+        this.keepDraw = false;
+    }
+
+
 }
 
 /**
@@ -88,9 +102,6 @@ class EbbinghausModel extends canvasModel {
 
     // the whether to drawGuide
     private drawGuide: boolean = false;
-
-    // whether to draw the next frame
-    private keepDraw: boolean = true;
 
     constructor(startTime: Date) {
         super();
@@ -188,7 +199,7 @@ class EbbinghausModel extends canvasModel {
         this.canvasContext.restore();
     }
 
-    private draw() {
+    draw() {
 
         if (this.keepDraw) {
             this.canvasContext.save();
@@ -209,21 +220,15 @@ class EbbinghausModel extends canvasModel {
 
     }
 
-    public startDraw() {
-        this.keepDraw = true;
-        this.draw();
-    }
-
-    public stopDraw() {
-        this.keepDraw = false;
-    }
-
 }
 
 
 $(() => {
+    let curModel: canvasModel;
+
     if ($('#ebbinghaus-illusion').hasClass("active")) {
-        let model = new EbbinghausModel(new Date());
-        model.startDraw()
+        curModel = new EbbinghausModel(new Date());
     }
+
+    curModel.startDraw()
 });
