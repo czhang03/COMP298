@@ -16,10 +16,22 @@ abstract class canvasModel {
 
     protected keepDraw: boolean = true;
 
-    protected readonly canvasContext = this.activeDisplayCanvas.getContext('2d');
+    private readonly canvasContextNullable = this.activeDisplayCanvas.getContext('2d');
 
     abstract startTime: Date;
     abstract oneRoundTimeInSeconds: number;
+
+    /**
+     * the none nullable version of canvas context 2d
+     * @returns {CanvasRenderingContext2D}
+     */
+    get canvasContext() {
+        if (!this.canvasContextNullable)
+            throw "canvas context 2d not found, please check spelling";
+        else
+            return this.canvasContextNullable;
+    }
+
     /**
      * clear the canvas
      */
@@ -293,6 +305,8 @@ $(() => {
         curModel = new EbbinghausModel(new Date());
     else if($('#munker-white-illusion').hasClass("active"))
         curModel = new SineIllusionModel(new Date());
+    else
+        throw "no illusion is active";
 
     curModel.startDraw()
 });
