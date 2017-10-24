@@ -68,6 +68,7 @@ abstract class canvasModel {
 
 }
 
+
 /**
  * the model to contorl the Ebbinghaus illusion
  */
@@ -211,7 +212,7 @@ class EbbinghausModel extends canvasModel {
             if (this.drawGuide)
                 this.drawGuideLinesFrame();
 
-            // dra illusion
+            // draw illusion
             this.drawIllusionFrame();
 
             this.canvasContext.restore();
@@ -219,6 +220,14 @@ class EbbinghausModel extends canvasModel {
         }
 
     }
+
+}
+
+
+/**
+ * the model for Munker-White illusion
+ */
+class MunkerWhiteModel {
 
 }
 
