@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./style.css">
   <title>Optical Illusion</title>
-  <script src="../node_modules/requirejs/require.js"></script>
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="build/packed.js"></script>
 </head>
@@ -18,8 +17,8 @@
 </header>
 
 <nav>
-  <button class="nav-but">&lt;</button>
-  <button class="nav-but">&gt;</button>
+  <button class="nav-but"><b>&lt;</b> Prev</button>
+  <button class="nav-but">Next <b>&gt;</b></button>
 </nav>
 
 <div class="illusion active" id="ebbinghaus-illusion">
@@ -29,15 +28,15 @@
 
   <div class="display">
 
-    <canvas width="700" height="500"></canvas>
+    <canvas width="600" height="500"></canvas>
 
     <form action="">
       <label for="maxDist">Maximum distance between circles</label><input type="range" id="maxDist" min="100" max="200">
       <label for="minDist">Minimum distance between circles</label><input type="range" id="minDist" min="30" max="50">
       <label for="outerMaxRadius">Maximum radius of outer circles</label><input type="range" id="outerMaxRadius" min="30" max="120">
       <label for="outerMinRadius">Minimum radius of outer circles</label><input type="range" id="outerMinRadius" min="0" max="30">
-      <label for="innerRadius">radius of the InnerBall</label><input type="range" id="innerRadius" min="10" max="30">
-      <label for="numOuterBall">the number of outer balls</label><input type="number" id="numOuterBall">
+      <label for="innerRadius">radius of the inner circle</label><input type="range" id="innerRadius" min="10" max="30">
+      <label for="numOuterBall">the number of outer circles</label><input type="number" id="numOuterBall">
       <label for="periodEbbinghaus">Period in seconds</label><input type="number" class="oneRoundTimeInSeconds" id="periodEbbinghaus">
       <input type="button" id="guideLines" value="Toggle Guide Lines">
       <input type="button" class="stop" value="Stop Drawing">
