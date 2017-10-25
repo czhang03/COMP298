@@ -12,26 +12,45 @@
 </head>
 <body>
 
-<div class="illusion" id="ebbinghaus-illusion">
+
+<h1>Optical Illusion Demonstration</h1>
+
+<nav>
+  <button class="nav-but">&lt;</button>
+  <button class="nav-but">&gt;</button>
+</nav>
+
+<div class="illusion active" id="ebbinghaus-illusion">
   <div class="description">
 
   </div>
 
   <div class="display">
 
-    <!--this canvas has to be a square-->
-    <canvas width="800" height="600">
-
-    </canvas>
+    <canvas width="600" height="400"></canvas>
 
     <form action="">
+      <label for="maxDist">Maximum distance between circles</label>
+      <input type="range" id="maxDist" min="0" max="100">
+      <label for="minDist">Minimum distance between circles</label>
+      <input type="range" id="minDist" min="0" max="100">
+      <label for="outerMaxRadius">Maximum radius of outer circles</label>
+      <input type="range" id="outerMaxRadius" min="0" max="100">
+      <label for="outerMinRadius">Minimum radius of outer circles</label>
+      <input type="range" id="outerMinRadius" min="0" max="100">
+      <label for="numOuterBall">the number of outer balls</label>
+      <input type="number" id="numOuterBall">
+      <label for="periodEbbinghaus">Period in seconds</label>
+      <input type="number" class="oneRoundTimeInSeconds" id="periodEbbinghaus">
+      <input type="button" class="stop" value="Stop Drawing">
+      <input type="button" class="resume" value="Resume Drawing">
 
     </form>
 
   </div>
 </div>
 
-<div class="illusion active" id="munker-white-illusion">
+<div class="illusion" id="sine-illusion">
 
   <div class="description">
 
@@ -39,12 +58,13 @@
 
   <div class="display">
 
-    <canvas width="600" height="400">
-
-    </canvas>
+    <canvas width="600" height="400"></canvas>
 
     <form action="">
-
+      <label for="periodSine">Period in seconds</label>
+      <input type="number" class="oneRoundTimeInSeconds" id="periodSine">
+      <input type="button" class="stop" value="stop">
+      <input type="button" class="start" value="Start Drawing">
     </form>
 
   </div>

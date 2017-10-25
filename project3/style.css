@@ -1,8 +1,48 @@
+body {
+    max-width: 1200px;
+    min-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    display: flex;
+    width: max-content;
+    width: -moz-max-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+nav .nav-but {
+    margin: 20px;
+}
+
+.illusion {
+    display: none;
+    float: right;
+}
+
+.active {
+    display: block;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+}
+
 canvas {
     border: 1px solid black;
+    background-color: whitesmoke;
+    margin: 20px;
 }
 
 form {
+    margin: 20px;
     display: flex;
     flex-direction: column;
+}
+
+form input {
+    margin-bottom: 20px;
 }

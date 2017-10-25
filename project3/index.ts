@@ -6,9 +6,9 @@ type point = { x: number, y: number }
  * the model to control the canvas
  *
  * @export
- * @class canvasModel - the canvas model
+ * @class CanvasModel - the canvas model
  */
-abstract class canvasModel {
+abstract class CanvasModel {
     private readonly activeDisplayCanvas = <HTMLCanvasElement> $(".active .display canvas").get(0);
     protected readonly activeDisplayConfig = <HTMLFormElement> $(".active .display form").get(0);
     protected canvasWidth = this.activeDisplayCanvas.width;
@@ -18,14 +18,14 @@ abstract class canvasModel {
 
     private readonly canvasContextNullable = this.activeDisplayCanvas.getContext('2d');
 
-    abstract startTime: Date;
+    abstract readonly startTime: Date;
     abstract oneRoundTimeInSeconds: number;
 
     /**
      * the none nullable version of canvas context 2d
      * @returns {CanvasRenderingContext2D}
      */
-    get canvasContext() {
+    protected get canvasContext() {
         if (!this.canvasContextNullable)
             throw "canvas context 2d not found, please check spelling";
         else
@@ -94,7 +94,7 @@ abstract class canvasModel {
 /**
  * the model to contorl the Ebbinghaus illusion
  */
-class EbbinghausModel extends canvasModel {
+class EbbinghausModel extends CanvasModel {
     // the distant between the center of the inner ball and the outer ball
     private readonly maxDist = 150;
     private readonly minDist = 30;
@@ -118,10 +118,10 @@ class EbbinghausModel extends canvasModel {
     private readonly numOuterBall = 6;
 
     // the start of the application
-    startTime: Date;
+    readonly startTime: Date;
 
     // the time of one round
-    readonly oneRoundTimeInSeconds = 10; // this value needs to be divisible by 60
+    oneRoundTimeInSeconds = 10; // this value needs to be divisible by 60
 
     // the whether to drawGuide
     private drawGuide: boolean = false;
@@ -216,21 +216,26 @@ class EbbinghausModel extends canvasModel {
 
     draw() {
 
+
+        this.canvasContext.save();
+
+        // clear canvas
+        this.clearCanvas();
+
+        // draw guide lines
+        if (this.drawGuide)
+            this.drawGuideLinesFrame();
+
+        // draw illusion
+        this.drawIllusionFrame();
+
+        this.canvasContext.restore();
+
+        // draw the next frame
         if (this.keepDraw) {
-            this.canvasContext.save();
-
-            // clear canvas
-            this.clearCanvas();
-
-            // draw guide lines
-            if (this.drawGuide)
-                this.drawGuideLinesFrame();
-
-            // draw illusion
-            this.drawIllusionFrame();
-
-            this.canvasContext.restore();
-            window.requestAnimationFrame(() => new EbbinghausModel(this.startTime).draw());
+            window.requestAnimationFrame(() => {
+                this.draw()
+            });
         }
 
     }
@@ -241,9 +246,9 @@ class EbbinghausModel extends canvasModel {
 /**
  * the model for Munker-White illusion
  */
-class SineIllusionModel extends canvasModel {
-    startTime: Date;
-    readonly oneRoundTimeInSeconds = 8;
+class SineIllusionModel extends CanvasModel {
+    readonly startTime: Date;
+    oneRoundTimeInSeconds = 8;
 
     private readonly numBars = 100;  // the number of bars displayed on the screen
     private readonly barHeight = 30;  // the height of each bar
@@ -270,43 +275,82 @@ class SineIllusionModel extends canvasModel {
             return {xStarts: xStarts, yCenter: this.amplitude * Math.sin(xStarts + process * 2 * Math.PI)}
         });
 
-        return XStartYCenters.map((param: {xStarts: number, yCenter: number}) => {
+        return XStartYCenters.map((param: { xStarts: number, yCenter: number }) => {
             return {x: param.xStarts, y: param.yCenter - this.barHeight / 2}
         })
     }
 
     draw() {
+
+
+        const process = this.getProcess();
+        const getBarsXYStarts = this.getBarsXYStarts(process);
+
+        this.canvasContext.save();
+        this.clearCanvas();
+
+        // move the the vertical center of the canvas
+        this.canvasContext.translate(0, this.canvasHeight / 2);
+
+        getBarsXYStarts.forEach((p: point) => {
+            this.drawRectagle({topLeft: p, height: this.barHeight, width: this.barWidth, color: "gray"})
+        });
+
+        this.canvasContext.restore();
+
+        // draw the next frame
         if (this.keepDraw) {
-
-            const process = this.getProcess();
-            const getBarsXYStarts = this.getBarsXYStarts(process);
-
-            this.canvasContext.save();
-            this.clearCanvas();
-
-            // move the the vertical center of the canvas
-            this.canvasContext.translate(0, this.canvasHeight/2);
-
-            getBarsXYStarts.forEach((p: point) => {
-                this.drawRectagle({topLeft: p, height: this.barHeight, width: this.barWidth, color: "gray"})
-            });
-
-            this.canvasContext.restore();
-            window.requestAnimationFrame(() => {new SineIllusionModel(this.startTime).draw()})
+            window.requestAnimationFrame(() => {
+                this.draw()
+            })
         }
     }
 }
 
 
-$(() => {
-    let curModel: canvasModel;
-
+function makeActiveModel(): CanvasModel {
     if ($('#ebbinghaus-illusion').hasClass("active"))
-        curModel = new EbbinghausModel(new Date());
-    else if($('#munker-white-illusion').hasClass("active"))
-        curModel = new SineIllusionModel(new Date());
+        return new EbbinghausModel(new Date());
+    else if ($('#sine-illusion').hasClass("active"))
+        return new SineIllusionModel(new Date());
     else
         throw "no illusion is active";
+}
 
-    curModel.startDraw()
+function getActiveillusionName(): string {
+    if ($('#ebbinghaus-illusion').hasClass("active"))
+        return "Ebbinghaus Illusion";
+    else if ($('#sine-illusion').hasClass("active"))
+        return "Sine Illusion";
+    else
+        throw "no illusion is active";
+}
+
+function getInactiveIllusionNames(): string[] {
+    if ($('#ebbinghaus-illusion').hasClass("active"))
+        return ["Sine Illusion"];
+    else if ($('#sine-illusion').hasClass("active"))
+        return ["Ebbinghaus Illusion"];
+    else
+        throw "no illusion is active";
+}
+
+function registerCommonIllusionEvent(activeModel: CanvasModel) {
+    $(".illusion .display form .stop").click(() => {
+        activeModel.stopDraw()
+    });
+    $(".illusion .display form .resume").click(() => {
+        activeModel.startDraw()
+    });
+    $(".illusion .display form .oneRoundTimeInSeconds").change((event) => {
+        activeModel.oneRoundTimeInSeconds = <number> $(event.currentTarget).val()
+    });
+}
+
+
+$(() => {
+    const activeModel = makeActiveModel();
+    registerCommonIllusionEvent(activeModel);
+    activeModel.startDraw();
+
 });
