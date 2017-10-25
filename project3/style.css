@@ -5,6 +5,16 @@ body {
     margin-right: auto;
 }
 
+header {
+    display: flex;
+    align-items: baseline;
+}
+
+header #illusion-name {
+    margin-left: 20px;
+    font-size: larger;
+}
+
 nav {
     display: flex;
     width: max-content;

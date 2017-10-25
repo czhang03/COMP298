@@ -346,13 +346,32 @@ function getActiveillusionName(): string {
         throw "no illusion is active";
 }
 
-function getInactiveIllusionNames(): string[] {
-    if ($('#ebbinghaus-illusion').hasClass("active"))
-        return ["Sine Illusion"];
-    else if ($('#sine-illusion').hasClass("active"))
-        return ["Ebbinghaus Illusion"];
+function toggleActiveIllusion(prevActiveModel: CanvasModel): CanvasModel {
+
+    // stop the old animation
+    prevActiveModel.stopDraw();
+
+    // name the selector
+    const ebbinghausSelector = $('#ebbinghaus-illusion');
+    const sineSelector = $('#sine-illusion');
+
+    // toggle the active class and re-register events
+    if (ebbinghausSelector.hasClass("active")){
+        ebbinghausSelector.removeClass("active");
+        sineSelector.addClass("active");
+    }
+
+    else if (sineSelector.hasClass("active")) {
+        sineSelector.removeClass("active");
+        ebbinghausSelector.addClass("active");
+    }
     else
         throw "no illusion is active";
+
+    // initialize the active model
+    const activeModel = makeActiveModel();
+    initActiveModel(activeModel);
+    return activeModel
 }
 
 function initIllusionCommonProperty(activeModel: CanvasModel) {
@@ -414,26 +433,54 @@ function registerEbbinghausIllusionEvents(activeModel: EbbinghausModel) {
 }
 
 function registerSineIllusionEvents(activeModel: SineIllusionModel) {
+    const barHeightSelector = $(".illusion .display #barHeight");
+    barHeightSelector.val(activeModel.barHeight);
+    barHeightSelector.change((event) => {
+        activeModel.barHeight = Number($(event.currentTarget).val())
+    });
 
+    const amplitudeSelector = $(".illusion .display #amplitude");
+    amplitudeSelector.val(activeModel.amplitude);
+    amplitudeSelector.change((event) => {
+        activeModel.amplitude = Number($(event.currentTarget).val())
+    });
+
+    const numBarSelector = $(".illusion .display #numBars");
+    numBarSelector.val(activeModel.numBars);
+    numBarSelector.change((event) => {
+        activeModel.numBars = Number($(event.currentTarget).val())
+    });
+
+}
+
+function initActiveModel(activeModel: CanvasModel) {
+    if (activeModel instanceof EbbinghausModel) {
+        registerEbbinghausIllusionEvents(activeModel)
+    }
+    else if (activeModel instanceof SineIllusionModel) {
+        registerSineIllusionEvents(activeModel);
+    }
+    else
+        throw "the type of active model is unknown";
+
+    $("header #illusion-name").text(`--- ${getActiveillusionName()}`);
+    activeModel.startDraw()
 }
 
 
 $(() => {
 
     // make the active model
-    const activeModel = makeActiveModel();
+    let activeModel = makeActiveModel();
 
     // register the event handler
+    $("nav .nav-but").click(() => {
+        activeModel = toggleActiveIllusion(activeModel);
+    });
+
     initIllusionCommonProperty(activeModel);
 
-    if (activeModel instanceof EbbinghausModel)
-        registerEbbinghausIllusionEvents(activeModel);
-    else if (activeModel instanceof SineIllusionModel)
-        registerSineIllusionEvents(activeModel);
-    else
-        throw "the type of active model is unknown";
-
-    // starts drawing
-    activeModel.startDraw();
+    // starts the active model
+    initActiveModel(activeModel);
 
 });
