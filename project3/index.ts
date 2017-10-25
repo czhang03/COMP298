@@ -272,6 +272,7 @@ class SineIllusionModel extends CanvasModel {
     numBars = 100;  // the number of bars displayed on the screen
     barHeight = 30;  // the height of each bar
     amplitude = 100;  // the amplitude of the wave (the dist between the center of highest the bar and the center of the canvas)
+    numSinPeriod = 5;
 
     private get barWidth() {  // the width of each bar
         return this.canvasWidth / this.numBars / 2;
@@ -294,12 +295,21 @@ class SineIllusionModel extends CanvasModel {
 
     private getBarsXYStarts(process: number): Array<point> {
 
-        const XStartYCenters = this.getBarsXStarts().map((xStarts) => {
-            return {xStarts: xStarts, yCenter: this.amplitude * Math.sin(xStarts + process * 2 * Math.PI)}
-        });
+        const XStarts = this.getBarsXStarts();
 
-        return XStartYCenters.map((param: { xStarts: number, yCenter: number }) => {
-            return {x: param.xStarts, y: param.yCenter - this.barHeight / 2}
+        // make sure the number sin period is correct
+        const normalizedX = XStarts.map((x) =>
+            x / this.canvasWidth * (2 * Math.PI * this.numSinPeriod)
+        );
+
+        const YCenters = normalizedX.map((x) =>
+            this.amplitude * Math.sin(x + process * 2 * Math.PI)
+        );
+
+        const YStarts = YCenters.map((x) => x - this.barHeight / 2);
+
+        return XStarts.map((x, index) => {
+            return {x: x, y: YStarts[index]}
         })
     }
 
