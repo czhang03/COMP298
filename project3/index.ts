@@ -263,7 +263,7 @@ class EbbinghausModel extends CanvasModel {
 
 
 /**
- * the model for Munker-White illusion
+ * the model for Sine illusion
  */
 class SineIllusionModel extends CanvasModel {
     readonly startTime: Date;
@@ -272,7 +272,7 @@ class SineIllusionModel extends CanvasModel {
     numBars = 100;  // the number of bars displayed on the screen
     barHeight = 30;  // the height of each bar
     amplitude = 100;  // the amplitude of the wave (the dist between the center of highest the bar and the center of the canvas)
-    numSinPeriod = 5;
+    numSinPeriod = 5;  // number of sine period in the graph
 
     private get barWidth() {  // the width of each bar
         return this.canvasWidth / this.numBars / 2;
@@ -463,6 +463,12 @@ function registerSineIllusionProperty(activeModel: SineIllusionModel) {
     numBarSelector.keyup((event) => {
         activeModel.numBars = Number($(event.currentTarget).val())
     });
+
+    const numSinePeriodSelector = $(".illusion .display #numSinPeriod");
+    numSinePeriodSelector.val(activeModel.numSinPeriod);
+    numSinePeriodSelector.keyup((event) => {
+        activeModel.numSinPeriod = Number($(event.currentTarget).val())
+    })
 
 }
 
