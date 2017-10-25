@@ -464,7 +464,7 @@ function initActiveModel(activeModel: CanvasModel) {
     else
         throw "the type of active model is unknown";
 
-    $("header #illusion-name").text(`--- ${getActiveillusionName()}`);
+    $("header #illusion-name").text(getActiveillusionName());
     activeModel.startDraw()
 }
 
