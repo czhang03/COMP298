@@ -383,7 +383,7 @@ function initIllusionCommonProperty(activeModel: CanvasModel) {
 
     const oneRoundTimeSelector = $(".illusion .display form .oneRoundTimeInSeconds");
     oneRoundTimeSelector.val(activeModel.oneRoundTimeInSeconds);
-    oneRoundTimeSelector.change((event) => {
+    oneRoundTimeSelector.keyup((event) => {
         activeModel.oneRoundTimeInSeconds = Number($(event.currentTarget).val())
     });
 }
@@ -421,7 +421,7 @@ function registerEbbinghausIllusionEvents(activeModel: EbbinghausModel) {
 
     const numOuterBallSelector = $(".illusion .display #numOuterBall");
     numOuterBallSelector.val(activeModel.numOuterBall);
-    numOuterBallSelector.change((event) => {
+    numOuterBallSelector.keyup((event) => {
         activeModel.numOuterBall = Number($(event.currentTarget).val())
     });
 
@@ -446,7 +446,7 @@ function registerSineIllusionEvents(activeModel: SineIllusionModel) {
 
     const numBarSelector = $(".illusion .display #numBars");
     numBarSelector.val(activeModel.numBars);
-    numBarSelector.change((event) => {
+    numBarSelector.keyup((event) => {
         activeModel.numBars = Number($(event.currentTarget).val())
     });
 
