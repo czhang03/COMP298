@@ -266,12 +266,16 @@ class SineIllusionModel extends CanvasModel {
     readonly startTime: Date;
     oneRoundTimeInSeconds = 8;
 
-    private readonly numBars = 100;  // the number of bars displayed on the screen
-    private readonly barHeight = 30;  // the height of each bar
-    private readonly amplitude = 100;  // the amplitude of the wave (the dist between the center of highest the bar and the center of the canvas)
+    numBars = 100;  // the number of bars displayed on the screen
+    barHeight = 30;  // the height of each bar
+    amplitude = 100;  // the amplitude of the wave (the dist between the center of highest the bar and the center of the canvas)
 
-    private readonly barWidth = this.canvasWidth / this.numBars / 2;  // the width of each bar
-    private readonly gapWidth = this.barWidth;  // the width of the gap (same as the width of the bar)
+    private get barWidth() {  // the width of each bar
+        return this.canvasWidth / this.numBars / 2;
+    }
+    private get gapWidth() { // the width of the gap (same as the width of the bar)
+        return this.barWidth;
+    }
 
     constructor(startTime: Date) {
         super();
