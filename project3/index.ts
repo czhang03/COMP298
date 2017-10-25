@@ -5,7 +5,6 @@ type point = { x: number, y: number }
 /**
  * the model to control the canvas
  *
- * @export
  * @class CanvasModel - the canvas model
  */
 abstract class CanvasModel {
