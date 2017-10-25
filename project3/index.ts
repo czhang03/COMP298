@@ -75,8 +75,12 @@ abstract class CanvasModel {
         const now = new Date();
         const totalMilliSecPassed = now.getTime() - this.startTime.getTime();
         const oneRoundTimeInMilliSec = this.oneRoundTimeInSeconds * 1000;
-
-        return (totalMilliSecPassed % oneRoundTimeInMilliSec) / oneRoundTimeInMilliSec
+        if(oneRoundTimeInMilliSec === 0 || isNaN(oneRoundTimeInMilliSec)) {
+            return 0  // handles the error to stop the animation
+        }
+        else {
+            return (totalMilliSecPassed % oneRoundTimeInMilliSec) / oneRoundTimeInMilliSec
+        }
     }
 
     abstract draw(): void;
