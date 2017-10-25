@@ -388,7 +388,7 @@ function initIllusionCommonProperty(activeModel: CanvasModel) {
     });
 }
 
-function registerEbbinghausIllusionEvents(activeModel: EbbinghausModel) {
+function registerEbbinghausIllusionProperty(activeModel: EbbinghausModel) {
     const maxDistSelector = $(".illusion .display #maxDist");
     maxDistSelector.val(activeModel.maxDist);
     maxDistSelector.change((event) => {
@@ -431,7 +431,7 @@ function registerEbbinghausIllusionEvents(activeModel: EbbinghausModel) {
 
 }
 
-function registerSineIllusionEvents(activeModel: SineIllusionModel) {
+function registerSineIllusionProperty(activeModel: SineIllusionModel) {
     const barHeightSelector = $(".illusion .display #barHeight");
     barHeightSelector.val(activeModel.barHeight);
     barHeightSelector.change((event) => {
@@ -453,11 +453,13 @@ function registerSineIllusionEvents(activeModel: SineIllusionModel) {
 }
 
 function initActiveModel(activeModel: CanvasModel) {
+    initIllusionCommonProperty(activeModel);
+
     if (activeModel instanceof EbbinghausModel) {
-        registerEbbinghausIllusionEvents(activeModel)
+        registerEbbinghausIllusionProperty(activeModel)
     }
     else if (activeModel instanceof SineIllusionModel) {
-        registerSineIllusionEvents(activeModel);
+        registerSineIllusionProperty(activeModel);
     }
     else
         throw "the type of active model is unknown";
@@ -476,8 +478,6 @@ $(() => {
     $("nav .nav-but").click(() => {
         activeModel = toggleActiveIllusion(activeModel);
     });
-
-    initIllusionCommonProperty(activeModel);
 
     // starts the active model
     initActiveModel(activeModel);
