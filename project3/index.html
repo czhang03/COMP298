@@ -17,27 +17,28 @@
 </header>
 
 <nav>
-  <button class="nav-but"><b>&lt;</b> Prev</button>
-  <button class="nav-but">Next <b>&gt;</b></button>
+  <div class="nav-buttons">
+    <button class="nav-but"><b>&lt;</b> Prev</button>
+    <button class="nav-but">Next <b>&gt;</b></button>
+  </div>
 </nav>
 
 <div class="illusion active" id="ebbinghaus-illusion">
-  <div class="description">
-
-  </div>
-
   <div class="display">
 
-    <canvas width="600" height="500"></canvas>
+    <canvas width="500" height="500"></canvas>
 
     <form action="">
       <label for="maxDist">Maximum distance between circles</label><input type="range" id="maxDist" min="100" max="200">
       <label for="minDist">Minimum distance between circles</label><input type="range" id="minDist" min="30" max="50">
-      <label for="outerMaxRadius">Maximum radius of outer circles</label><input type="range" id="outerMaxRadius" min="30" max="120">
-      <label for="outerMinRadius">Minimum radius of outer circles</label><input type="range" id="outerMinRadius" min="0" max="30">
+      <label for="outerMaxRadius">Maximum radius of outer
+        circles</label><input type="range" id="outerMaxRadius" min="30" max="120">
+      <label for="outerMinRadius">Minimum radius of outer
+        circles</label><input type="range" id="outerMinRadius" min="0" max="30">
       <label for="innerRadius">radius of the inner circle</label><input type="range" id="innerRadius" min="10" max="30">
       <label for="numOuterBall">the number of outer circles</label><input type="number" id="numOuterBall">
-      <label for="periodEbbinghaus">Period in seconds</label><input type="number" class="oneRoundTimeInSeconds" id="periodEbbinghaus">
+      <label for="periodEbbinghaus">Period in
+        seconds</label><input type="number" class="oneRoundTimeInSeconds" id="periodEbbinghaus">
       <input type="button" id="guideLines" value="Toggle Guide Lines">
       <input type="button" class="stop" value="Stop Drawing">
       <input type="button" class="resume" value="Resume Drawing">
@@ -45,6 +46,22 @@
     </form>
 
   </div>
+
+  <div class="description">
+    <h3><i>What to see</i></h3>
+    <p>A ring of large blueish disks and a smalle orange disk, and everything moves.  The blue disks change size, does the orange disk change size too?  If you're a little like me, you see the the orange disk  as smaller when it's in the middle, and growing larger when moving to the bottom right. The effect increases when you fixate the blue dot on the top left blue disk.</p>
+    <h3><i>What to do</i></h3>
+    <p>Activate the “Guides” checkbox. A pair of parallel (!) lines appears to indicate that the orange disk has constant diameter throughout. However, the illusion is so strong that the lines seem to bulge!</p>
+    <p>Activate the  “Compensation”&nbsp; checkbox. When the slider is at the bottom, nothing changes. Move the slider up, and the orange disk diameter is now dynamically changed. Try to find a slider setting where the orange disks is close to constant in size throughout (for me that's near the slider's centre). Now switch on the “Guide” lines again, and you can estimate the size of the illusion.</p>
+    <p>Obviously, the context – here the surrounding smaller or larger disks –&nbsp; affects our size judgement.</p>
+    <h3><i>Comments</i></h3>
+    <p>This is a dynamic version of the “Ebbinghaus Illusion” (see <a href="http://www.michaelbach.de/ot/cogEbbinghaus/index.html">there</a> for more). The dynamic variant, created by Christopher D. Blair, Gideon P. Caplovitz and Ryan E.B. Mruczek, enhances illusion strength and was a deserved <a href="http://illusionoftheyear.com/2014/thedynamicebbinghaus/" target="_blank" class="external">winner</a> at the 2014 “Visual Illusion Contest”.</p>
+
+
+    <h3><i>Sources</i></h3>
+    <p><a href="http://www.michaelbach.de/ot/cog-Ebbinghaus/index.html" target="_blank">Ebbinghaus Illusion</a></p>
+  </div>
+
 </div>
 
 <div class="illusion" id="sine-illusion">
@@ -61,13 +78,46 @@
       <label for="barHeight">Height of Bars</label><input type="range" id="barHeight" max="60" min="10">
       <label for="amplitude">Amplitude of Sine Wave</label><input type="range" id="amplitude" min="0" max="150">
       <label for="numBars">Number of Bars</label><input type="number" id="numBars">
-      <label for="periodSine">Period in seconds</label><input type="number" class="oneRoundTimeInSeconds" id="periodSine">
+      <label for="periodSine">Period in
+        seconds</label><input type="number" class="oneRoundTimeInSeconds" id="periodSine">
       <input type="button" class="stop" value="Stop Drawing">
       <input type="button" class="resume" value="Resume Drawing">
     </form>
 
   </div>
+
+  <div class="description">
+    <h3><i>What to do </i>&amp; see</h3>
+    <p>Above there are many small upright bars which are vertically displaced following a sine-wave. The question
+      is: do all bars look alike in height? Many would agree they don’t. You can use the right slider
+      “<span class="fontSans">Compensate</span>” on the right, for me a value of half way up is about right, no?</p>
+    <p>As you will already have guessed, they are all identical in height, but don't look like it. If you use the
+      left slider, the amplitude of the sine-wave can be reduced to zero, revealing the vertical height of the
+      vertical lines.</p>
+    <h3><i>Comment</i></h3>
+    <p>The original authors (Day &amp; Stecher, 1991) write in their abstract: “The illusion is explained in
+      terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the
+      section at the turn of the sine-wave figure and is thereby held to be the same in principle as the Müller-Lyer
+      illusion.” Hmm… When I have obtained the original article (which is non-trivial for me) I will comment
+      more. Whatever, the illusion is rather strong for me.</p>
+    <p>The phenomenon has occurred in my laboratory a number of times, when we were looking at visual evoked
+      responses in the EEG. Small structures that ride on a rising or falling edge are easily misjudged in
+      size. </p>
+    <h3><i>Sources</i></h3>
+    <p class="textIndent1AndSmaller"><a href="http://www.perceptionweb.com/abstract.cgi?id=p200049" target="_blank">Day
+      RH, Stecher EJ (1991)</a> Sine of an illusion. Perception 20;49–55</p>
+  </div>
+
+
 </div>
+
+<nav>
+  <div class="nav-buttons">
+    <button class="nav-but"><b>&lt;</b> Prev</button>
+    <button class="nav-but">Next <b>&gt;</b></button>
+  </div>
+</nav>
+
 
 </body>
 </html>

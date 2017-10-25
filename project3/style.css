@@ -1,9 +1,11 @@
 body {
-    max-width: 1200px;
-    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    min-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    font-family: Arial, sans-serif;
+    font-family: Calibri, sans-serif;
 }
 
 button, input[type=button] {
@@ -17,17 +19,34 @@ button, input[type=button] {
 }
 
 header {
+    width: 100%;
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    font-family: "Bookman Old Style", sans-serif;
+}
+
+header h1 {
+    margin: 0;
+    background-color: #90CAF9;
+    color: #212121;
+    font-size: 40pt;
+    padding: 30px 70px;
 }
 
 header #illusion-name {
-    margin-left: 20px;
+    margin: 0;
+    padding: 30px 90px;
+    background-color: #4dd0e1;
     font-size: larger;
     font-weight: bold;
 }
 
 nav {
+    background-color: #e0f7fa;
+    width: 100%;
+}
+
+nav .nav-buttons {
     display: flex;
     width: max-content;
     width: -moz-max-content;
@@ -35,23 +54,29 @@ nav {
     margin-left: auto;
 }
 
-nav button {
+nav .nav-buttons button {
     margin: 20px;
 }
 
 .illusion {
     display: none;
-    float: right;
+    padding: 0 50px;
+    background-color: whitesmoke;
 }
 
 .active {
     display: block;
 }
 
+.illusion .description {
+    padding: 20px 50px;
+}
+
 .display {
+    float: right;
+    margin: 20px;
     display: flex;
     align-items: center;
-    background-color: whitesmoke;
 }
 
 canvas {
