@@ -11,8 +11,12 @@ type point = { x: number, y: number }
 abstract class CanvasModel {
     private readonly activeDisplayCanvas = <HTMLCanvasElement> $(".active .display canvas").get(0);
     protected readonly activeDisplayConfig = <HTMLFormElement> $(".active .display form").get(0);
-    protected canvasWidth = this.activeDisplayCanvas.width;
-    protected canvasHeight = this.activeDisplayCanvas.height;
+    protected get canvasWidth() {
+        return this.activeDisplayCanvas.width;
+    }
+    protected get canvasHeight () {
+        return this.activeDisplayCanvas.height;
+    }
 
     protected keepDraw: boolean = true;
 
@@ -96,26 +100,34 @@ abstract class CanvasModel {
  */
 class EbbinghausModel extends CanvasModel {
     // the distant between the center of the inner ball and the outer ball
-    private readonly maxDist = 150;
-    private readonly minDist = 30;
+    public maxDist = 150;
+    public minDist = 30;
 
     // the radius of the inner ball
-    private readonly outerMaxRadius = 70;
-    private readonly outerMinRadius = 5;
-
-    // the start and the end of the x coordinate of the inner ball center
-    private readonly leftMostInnerCenterXCoord = 50;
-    private readonly rightMostInnerCenterXCoord = 400;
+    public outerMaxRadius = 70;
+    public outerMinRadius = 5;
 
     // the radius of the inner ball
-    private readonly innerRadius = 20;
+    public innerRadius = 20;
 
     // the start position of the guide lines, this require minor geometry calculation
-    private readonly guideStartPositionX = Math.sqrt((this.innerRadius) ** 2 + (this.innerRadius / this.canvasHeight * this.canvasWidth) ** 2);
-    private readonly guideStartPositionY = this.guideStartPositionX / this.canvasWidth * this.canvasHeight;
+    private get guideStartPositionX() {
+        return Math.sqrt((this.innerRadius) ** 2 + (this.innerRadius / this.canvasHeight * this.canvasWidth) ** 2);
+    }
+    private get guideStartPositionY() {
+        return this.guideStartPositionX / this.canvasWidth * this.canvasHeight;
+    }
 
     // number of outer ball
-    private readonly numOuterBall = 6;
+    public numOuterBall = 6;
+
+    // the start and the end of the x coordinate of the inner ball center
+    private get topMostInnerCenterYCoord(){
+        return this.minDist + this.outerMinRadius + 5;  // 5 is the margin
+    }
+    private get bottomMostInnerCenterYCoord() {
+        return this.canvasHeight - this.maxDist - this.outerMaxRadius - 5;  // 30 is the margin
+    }
 
     // the start of the application
     readonly startTime: Date;
@@ -149,13 +161,13 @@ class EbbinghausModel extends CanvasModel {
             {process: process, min: this.outerMinRadius, max: this.outerMaxRadius})
     }
 
-    private getCurInnerBallCenterXCoor(process: number): number {
+    private getCurInnerBallCenterYCoor(process: number): number {
         return EbbinghausModel.getValFromProcessMinToMax(
-            {process: process, min: this.leftMostInnerCenterXCoord, max: this.rightMostInnerCenterXCoord})
+            {process: process, min: this.topMostInnerCenterYCoord, max: this.bottomMostInnerCenterYCoord})
     }
 
-    private getCurInnerBallCenterYCoor(process: number): number {
-        return this.getCurInnerBallCenterXCoor(process) / this.canvasWidth * this.canvasHeight
+    private getCurInnerBallCenterXCoor(process: number): number {
+        return this.getCurInnerBallCenterYCoor(process) / this.canvasHeight * this.canvasWidth
     }
 
     protected drawIllusionFrame() {
@@ -238,6 +250,10 @@ class EbbinghausModel extends CanvasModel {
             });
         }
 
+    }
+
+    public toggleGuideLines() {
+        this.drawGuide = !this.drawGuide;
     }
 
 }
@@ -335,22 +351,85 @@ function getInactiveIllusionNames(): string[] {
         throw "no illusion is active";
 }
 
-function registerCommonIllusionEvent(activeModel: CanvasModel) {
+function initIllusionCommonProperty(activeModel: CanvasModel) {
     $(".illusion .display form .stop").click(() => {
         activeModel.stopDraw()
     });
     $(".illusion .display form .resume").click(() => {
         activeModel.startDraw()
     });
-    $(".illusion .display form .oneRoundTimeInSeconds").change((event) => {
-        activeModel.oneRoundTimeInSeconds = <number> $(event.currentTarget).val()
+
+    const oneRoundTimeSelector = $(".illusion .display form .oneRoundTimeInSeconds");
+    oneRoundTimeSelector.val(activeModel.oneRoundTimeInSeconds);
+    oneRoundTimeSelector.change((event) => {
+        activeModel.oneRoundTimeInSeconds = Number($(event.currentTarget).val())
     });
+}
+
+function registerEbbinghausIllusionEvents(activeModel: EbbinghausModel) {
+    const maxDistSelector = $(".illusion .display #maxDist");
+    maxDistSelector.val(activeModel.maxDist);
+    maxDistSelector.change((event) => {
+        activeModel.maxDist = Number($(event.currentTarget).val())
+    });
+
+    const minDistSelector = $(".illusion .display #minDist");
+    minDistSelector.val(activeModel.minDist);
+    minDistSelector.change((event) => {
+        activeModel.minDist = Number($(event.currentTarget).val())
+    });
+
+    const outerMaxRadiusSelector = $(".illusion .display #outerMaxRadius");
+    outerMaxRadiusSelector.val(activeModel.outerMaxRadius);
+    outerMaxRadiusSelector.change((event) => {
+        activeModel.outerMaxRadius = Number($(event.currentTarget).val())
+    });
+
+    const outerMinRadiusSelector = $(".illusion .display #outerMinRadius");
+    outerMinRadiusSelector.val(activeModel.outerMinRadius);
+    outerMinRadiusSelector.change((event) => {
+        activeModel.outerMinRadius = Number($(event.currentTarget).val())
+    });
+
+    const innerRadiusSelector = $(".illusion .display #innerRadius");
+    innerRadiusSelector.val(activeModel.innerRadius);
+    innerRadiusSelector.change((event) => {
+        activeModel.innerRadius = Number($(event.currentTarget).val())
+    });
+
+    const numOuterBallSelector = $(".illusion .display #numOuterBall");
+    numOuterBallSelector.val(activeModel.numOuterBall);
+    numOuterBallSelector.change((event) => {
+        activeModel.numOuterBall = Number($(event.currentTarget).val())
+    });
+
+    $(".illusion .display #guideLines").click(() => {
+        activeModel.toggleGuideLines()
+    });
+
+}
+
+function registerSineIllusionEvents(activeModel: SineIllusionModel) {
+
 }
 
 
 $(() => {
+
+    // make the active model
     const activeModel = makeActiveModel();
-    registerCommonIllusionEvent(activeModel);
+
+    // register the event handler
+    initIllusionCommonProperty(activeModel);
+
+    if (activeModel instanceof EbbinghausModel)
+        registerEbbinghausIllusionEvents(activeModel);
+    else if (activeModel instanceof SineIllusionModel)
+        registerSineIllusionEvents(activeModel);
+    else
+        throw "the type of active model is unknown";
+
+    // starts drawing
     activeModel.startDraw();
 
 });
