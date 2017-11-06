@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Exam 2</title>
+  <style>
+    #canvas {
+      border: 2px solid #000;
+    }
+  </style>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+<h3>Color Fun</h3>
+
+<div id="someText">
+</div>
+
+<form action="">
+  <p>Click a button to toggle the color in each box</p>
+  <div>
+    <input type="checkbox" id="red"><label id="red-label" for="red">Red</label>
+  </div>
+  <div>
+    <input type="checkbox" id="blue"><label id="blue-label" for="blue">Blue</label>
+  </div>
+  <div>
+    <input type="checkbox" id="green"><label id="green-label" for="green">Green</label>
+
+  </div>
+</form>
+
+<canvas id="canvas" width="530" height="180"></canvas>
+
+<script>
+  const canvas = document.getElementById('canvas')
+  const context = canvas.getContext('2d')
+
+  context.save()
+  context.strokeStyle="black"
+  context.beginPath()
+  context.rect(50, 50, 130, 80)
+  context.stroke()
+  context.closePath()
+  context.restore()
+
+
+  context.save()
+  context.strokeStyle="black"
+  context.beginPath()
+  context.rect(200, 50, 130, 80)
+  context.stroke()
+  context.closePath()
+  context.restore()
+
+  context.save()
+  context.strokeStyle="black"
+  context.beginPath()
+  context.rect(350, 50, 130, 80)
+  context.stroke()
+  context.closePath()
+  context.restore()
+
+  $("#red").click(() => {
+    if ($("#red").is(':checked')) {
+      $("#red-label").css({"color": "red"})
+      context.save()
+      context.fillStyle="red"
+      context.beginPath()
+      context.rect(50, 50, 130, 80)
+      context.fill()
+      context.closePath()
+      context.restore()
+    }
+    if (! $("#red").is(':checked')) {
+      $("#red-label").css({"color": ""})
+      context.save()
+      context.fillStyle="white"
+      context.beginPath()
+      context.rect(50, 50, 130, 80)
+      context.fill()
+      context.cl
+      context.restore()
+    }
+
+  })
+
+  $("#blue").click(() => {
+    if ($("#blue").is(':checked')) {
+      $("#blue-label").css({"color": "blue"})
+      context.save()
+      context.fillStyle="blue"
+      context.beginPath()
+      context.rect(200, 50, 130, 80)
+      context.fill()
+      context.closePath()
+      context.restore()
+    }
+    if (! $("#blue").is(':checked')) {
+      $("#blue-label").css({"color": ""})
+      context.save()
+      context.fillStyle="white"
+      context.beginPath()
+      context.rect(200, 50, 130, 80)
+      context.fill()
+      context.closePath()
+      context.restore()
+    }
+
+  })
+
+  $("#green").click(() => {
+    if ($("#green").is(':checked')) {
+      $("#green-label").css({"color": "green"})
+      context.save()
+      context.fillStyle="green"
+      context.beginPath()
+      context.rect(350, 50, 130, 80)
+      context.fill()
+      context.closePath()
+      context.restore()
+    }
+    if (! $("#green").is(':checked')) {
+      $("#green-label").css({"color": ""})
+      context.save()
+      context.fillStyle="white"
+      context.beginPath()
+      context.rect(350, 50, 130, 80)
+      context.fill()
+      context.closePath()
+      context.restore()
+    }
+
+    const ajaxObj = $.ajax({
+      type: 'GET',
+      contentType: 'application/json; charset=utf-8',
+      url: 'http://cs.wheatoncollege.edu/mgousie/comp298/exam2text.html'
+    })
+
+    ajaxObj.done((response) => {
+      $('#someText').html(response)
+    })
+
+  })
+
+
+</script>
+
+</body>
+</html>

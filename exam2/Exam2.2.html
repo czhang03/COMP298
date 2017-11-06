@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <title>Exam 2</title>
+</head>
+<body>
+<h1>Question 2</h1>
+
+<form action="">
+  <label for="type">Type of Sweet </label><input type="text" id="type">
+  <input type="button" value="submit" id="submit">
+  <label for="flavor">Flavors </label><input type="text" id="flavor">
+</form>
+
+<script>
+  const jsonStr = '{"sweets":[{ "name": "oreo","type": "cookie","flavors": ["chocolate", "vanilla"],"favorite": false,"created": 1912},{ "name": "snickers","type": "candy bar","flavors": ["chocolate", "peanuts", "caramel", "nougat"],"favorite": true, "created": 1930},{"name": "malt","type": "frozen dairy","flavors": ["vanilla", "chocolate", "strawberry"],"favorite": false,"created": 1922 }]}'
+  const jsonObj = JSON.parse(jsonStr)
+
+  $('#submit').click(() => {
+    const inputName = $('#type').val()
+    const selected = jsonObj.sweets.filter((x) => x.name === inputName)
+    if (selected.length === 0){
+      $('#flavor').val("input sweet not found!!!")
+      alert("input sweet not found!!!")
+    }
+    else {
+      const flavorStr = selected[0].flavors.join()
+      $('#flavor').val(flavorStr)
+    }
+  })
+</script>
+
+</body>
+</html>
