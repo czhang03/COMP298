@@ -1,18 +1,3 @@
-responseObj = {
-  success: true,
-  username: 'Joe',
-  imageList: [
-    {
-      srcUrl: 'loading.gif',
-      yearTaken: 2016,
-      countryHTML: 'United State',
-      stateHTML: 'MA',
-      locationHTML: 'common park',
-      descriptionHTML: 'good day!'
-    }
-  ]
-}
-
 async function login () {
   // get the login information
   const username = $('#username').val()
