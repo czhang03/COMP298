@@ -3,7 +3,7 @@ responseObj = {
   username: "Joe",
   imageList: [
     {
-      src: "test",
+      src: "loading.gif",
       yearTaken: 2016,
       country: "United State",
       state: "MA",
@@ -57,10 +57,22 @@ function handleLoginResponse (responseObj) {
   }
 }
 
+const imageToColorBoxHTML = (image) =>
+   `<a href="${image.src}" class="photo" 
+    title="${image.description}<br>taken in: ${image.yearTaken},${image.location} ${image.state} ${image.country}">
+      <img src="${image.src}" alt="${image.description}">
+    </a>`
+
 function displayImage (imageList) {
+  const photoHTML = imageList.map(imageToColorBoxHTML).join("\n")
+
+  const photosView = $("#photos")
+
+  // put in the html
+  photosView.html(photoHTML)
 
   // initialize color box
-  $('#photos').find('.photo').colorbox({rel: 'photo', transition: 'elastic', height: '75%'})
+  photosView.find('.photo').colorbox({rel: 'photo', transition: 'elastic', height: '75%'})
 }
 
 $(() => {
