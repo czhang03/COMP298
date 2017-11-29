@@ -34,10 +34,6 @@
     -webkit-overflow-scrolling: touch;
 }
 
-#cboxTitle {
-    margin: 0;
-}
-
 #cboxLoadingOverlay, #cboxLoadingGraphic {
     position: absolute;
     top: 0;
@@ -108,11 +104,14 @@
 
 #cboxTitle {
     position: absolute;
-    top: -20px;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
     left: 0;
-    color: #ccc;
+    padding: 20px;
+    color: silver;
+    background-color: rgba(0,0,0,0.7);
 }
-
 #cboxCurrent {
     position: absolute;
     top: -20px;
