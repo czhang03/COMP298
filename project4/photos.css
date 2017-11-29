@@ -23,6 +23,10 @@ nav {
     box-shadow: 0 0 10px black;
 }
 
+#fotofan-page {
+    display: none;
+}
+
 #search-box-form {
     display: flex;
 }
@@ -32,7 +36,7 @@ nav {
     margin-right: 5px;
 }
 
-#search {
+#search-field {
     width: 450px;
     border-radius: 8px;
     padding: 5px 10px;
@@ -58,7 +62,7 @@ nav {
     cursor: pointer;
 }
 
-#login {
+#login-name {
     font-size: larger;
 }
 
