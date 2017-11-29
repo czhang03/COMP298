@@ -57,10 +57,14 @@ function handleLoginResponse (responseObj) {
   }
 }
 
-const imageToEncodedDescriptionHTML = (image) => encodeURI(
+const imageToDescriptionHTML = (image) =>
   `<p>${image.descriptionHTML} <a href="${image.srcUrl}">Open in a New Tab</a></p>
     <p>Taken in: ${image.locationHTML}, ${image.stateHTML} ${image.countryHTML}, ${image.yearTaken}</p>`
-)
+
+
+function imageToEncodedDescriptionHTML (image) {
+  return encodeURI(imageToDescriptionHTML(image))
+}
 
 const imageToColorBoxHTML = (image) =>
   `<a href="${image.srcUrl}" class="photo" title="${image.descriptionHTML}"
