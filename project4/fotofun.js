@@ -67,8 +67,7 @@ function imageToEncodedDescriptionHTML (image) {
 }
 
 const imageToColorBoxHTML = (image) =>
-  `<a href="${image.srcUrl}" class="photo" title="${image.descriptionHTML}"
-       data-encoded-description="${imageToEncodedDescriptionHTML(image)}">
+  `<a href="${image.srcUrl}" class="photo" data-encoded-description="${imageToEncodedDescriptionHTML(image)}">
       <img src="${image.srcUrl}" alt="${image.descriptionHTML}">
     </a>`
 
