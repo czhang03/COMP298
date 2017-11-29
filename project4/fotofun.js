@@ -57,11 +57,10 @@ function handleLoginResponse (responseObj) {
   }
 }
 
-const imageToEncodedDescriptionHTML = (image) =>
-  encodeURI(
-    `<p>${image.descriptionHTML} <a href="${image.srcUrl}">Open in a New Tab</a></p>
+const imageToEncodedDescriptionHTML = (image) => encodeURI(
+  `<p>${image.descriptionHTML} <a href="${image.srcUrl}">Open in a New Tab</a></p>
     <p>Taken in: ${image.locationHTML}, ${image.stateHTML} ${image.countryHTML}, ${image.yearTaken}</p>`
-  )
+)
 
 const imageToColorBoxHTML = (image) =>
   `<a href="${image.srcUrl}" class="photo" title="${image.descriptionHTML}"
@@ -80,7 +79,7 @@ function displayImage (imageList) {
   // initialize color box
   photosView.find('.photo').colorbox({
     rel: 'photo', transition: 'elastic', height: '75%',
-    title: function () {return decodeURI($(this).data("encoded-description"))}
+    title: function () {return decodeURI($(this).data('encoded-description'))}
   })
 }
 
