@@ -1,14 +1,14 @@
 responseObj = {
   success: true,
-  username: "Joe",
+  username: 'Joe',
   imageList: [
     {
-      src: "loading.gif",
+      srcUrl: 'loading.gif',
       yearTaken: 2016,
-      country: "United State",
-      state: "MA",
-      location: "common park",
-      description: "good day!"
+      countryHTML: 'United State',
+      stateHTML: 'MA',
+      locationHTML: 'common park',
+      descriptionHTML: 'good day!'
     }
   ]
 }
@@ -40,43 +40,52 @@ function handleLoginResponse (responseObj) {
   if (responseObj.success === false)
     $('#login-error').val('wrong username or password')
 
-  else if (responseObj.success === true){
+  else if (responseObj.success === true) {
     // plug the information into the page
     displayImage(responseObj.imageList)
-    $("#login-name").html(responseObj.username)
+    $('#login-name').html(responseObj.username)
 
     // switch to the fotofun page
-    $("#login-page").css({"display": "none"})
-    $("#fotofan-page").css({"display": "block"})
-    $("#search-field").attr({"disabled": false})
-    $("#upload-button").attr({"disabled": false})
+    $('#login-page').css({'display': 'none'})
+    $('#fotofan-page').css({'display': 'block'})
+    $('#search-field').attr({'disabled': false})
+    $('#upload-button').attr({'disabled': false})
   }
 
   else {
-    $("#login-error").val("server send a invalid response, Please contact support")
+    $('#login-error').val('server send a invalid response, Please contact support')
   }
 }
 
+const imageToEncodedDescriptionHTML = (image) =>
+  encodeURI(
+    `<p>${image.descriptionHTML} <a href="${image.srcUrl}">Open in a New Tab</a></p>
+    <p>Taken in: ${image.locationHTML}, ${image.stateHTML} ${image.countryHTML}, ${image.yearTaken}</p>`
+  )
+
 const imageToColorBoxHTML = (image) =>
-   `<a href="${image.src}" class="photo" 
-    title="${image.description}<br>taken in: ${image.yearTaken},${image.location} ${image.state} ${image.country}">
-      <img src="${image.src}" alt="${image.description}">
+  `<a href="${image.srcUrl}" class="photo" title="${image.descriptionHTML}"
+       data-encoded-description="${imageToEncodedDescriptionHTML(image)}">
+      <img src="${image.srcUrl}" alt="${image.descriptionHTML}">
     </a>`
 
 function displayImage (imageList) {
-  const photoHTML = imageList.map(imageToColorBoxHTML).join("\n")
+  const photoHTML = imageList.map(imageToColorBoxHTML).join('\n')
 
-  const photosView = $("#photos")
+  const photosView = $('#photos')
 
   // put in the html
   photosView.html(photoHTML)
 
   // initialize color box
-  photosView.find('.photo').colorbox({rel: 'photo', transition: 'elastic', height: '75%'})
+  photosView.find('.photo').colorbox({
+    rel: 'photo', transition: 'elastic', height: '75%',
+    title: function () {return decodeURI($(this).data("encoded-description"))}
+  })
 }
 
 $(() => {
 
   // register event for the login button
-  $("#login-button").click(login)
+  $('#login-button').click(login)
 })
