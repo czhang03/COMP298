@@ -22,6 +22,7 @@
   "dependencies": {
     "@types/jquery": "^3.2.15",
     "jquery": "^3.2.1",
+    "jquery-colorbox": "^1.6.4",
     "materialize-css": "^0.100.2",
     "requirejs": "^2.3.5"
   }
