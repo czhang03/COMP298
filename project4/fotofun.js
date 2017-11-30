@@ -85,13 +85,16 @@ function populateSearchView (imageList) {
   })
 
   // initialize marker
+  function markText(keyword) {
+    searchPhotosView
+      .find(".search-text")
+      .mark(keyword,{separateWordSearch: false})
+  }
   $("#search-field").keyup(() => {
     const keyword = $("#search-field").val()
     searchPhotosView.find(".search-text")
       .unmark({
-        done: () => {
-          searchPhotosView.find(".search-text").mark(keyword,{})
-        }
+        done: () => markText(keyword)
       })
   })
 
