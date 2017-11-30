@@ -35,11 +35,13 @@ const imageToColorBoxHTML = (image) =>
     </a>`
 
 const imageToSearchItemHTML = (image) =>
-  `<li>
+  `<li class="search-item">
     <a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
       <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
     </a>
-    ${escapeHtml(image.description)}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
+    <div class="search-text">
+      ${escapeHtml(image.description)}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
+     </div>
    </li>`
 
 function displayAllImage (imageList) {
@@ -60,20 +62,41 @@ function displayAllImage (imageList) {
 }
 
 function populateSearchView (imageList) {
+  // generate the html
   const photoHTML = imageList.map(imageToSearchItemHTML).join('\n')
 
-  // put in the html
-  $('#search-photos').html(photoHTML)
+  const searchPhotosView = $('#search-photos')
 
-  // initialize color box
-  $("#search-field").hideseek({
-    highlight: true,
-    nodata: "no result found",
-    ignore_accents: true
+  // put in the html
+  searchPhotosView.html(photoHTML)
+
+  // initialize searcher
+  searchPhotosView.searcher({
+    itemSelector: ".search-item",
+    textSelector: ".search-text",
+    inputSelector: "#search-field",
+    toggle: (item, containsText) => {
+      // use a typically jQuery effect instead of simply showing/hiding the item element
+      if (containsText)
+        $(item).fadeIn();
+      else
+        $(item).fadeOut();
+    }
+  })
+
+  // initialize marker
+  $("#search-field").keyup(() => {
+    const keyword = $("#search-field").val()
+    searchPhotosView.find(".search-text")
+      .unmark({
+        done: () => {
+          searchPhotosView.find(".search-text").mark(keyword,{})
+        }
+      })
   })
 
   // initialize color box
-  $("#search-photos").find('.photo').colorbox({
+  searchPhotosView.find('.photo').colorbox({
     rel: 'photo', transition: 'elastic', height: '75%',
     title: function () {
       return unescapeHtml($(this).data('escaped-description'))
@@ -148,12 +171,6 @@ $(() => {
 
   // register event for the login button
   $('#login-button').click(login)
-
-  $("#search-field").hideseek({
-    highlight: true,
-    nodata: "no result found",
-    ignore_accents: true
-  })
 
   $('#search-field').keyup(toggleSearch)
 })

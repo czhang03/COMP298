@@ -76,10 +76,18 @@ nav {
 
 .photo-view img {
     margin: 20px;
+}
+
+#all-photos img {
     height: 200px;
 }
 
 .photo-view img:hover {
     margin: 18px;
     border: 2px solid silver;
+}
+
+#search-photos img {
+    width: 200px;
+    float: left;
 }

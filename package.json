@@ -21,9 +21,10 @@
   "homepage": "https://github.com/chantisnake/COMP298#readme",
   "dependencies": {
     "@types/jquery": "^3.2.15",
-    "hideseek": "^0.8.0",
     "jquery": "^3.2.1",
     "jquery-colorbox": "^1.6.4",
+    "jquery-searcher": "github:lloiser/jquery-searcher#v0.3.0",
+    "mark.js": "^8.11.0",
     "materialize-css": "^0.100.2",
     "requirejs": "^2.3.5"
   }
