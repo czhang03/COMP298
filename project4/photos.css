@@ -87,7 +87,23 @@ nav {
     border: 2px solid silver;
 }
 
+#search-photos {
+    padding: 0;
+}
+
 #search-photos img {
     width: 200px;
-    float: left;
+}
+
+#search-photos .search-item {
+    width: calc(100vh - 40px) ;
+    display: flex;
+    margin: 20px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+}
+
+#search-photos .search-item .search-text {
+    margin: 20px;
 }
