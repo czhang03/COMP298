@@ -38,7 +38,7 @@ const imageToSearchItemHTML = (image) =>
     <a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
      <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
      <div class="search-text">
-      ${escapeHtml(nl2br(image.description))}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
+      ${nl2br(escapeHtml(image.description))}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
      </div>
     </a>
    </li>`
