@@ -9,15 +9,15 @@ function escapeHtml (unsafe) {
 
 function unescapeHtml (safe) {
   return safe
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, "\"")
-    .replace(/&#039;/g, "'")
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, '\'')
 }
 
 function nl2br (nlStr) {
-  return nlStr.replace(/\n/g, "<br/>")
+  return nlStr.replace(/\n/g, '<br/>')
 }
 
 const imageToDescriptionHTML = (image) =>
@@ -28,20 +28,19 @@ function imageToEscapedDescriptionHTML (image) {
   return escapeHtml(imageToDescriptionHTML(image))
 }
 
-
 const imageToColorBoxHTML = (image) =>
   `<a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
       <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
     </a>`
 
 const imageToSearchItemHTML = (image) =>
-  `<li class="search-item">
-    <a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
-      <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
-    </a>
-    <div class="search-text">
-      ${escapeHtml(image.description)}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
+  `<li class="search-item"  data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
+    <a href="${image.srcUrl}" class="photo"">
+     <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
+     <div class="search-text">
+      ${escapeHtml(nl2br(image.description))}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
      </div>
+    </a>
    </li>`
 
 function displayAllImage (imageList) {
@@ -72,27 +71,28 @@ function populateSearchView (imageList) {
 
   // initialize searcher
   searchPhotosView.searcher({
-    itemSelector: ".search-item",
-    textSelector: ".search-text",
-    inputSelector: "#search-field",
+    itemSelector: '.search-item',
+    textSelector: '.search-text',
+    inputSelector: '#search-field',
     toggle: (item, containsText) => {
       // use a typically jQuery effect instead of simply showing/hiding the item element
       if (containsText)
-        $(item).fadeIn();
+        $(item).fadeIn()
       else
-        $(item).fadeOut();
+        $(item).fadeOut()
     }
   })
 
   // initialize marker
-  function markText(keyword) {
+  function markText (keyword) {
     searchPhotosView
-      .find(".search-text")
-      .mark(keyword,{separateWordSearch: false})
+      .find('.search-text')
+      .mark(keyword, {separateWordSearch: false})
   }
-  $("#search-field").keyup(() => {
-    const keyword = $("#search-field").val()
-    searchPhotosView.find(".search-text")
+
+  $('#search-field').keyup(() => {
+    const keyword = $('#search-field').val()
+    searchPhotosView.find('.search-text')
       .unmark({
         done: () => markText(keyword)
       })
@@ -106,9 +106,7 @@ function populateSearchView (imageList) {
     }
   })
 
-
 }
-
 
 function handleLoginResponse (responseObj) {
 
@@ -155,18 +153,18 @@ async function login () {
   handleLoginResponse(JSON.parse(response))
 }
 
-function toggleSearch() {
-  const keyword = $("#search-field").val()
+function toggleSearch () {
+  const keyword = $('#search-field').val()
 
-  if (keyword === "") {
+  if (keyword === '') {
     // display all photos
-    $("#search-photos").css({"display": "none"})
-    $("#all-photos").css({"display": "block"})
+    $('#search-photos').css({'display': 'none'})
+    $('#all-photos').css({'display': 'block'})
   }
   else {
     // enter search mode
-    $("#search-photos").css({"display": "block"})
-    $("#all-photos").css({"display": "none"})
+    $('#search-photos').css({'display': 'block'})
+    $('#all-photos').css({'display': 'none'})
   }
 }
 

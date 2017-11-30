@@ -88,6 +88,7 @@ nav {
 }
 
 #search-photos {
+    list-style: none;
     padding: 0;
 }
 
@@ -95,9 +96,16 @@ nav {
     width: 200px;
 }
 
-#search-photos .search-item {
-    width: calc(100vh - 40px) ;
+#search-photos .photo {
     display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+#search-photos .search-item {
+    width: calc(100vw - 40px) ;
     margin: 20px;
     border: 1px solid silver;
     border-radius: 10px;
@@ -106,4 +114,6 @@ nav {
 
 #search-photos .search-item .search-text {
     margin: 20px;
+    text-decoration: none;
+    color: black;
 }
