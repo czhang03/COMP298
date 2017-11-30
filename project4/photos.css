@@ -66,7 +66,7 @@ nav {
     font-size: larger;
 }
 
-#photos {
+.photo-view {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -74,12 +74,12 @@ nav {
     height: calc(100vh - 80px);
 }
 
-#photos img {
+.photo-view img {
     margin: 20px;
     height: 200px;
 }
 
-#photos img:hover {
+.photo-view img:hover {
     margin: 18px;
     border: 2px solid silver;
 }
