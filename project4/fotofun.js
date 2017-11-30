@@ -24,22 +24,23 @@ const imageToDescriptionHTML = (image) =>
   `<p>${escapeHtml(nl2br(image.description))}<a href="${image.src}">Open in a New Tab</a></p>
     <p>Taken in: ${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}</p>`
 
-const imageToSearchIndex = (image) =>
-  `${image.descriptionHTML}${image.locationHTML}${image.stateHTML}${image.countryHTML}${image.yearTaken}`.toLowerCase()
-
 function imageToEscapedDescriptionHTML (image) {
   return escapeHtml(imageToDescriptionHTML(image))
 }
 
-function imageToEscapedSearchIndex (image) {
-  return escapeHtml(imageToSearchIndex(image))
-}
 
 const imageToColorBoxHTML = (image) =>
-  `<a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}"
-      data-escaped-search-index="${imageToEscapedSearchIndex(image)}">
-      <img src="${image.srcUrl}" alt="${image.descriptionHTML}">
+  `<a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
+      <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
     </a>`
+
+const imageToSearchItemHTML = (image) =>
+  `<li>
+    <a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
+      <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
+    </a>
+    ${escapeHtml(image.description)}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
+   </li>`
 
 function displayAllImage (imageList) {
   const photoHTML = imageList.map(imageToColorBoxHTML).join('\n')
@@ -58,6 +59,31 @@ function displayAllImage (imageList) {
   })
 }
 
+function populateSearchView (imageList) {
+  const photoHTML = imageList.map(imageToSearchItemHTML).join('\n')
+
+  // put in the html
+  $('#search-photos').html(photoHTML)
+
+  // initialize color box
+  $("#search-field").hideseek({
+    highlight: true,
+    nodata: "no result found",
+    ignore_accents: true
+  })
+
+  // initialize color box
+  $("#search-photos").find('.photo').colorbox({
+    rel: 'photo', transition: 'elastic', height: '75%',
+    title: function () {
+      return unescapeHtml($(this).data('escaped-description'))
+    }
+  })
+
+
+}
+
+
 function handleLoginResponse (responseObj) {
 
   if (responseObj.success === false)
@@ -66,6 +92,7 @@ function handleLoginResponse (responseObj) {
   else if (responseObj.success === true) {
     // plug the information into the page
     displayAllImage(responseObj.imageList)
+    populateSearchView(responseObj.imageList)
     $('#login-name').html(responseObj.username)
 
     // switch to the fotofun page
@@ -121,6 +148,12 @@ $(() => {
 
   // register event for the login button
   $('#login-button').click(login)
+
+  $("#search-field").hideseek({
+    highlight: true,
+    nodata: "no result found",
+    ignore_accents: true
+  })
 
   $('#search-field').keyup(toggleSearch)
 })
