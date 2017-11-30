@@ -44,13 +44,13 @@ const imageToColorBoxHTML = (image) =>
 function displayAllImage (imageList) {
   const photoHTML = imageList.map(imageToColorBoxHTML).join('\n')
 
-  const photosView = $('#all-photos')
+  const allPhotosView = $('#all-photos')
 
   // put in the html
-  photosView.html(photoHTML)
+  allPhotosView.html(photoHTML)
 
   // initialize color box
-  photosView.find('.photo').colorbox({
+  allPhotosView.find('.photo').colorbox({
     rel: 'photo', transition: 'elastic', height: '75%',
     title: function () {
       return unescapeHtml($(this).data('escaped-description'))
