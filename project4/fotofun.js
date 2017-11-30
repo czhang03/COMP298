@@ -76,10 +76,14 @@ function populateSearchView (imageList) {
     inputSelector: '#search-field',
     toggle: (item, containsText) => {
       // use a typically jQuery effect instead of simply showing/hiding the item element
-      if (containsText)
+      if (containsText) {
         $(item).fadeIn()
-      else
+        $(item).find("a").attr("data-cbox-rel", "active")
+      }
+      else {
         $(item).fadeOut()
+        $(item).find("a").attr("data-cbox-rel", "inactive")
+      }
     }
   })
 
@@ -100,7 +104,7 @@ function populateSearchView (imageList) {
 
   // initialize color box
   searchPhotosView.find('.photo').colorbox({
-    rel: 'photo', transition: 'elastic', height: '75%',
+    transition: 'elastic', height: '75%',
     title: function () {
       return unescapeHtml($(this).data('escaped-description'))
     }
