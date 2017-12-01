@@ -2,7 +2,7 @@
  * handles the login to get the token
  * token will be automatically set in the session
  */
-function getAuthenticateToken() {
+function getAuthenticateToken(afterAuthenticate) {
   const loginError = $("#login-error")
 
   // get the login information
@@ -22,13 +22,25 @@ function getAuthenticateToken() {
 
   // get the response
   $.ajax(`php/login.php?username=${username}&password=${password}`)
+
     // handles the error from server
     // because if success the server will just set the session
     .done((response) => {
       const responseObj = JSON.parse(response)
-      if (! responseObj.success)
+
+      // if the server gives an error
+      if (responseObj.success === false)
         $("#login-error").text(responseObj.error)
+
+      // if the server does not give an error
+      else if (responseObj.success === true)
+        afterAuthenticate()
+
+      // server send invalid request
+      else
+        throw "server send invalid respond"
     })
+
     // handle error during ajax requests
     .fail(() => loginError.text("error encountered will login in"))
 
@@ -55,8 +67,7 @@ function getLoginHtml ({afterAuthenticate}) {
       // register the event of the login button
       // get the authentication token, and then execute the login click callback
       $("#login-button").click(() => {
-        getAuthenticateToken()
-        afterAuthenticate()
+        getAuthenticateToken(afterAuthenticate)
       })
     })
     .fail((responce) => loginSelector.html("<p class='error'>Cannot Load Login page. Please Refresh</p>"))
