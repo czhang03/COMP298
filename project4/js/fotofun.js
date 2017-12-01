@@ -135,6 +135,16 @@ function handleLoginResponse (responseObj) {
   }
 }
 
+async function tryLogin ({username, password}) {
+  try {
+    return await $.ajax(`php/login.php?username=${username}&password=${password}`)
+  }
+  catch {
+    $("#login-error").html("Fail to login. Please try again later")
+    return null
+  }
+}
+
 async function login () {
   // get the login information
   const username = $('#username').val()
@@ -151,10 +161,12 @@ async function login () {
   }
 
   // get the response
-  const response = await $.ajax(`php/login.php?username=${username}&password=${password}`)
+  const response = await tryLogin({username: username, password: password})
 
   // display the response
-  handleLoginResponse(JSON.parse(response))
+  if (response !== null) {
+    handleLoginResponse(JSON.parse(response))
+  }
 }
 
 function toggleSearch () {
