@@ -1,0 +1,12 @@
+[
+  {
+  "id": "Joe",
+  "name": "Uncle Joe Mikey",
+  "avatar": "./database/JoeAvatar.gif"
+},
+  {
+    "id": "Jane",
+    "name": "Aunt Jane BloomGloom",
+    "avatar": ""
+  }
+]

@@ -151,7 +151,7 @@ async function login () {
   }
 
   // get the response
-  const response = await $.ajax(`login.php?username=${username}&password=${password}`)
+  const response = await $.ajax(`php/login.php?username=${username}&password=${password}`)
 
   // display the response
   handleLoginResponse(JSON.parse(response))
