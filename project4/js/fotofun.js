@@ -112,7 +112,7 @@ function populateSearchView (imageList) {
 
 }
 
-function handleLoginResponse (responseObj) {
+function handleFotoFanResponse (responseObj) {
 
   if (responseObj.success === false)
     $('#login-error').val('wrong username or password')
@@ -135,29 +135,10 @@ function handleLoginResponse (responseObj) {
   }
 }
 
-function login () {
-  const loginError = $("#login-error")
-
-  // get the login information
-  const username = $('#username').val()
-  const password = $('#password').val()
-
-  // check for basic errors
-  // if there is anything wrong, just terminate
-  if (username === '') {
-    loginError.text('username cannot be empty')
-    return
-  }
-  else if (password === '') {
-    loginError.text('password cannot be empty')
-    return
-  }
-
+function getFotoFan () {
   // get the response
-  $.ajax(`php/login.php?username=${username}&password=${password}`)
-    .done((response) => handleLoginResponse(response))
-    .fail(() => loginError.text("error encountered will login in"))
-
+  $.ajax(`php/fotofan.php`)
+    .done((response) => handleFotoFanResponse(JSON.parse(response)))
 }
 
 function toggleSearch () {
@@ -177,10 +158,8 @@ function toggleSearch () {
 
 $(() => {
 
-  // register event for the login button
-  $('#login-button').click(login)
-
   // toggle the search field
   $('#search-field').keyup(toggleSearch)
 
+  getLoginHtml({afterAuthenticate: getFotoFan})
 })
