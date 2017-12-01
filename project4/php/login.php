@@ -4,7 +4,6 @@
 session_start();
 
 const login_data_file = "../database/login.json";
-const secure_key_path = "key.secret";
 
 $username = $_GET["username"];
 $password = $_GET["password"];
@@ -30,12 +29,13 @@ function write_to_file($content, $file_path) {
 
 // get the secrete key on this server
 function get_secrete_key() {
-    if (file_exists(secure_key_path)) {
-        return file_get_contents(secure_key_path);
+    $secure_key_path = sys_get_temp_dir() . "/key.secret";
+    if (file_exists($secure_key_path)) {
+        return file_get_contents($secure_key_path);
     }
     else {
         $secure_key = bin2hex(random_bytes(16));
-        write_to_file($secure_key, secure_key_path);
+        write_to_file($secure_key, $secure_key_path);
         return $secure_key;
     }
 }
