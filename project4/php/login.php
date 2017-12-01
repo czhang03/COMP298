@@ -1,13 +1,22 @@
 <?php
 
-const login_data_file = "database/login.json";
-const secure_key_path = "key.secrete";
+const login_data_file = "../database/login.json";
+const secure_key_path = "key.secret";
 
 $username = $_GET["username"];
 $password = $_GET["password"];
 $password_hash = hash("sha256", $password);
 
-$json_str = file_get_contents(login_data_file);
+if (file_exists(login_data_file))
+    $json_str = file_get_contents(login_data_file);
+else {
+    echo json_encode([
+        "success" => false,
+        "error" => "cannot find the database"
+    ]);
+    exit(1);
+}
+
 $login_database = json_decode($json_str, true);
 
 // helper function to write content to file path
