@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Yippee!!</title>
+  <!-- Compiled and minified CSS -->
+
+  <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+<nav>
+  <div class="navbar">
+    <a href="https://www.google.com/gmail/">Email</a>
+    <a href="https://www.nytimes.com/">News</a>
+    <a href="FotoFan.html">FotoFan</a>
+
+
+    <div class="popup" onclick="myFunction()"><a class="login">Login</a>
+      <span class="popuptext" id="myPopup">
+        <form action="login.php">
+            <div class="imgcontainer">
+              <img src="avatar.gif" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" name="uname" id="uname" required>
+
+              <label for="pwd"><b>Password</b></label>
+              <input type="password" name="pwd" id="pwd" required>
+
+              <button type="submit">Login</button>
+            </div>
+        </form>
+      </span>
+    </div>
+
+    <script>
+      // When the user clicks on div, open the popup
+      function myFunction () {
+        const popup = document.getElementById('myPopup')
+        popup.classList.toggle('show')
+      }
+    </script>
+
+</div>
+</nav>
+
+<br>
+
+<img id="logo" src="yippee.png">
+<input type="search" placeholder="What's going on?">
+
+</body>
+</html>

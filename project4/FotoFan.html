@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../node_modules/jquery-colorbox/jquery.colorbox-min.js"></script>
   <script src="../node_modules/jquery-searcher/dist/jquery.searcher.min.js"></script>
   <script src="../node_modules/mark.js/dist/jquery.mark.es6.min.js"></script>
+
   <script src="fotofun.js"></script>
+
+  <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="./photos.css">
+  <link rel="stylesheet" href="./FotoFan.css">
   <link rel="stylesheet" href="./cbox.css">
   <title>FotoFan</title>
 </head>
@@ -19,34 +23,45 @@
 <div class="all">
 
   <nav>
-    <div class="logo">FotoFan</div>
+    <img src="yippee.jpg" alt="yippee" class="fanlogo">
     <form id="search-box-form">
       <label for="search-field"><i class="material-icons" id="search-icon">search</i> </label>
       <input type="search" id="search-field" disabled data-list="#search-photos">
+      <i class="material-icons">add_to_photos</i>
+      <i class="material-icons">file_upload</i>
     </form>
+
     <div class="right-nav">
+      <!--
       <div class="upload">
         <button id="upload-button" disabled>Upload</button>
       </div>
+      -->
       <div id="login-name"></div>
     </div>
   </nav>
 
+
   <div id="login-page">
     <div id="login-error"></div>
     <form>
-      <label for="username">Username: </label><input type="text" id="username">
-      <label for="password">Password: </label><input type="password" id="password">
-      <input type="button" value="login" id="login-button">
+      <div class="imgcontainer">
+        <img src="yippee.png" alt="yippee" class="logo">
+      </div>
+
+      <input type="text" placeholder="username" id="username"><br>
+      <input type="password" placeholder="password" id="password"><br>
+      <input type="button" value="login" id="login-button"><br>
     </form>
   </div>
 
-  <div id="fotofan-page">
-    <div id="all-photos" class="photo-view">
-    </div>
-    <ul id="search-photos" class="photo-view">
-    </ul>
+</div>
+
+<div id="fotofan-page">
+  <div id="all-photos" class="photo-view">
   </div>
+  <ul id="search-photos" class="photo-view">
+  </ul>
 </div>
 
 </body>

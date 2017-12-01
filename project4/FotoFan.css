@@ -3,8 +3,9 @@
 }
 
 body {
-    font-family: sans-serif;
-    margin: 0;
+    font-family: "Comfortaa", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .all {
@@ -15,12 +16,70 @@ body {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     padding: 0 30px;
     height: 80px;
-    background-color: #212121;
+    background-color: whitesmoke;
     color: whitesmoke;
-    box-shadow: 0 0 10px black;
+    /*box-shadow: 0 0 10px black;*/
+}
+
+form {
+    text-align: center;
+}
+
+#username, #password {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    background-color: #e6f7ff;
+    box-sizing: border-box;
+}
+
+#username:hover, #password:hover {
+    border-bottom: 3px solid #4286f4;
+    transition: border-bottom 0.1s;
+
+}
+
+#login-button {
+    background-color: #4286f4;
+    font-family: "Comfortaa", sans-serif;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.logo {
+    width: 30%;
+}
+
+img.fanlogo {
+    width: 120px;
+    padding-right: 20px;
+}
+
+.material-icons {
+    color: black;
+    padding-left: 10px;
+}
+
+.material-icons:hover {
+    cursor: pointer;
 }
 
 #fotofan-page {
@@ -29,17 +88,21 @@ nav {
 
 #search-box-form {
     display: flex;
+    float: left;
 }
 
 #search-icon {
     font-size: 20pt;
-    margin-right: 5px;
+    padding-right: 5px;
+}
+
+#search-icon:hover {
+    cursor: default;
 }
 
 #search-field {
-    width: 450px;
-    border-radius: 8px;
-    padding: 5px 10px;
+    width: 700px;
+    border-radius: 5px;
     border: none;
     font-weight: bold;
 }
@@ -54,6 +117,7 @@ nav {
     padding-left: 10px;
 }
 
+/*
 #upload-button {
     border-radius: 8px;
     padding: 5px 10px;
@@ -61,6 +125,7 @@ nav {
     font-weight: bold;
     cursor: pointer;
 }
+*/
 
 #login-name {
     font-size: larger;
@@ -106,7 +171,7 @@ nav {
 }
 
 #search-photos .search-item {
-    width: calc(100vw - 40px) ;
+    width: calc(100vw - 40px);
     margin: 20px;
     border: 1px solid silver;
     border-radius: 10px;
