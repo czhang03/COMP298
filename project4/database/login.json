@@ -1,0 +1,14 @@
+{
+  "Joe": {
+    "id": "Joe",
+    "name": "Uncle Joe Mikey",
+    "passwordSha256": "6770928359445e82d7785c6372ec6f076b49c88bf84e2bff9cf998fe3b1e32a1",
+    "avatar": "./database/JoeAvatar.gif"
+  },
+  "Jane": {
+    "id": "Jane",
+    "name": "Aunt Jane BloomGloom",
+    "passwordSha256": "10a1ee324527de28090c2e544eb1857e963ae85ec647fdf0e3b4d6eef256e9d2",
+    "avatar": ""
+  }
+}
