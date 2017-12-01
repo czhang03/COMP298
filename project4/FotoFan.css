@@ -38,10 +38,10 @@ form {
     box-sizing: border-box;
 }
 
-#username:hover, #password:hover {
+#username:focus, #password:focus {
     border-bottom: 3px solid #4286f4;
-    transition: border-bottom 0.1s;
-
+    margin-bottom: 5px;
+    transition: border-bottom 0.3s, margin-bottom 0.3s;
 }
 
 #login-button {
