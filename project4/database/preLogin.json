@@ -7,6 +7,6 @@
   "Jane": {
     "id": "Jane",
     "name": "Aunt Jane BloomGloom",
-    "avatar": ""
+    "avatar": "./database/JanAvatar.gif"
   }
 }
