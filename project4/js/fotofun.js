@@ -135,38 +135,29 @@ function handleLoginResponse (responseObj) {
   }
 }
 
-async function tryLogin ({username, password}) {
-  try {
-    return await $.ajax(`php/login.php?username=${username}&password=${password}`)
-  }
-  catch {
-    $("#login-error").html("Fail to login. Please try again later")
-    return null
-  }
-}
+function login () {
+  const loginError = $("#login-error")
 
-async function login () {
   // get the login information
   const username = $('#username').val()
   const password = $('#password').val()
 
   // check for basic errors
+  // if there is anything wrong, just terminate
   if (username === '') {
-    $('#login-error').html('username cannot be empty')
+    loginError.text('username cannot be empty')
     return
   }
   else if (password === '') {
-    $('#login-error').html('password cannot be empty')
+    loginError.text('password cannot be empty')
     return
   }
 
   // get the response
-  const response = await tryLogin({username: username, password: password})
+  $.ajax(`php/login.php?username=${username}&password=${password}`)
+    .done((response) => handleLoginResponse(response))
+    .fail(() => loginError.text("error encountered will login in"))
 
-  // display the response
-  if (response !== null) {
-    handleLoginResponse(JSON.parse(response))
-  }
 }
 
 function toggleSearch () {
@@ -189,5 +180,7 @@ $(() => {
   // register event for the login button
   $('#login-button').click(login)
 
+  // toggle the search field
   $('#search-field').keyup(toggleSearch)
+
 })
