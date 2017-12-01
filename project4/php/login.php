@@ -1,5 +1,8 @@
 <?php
 
+// start the session
+session_start();
+
 const login_data_file = "../database/login.json";
 const secure_key_path = "key.secret";
 
