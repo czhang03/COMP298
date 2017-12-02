@@ -8,6 +8,7 @@
   <link href="css/index.css" rel="stylesheet">
   <link rel="stylesheet" href="css/general.css">
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./js/userInfo.js"></script>
   <script src="./js/index.js"></script>
 </head>
 
@@ -20,8 +21,12 @@
     <a href="https://www.nytimes.com/">News</a>
     <a href="FotoFan.html">FotoFan</a>
 
-    <div class="popup">
-      <a class="login" id="login">Login</a>
+    <div class="popup" id="login-div">
+      <a class="login" id="login-link">Login</a>
+    </div>
+    <div class="popup" id="user-info">
+      <img id="login-avatar" src=""/>
+      <div id="login-name"></div>
       <a id="logout">logout</a>
     </div>
   </div>

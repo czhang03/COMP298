@@ -1,6 +1,6 @@
 /**
  * handles the login to get the token
- * token will be automatically set in the session
+ * token will be automatically set in the cookie
  */
 function getAuthenticateToken() {
   const loginError = $("#login-error")
@@ -23,8 +23,7 @@ function getAuthenticateToken() {
   // get the response
   $.ajax(`php/login.php?username=${username}&password=${password}`)
 
-    // handles the error from server
-    // because if success the server will just set the session
+    // handles server response
     .done((response) => {
       const responseObj = JSON.parse(response)
 
