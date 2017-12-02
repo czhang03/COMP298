@@ -3,8 +3,8 @@ async function get_login_info () {
   const info = await tryGetUserInfo()
 
   if (info.success === true){
-    $("#user-info").css("display", "auto")
-    $("#login").css("display", "none")
+    $("#user-info").css("display", "block")
+    $("#login-div").css("display", "none")
     // set the login avatar and login
     $("#login-avatar").attr("src", info.avatar)
     $("#login-name").text(info.name)
