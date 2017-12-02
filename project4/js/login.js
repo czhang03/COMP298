@@ -104,6 +104,6 @@ function handlePareLoginResponse (responseObj){
   }
   else {
     $("#login-error").html(responseObj.error)
-    $("#login-avatar").attr("src", "fotofan.png")
+    $("#login-avatar").attr("src", "img_resource/fotofan.png")
   }
 }
