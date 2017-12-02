@@ -32,6 +32,9 @@ button:hover {
     cursor: pointer;
 }
 
+img.logo {
+    width:300px;
+}
 
 
 

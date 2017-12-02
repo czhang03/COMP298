@@ -125,9 +125,8 @@ img.avatar {
     top: -6%;
     left: 90%;
     margin-left: -10px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent silver transparent;
+    border: 10px solid transparent;
+    border-bottom-color: silver;
 }
 
 /*hide and show the popup */
@@ -135,10 +134,6 @@ img.avatar {
     visibility: visible;
     -webkit-animation: fadeIn 0.6s;
     animation: fadeIn 0.6s;
-}
-
-img.logo {
-    width:300px;
 }
 
 /* Add animation (fade in the popup) */
