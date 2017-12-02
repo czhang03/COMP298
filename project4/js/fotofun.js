@@ -172,4 +172,7 @@ $(() => {
 
   // toggle the search field
   $('#search-field').keyup(toggleSearch)
+
+  // register the logout function
+  $('#logout').click(logout)
 })

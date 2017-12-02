@@ -8,7 +8,7 @@ async function tryGetUserInfo () {
  * This function is not so good because there is no error handling
  */
 function logout () {
-  $.ajax('../php/logout.php')
+  $.ajax('./php/logout.php')
     .done((response) => {
       const responseObj = JSON.parse(response)
       if (responseObj.success)
