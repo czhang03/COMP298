@@ -11,7 +11,7 @@ async function get_login_info () {
   }
   else {
     // set the login page url, if the user is not properly login
-    $('#login-link').attr('href', encodeURI(`./login.html?from=${window.location.href}`))
+    $('#login-link').attr('href', `./login.html?from=${encodeURIComponent(window.location.href)}`)
     $("#user-info").css("display", "none")
     $("#login-div").css("display", "auto")
   }
