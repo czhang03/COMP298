@@ -124,8 +124,8 @@ function populateSearchView (imageList) {
 
 function handleFotoFanResponse (responseObj) {
 
-  if (responseObj.success === false && responseObj.errorType === "AuthenticationFailure")
-    window.location.href = "../login.html"
+  if (responseObj.success === false && responseObj.error === "authentication failure")
+    window.location.href = "./login.html"
 
   else if (responseObj.success === true) {
     // plug the information into the page
