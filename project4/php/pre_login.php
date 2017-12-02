@@ -6,7 +6,7 @@ This file handles the pre-login process:
 - display the welcome message for that username
 */
 
-include "get_user_info.php";
+include "user_info_handler.php";
 
 $username = $_GET["username"];
 
