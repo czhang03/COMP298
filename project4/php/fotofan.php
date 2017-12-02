@@ -1,21 +1,4 @@
 <?php
-
-class response
-{
-    public $success;
-    public $username;
-    public $imageList;
-}
-
-class image
-{
-    public $yearTaken;
-    public $country;
-    public $state;
-    public $location;
-    public $description;
-}
-
 echo json_encode([
     "success" => true,
     "username" => "Joe",
