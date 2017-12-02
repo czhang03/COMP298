@@ -62,16 +62,17 @@ img.fanlogo {
 
 }
 
-#all-photos img {
-    height: 300px;
-}
-
 .photo-view img:hover {
     opacity: 0.8;
     transition: opacity 0.3s;
 }
 
+#all-photos img {
+    height: 300px;
+}
+
 #search-photos {
+    display: none;
     list-style: none;
     padding: 0;
     margin: 0;
