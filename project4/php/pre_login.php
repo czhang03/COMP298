@@ -6,26 +6,14 @@ This file handles the pre-login process:
 - display the welcome message for that username
 */
 
+include "get_user_info.php";
+
 const login_data_file_path = "../database/login.json";
 
 if (file_exists(login_data_file_path)) {
-    $json_str = file_get_contents(login_data_file_path);
-    $json_array = json_decode($json_str, true);
     $username = $_GET["username"];
 
-    // check if the username is valid
-    if (array_key_exists($username, $json_array)){
-        echo json_encode([
-            "success" => true,
-            "data" => $json_array[$username]
-        ]);
-    }
-    else {
-        echo json_encode([
-            "success" => false,
-            "error" => "username not found ╮( ￣ ▽ ￣' )╭ "
-        ]);
-    }
+    echo json_encode(get_user_info_from_username($username));
 }
 else {
     echo json_encode([
