@@ -75,6 +75,16 @@ function _validate_token($token_str) {
     return _token_not_outdated($time_created) && _token_hash_correct($time_created, $username, $hash);
 }
 
+// decode the user name from token
+// return can be null
+function _get_user_name_from_token($token_str) {
+    $token_obj = json_decode($token_str, true);
+
+    // unpack
+    return $token_obj["username"];
+}
+
+
 // validate the token from session super global
 function _validate_token_from_session() {
     // if token do not exists
@@ -85,11 +95,23 @@ function _validate_token_from_session() {
     return _validate_token($_SESSION[token_key]);
 }
 
+// decode the username from session token
+// return can be null
+function get_user_name_from_session_token() {
+    // if token do not exists
+    if (!isset($_SESSION[token_key]))
+        return null;
+
+    // validate the token
+    return _get_user_name_from_token($_SESSION[token_key]);
+}
+
 
 // validate the token
 // if validated, then update the token and return true.
 // if not validated, then clear the token and return false.
-function validate_and_update($username) {
+function validate_and_update() {
+
     // if token is not valid
     if (! _validate_token_from_session()) {
         destroy_token();
@@ -97,6 +119,7 @@ function validate_and_update($username) {
     }
     // if the token is valid
     else {
+        $username = get_user_name_from_session_token();
         set_new_secure_token($username);
         return true;
     }
