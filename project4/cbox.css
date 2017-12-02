@@ -120,7 +120,7 @@
 }
 
 #cboxLoadingGraphic {
-    background: url(loading.gif) no-repeat center center;
+    background: url(Blocks.gif) no-repeat center center;
 }
 
 /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */

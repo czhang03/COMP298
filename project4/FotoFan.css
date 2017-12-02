@@ -61,10 +61,11 @@ button:hover {
 .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
+
 }
 
 img.logo {
-    width: 30%;
+    width:300px;
 }
 
 img.fanlogo {
@@ -103,6 +104,7 @@ img.fanlogo {
     width: 700px;
     border-radius: 5px;
     border: none;
+    padding-left:10px;
     font-weight: bold;
 }
 
@@ -115,16 +117,6 @@ img.fanlogo {
     padding-right: 10px;
     padding-left: 10px;
 }
-
-/*
-#upload-button {
-    border-radius: 8px;
-    padding: 5px 10px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-*/
 
 #login-name {
     font-size: larger;
@@ -139,16 +131,18 @@ img.fanlogo {
 }
 
 .photo-view img {
-    margin: 20px;
+    padding:20px 0 20px 20px;
+
 }
 
 #all-photos img {
-    height: 200px;
+    height: 300px;
 }
 
 .photo-view img:hover {
-    margin: 18px;
-    border: 2px solid silver;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+
 }
 
 #search-photos {
