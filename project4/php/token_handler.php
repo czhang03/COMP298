@@ -142,7 +142,7 @@ function precede_if_token_valid()
     if (!_validate_and_update_token()) {
         echo json_encode([
             "success" => true,
-            "ErrorType" => "AuthenticationFailure",
+            "error" => "authentication failure",
         ]);
         exit(0);
     }
