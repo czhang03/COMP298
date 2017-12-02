@@ -1,4 +1,7 @@
 function escapeHtml (unsafe) {
+  if (! unsafe)  // if unsafe is not defined, don't modify it
+    return unsafe
+
   return unsafe
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -8,6 +11,9 @@ function escapeHtml (unsafe) {
 }
 
 function unescapeHtml (safe) {
+  if (! safe)  // if safe is not defined, don't modify it
+    return safe
+
   return safe
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -17,6 +23,9 @@ function unescapeHtml (safe) {
 }
 
 function nl2br (nlStr) {
+  if (!nlStr)  // if nlStr is not defined, don't modify it
+    return nlStr
+
   return nlStr.replace(/\n/g, '<br/>')
 }
 
@@ -95,6 +104,7 @@ function populateSearchView (imageList) {
   }
 
   $('#search-field').keyup(() => {
+    toggleSearch()
     const keyword = $('#search-field').val()
     searchPhotosView.find('.search-text')
       .unmark({
@@ -114,8 +124,8 @@ function populateSearchView (imageList) {
 
 function handleFotoFanResponse (responseObj) {
 
-  if (responseObj.success === false)
-    $('#login-error').val('wrong username or password')
+  if (responseObj.success === false && responseObj.errorType === "AuthenticationFailure")
+    window.location.href = "../login.html"
 
   else if (responseObj.success === true) {
     // plug the information into the page
@@ -157,9 +167,9 @@ function toggleSearch () {
 }
 
 $(() => {
+  // populate fotofan page
+  getFotoFan()
 
   // toggle the search field
   $('#search-field').keyup(toggleSearch)
-
-  getLoginHtml({afterAuthenticate: getFotoFan})
 })
