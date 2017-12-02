@@ -2,7 +2,7 @@
 // common functions that are used in multiple file
 
 const hash_algorithm = "sha256";  // the algorithm used for hashing
-const token_key = "token";  // the key of the token in session
+const token_key = "token";  // the key of the token in cookie
 
 // get the secrete key on this server
 function get_secrete_key()
@@ -19,7 +19,7 @@ function get_secrete_key()
 
 function _generate_token($current_time, $username)
 {
-    // generate the secure session token
+    // generate the secure cookie token
     return json_encode([
         "time" => $current_time,
         "username" => $username,
@@ -30,16 +30,13 @@ function _generate_token($current_time, $username)
 function set_new_secure_token($username)
 {
     $current_time = time();
-    $_SESSION[token_key] = _generate_token($current_time, $username);
+    setcookie(token_key, _generate_token($current_time, $username));
 }
 
 function destroy_token()
 {
-    // destroy the old session
-    session_destroy();
-
-    // start the new session
-    session_start();
+    $time_in_past = time() - 3600; // just some time in the past
+    setcookie(token_key, "", $time_in_past);
 }
 
 // the time when token is outdated
@@ -48,10 +45,11 @@ const token_valid_period_in_hour = 1;
 // helper function for validate token, to return true if token is not outdated
 function _token_not_outdated($time_created)
 {
-    // calculate whether this session is outdated
+    // calculate whether this cookie is outdated
     $current_time = time();
     $time_passed_in_hour = abs($current_time - $time_created) / 360; // convert seconds to hours
-    return $time_passed_in_hour > token_valid_period_in_hour;
+
+    return $time_passed_in_hour < token_valid_period_in_hour;
 }
 
 // helper function for validate token, validate the hash is correct
@@ -59,11 +57,11 @@ function _token_hash_correct($time_created, $username, $hash)
 {
     // validate the hash is correct
     $expected_hash = hash(hash_algorithm, $time_created . $username . get_secrete_key());
-    return strcmp($hash, $expected_hash) === 1;
+    return strcmp($hash, $expected_hash) === 0;
 }
 
-// validate the session token
-// session token is a json string of the form:
+// validate the cookie token
+// cookie token is a json string of the form:
 // {
 //    "time": timeCreated,
 //    "username": username,
@@ -92,27 +90,27 @@ function _get_user_name_from_token($token_str)
 }
 
 
-// validate the token from session super global
-function _validate_token_from_session()
+// validate the token from cookie super global
+function _validate_token_from_cookie()
 {
     // if token do not exists
-    if (!isset($_SESSION[token_key]))
+    if (!isset($_COOKIE[token_key]))
         return false;
 
     // validate the token
-    return _validate_token($_SESSION[token_key]);
+    return _validate_token($_COOKIE[token_key]);
 }
 
-// decode the username from session token
+// decode the username from cookie token
 // return can be null
-function get_user_name_from_session_token()
+function get_user_name_from_cookie_token()
 {
     // if token do not exists
-    if (!isset($_SESSION[token_key]))
+    if (!isset($_COOKIE[token_key]))
         return null;
 
     // validate the token
-    return _get_user_name_from_token($_SESSION[token_key]);
+    return _get_user_name_from_token($_COOKIE[token_key]);
 }
 
 
@@ -123,12 +121,12 @@ function _validate_and_update_token()
 {
 
     // if token is not valid
-    if (!_validate_token_from_session()) {
-        destroy_token();
+    if (!_validate_token_from_cookie()) {
+        // destroy_token();
         return false;
     } // if the token is valid
     else {
-        $username = get_user_name_from_session_token();
+        $username = get_user_name_from_cookie_token();
         set_new_secure_token($username);
         return true;
     }
@@ -141,7 +139,7 @@ function precede_if_token_valid()
 {
     if (!_validate_and_update_token()) {
         echo json_encode([
-            "success" => true,
+            "success" => false,
             "error" => "authentication failure",
         ]);
         exit(0);
