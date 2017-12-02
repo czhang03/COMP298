@@ -8,7 +8,14 @@ const login_data_file_path = "../database/login.json";
 // it will return an array that contains the user info.
 function get_user_info_from_username($username)
 {
+    if (! file_exists(login_data_file_path)) {
+        return [
+            "success" => false,
+            "error" => "login database not found"
+        ];
+    }
     $json_str = file_get_contents(login_data_file_path);
+
     $json_array = json_decode($json_str, true);
 
     if (array_key_exists($username, $json_array)) {
