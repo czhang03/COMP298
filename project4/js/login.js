@@ -2,7 +2,7 @@
  * handles the login to get the token
  * token will be automatically set in the session
  */
-function getAuthenticateToken(afterAuthenticate) {
+function getAuthenticateToken() {
   const loginError = $("#login-error")
 
   // get the login information
@@ -30,11 +30,10 @@ function getAuthenticateToken(afterAuthenticate) {
 
       // if the server gives an error
       if (responseObj.success === false)
-        $("#login-error").text(responseObj.error)
+        loginError.text(responseObj.error)
 
-      // if the server does not give an error
       else if (responseObj.success === true)
-        afterAuthenticate()
+        loginError.text("login successful")
 
       // server send invalid request
       else
@@ -47,33 +46,6 @@ function getAuthenticateToken(afterAuthenticate) {
 }
 
 /**
- * use ajax to get the log in html
- *
- * @param afterAuthenticate: the callback to execute after authentication
- */
-function getLoginHtml ({afterAuthenticate}) {
-
-  const loginSelector = $("#login-page")
-  $.ajax("login.html")
-    .done((responce) => {
-
-      // get the login html
-      loginSelector.html(responce)
-
-      // when the user finish input the username
-      // validate the username
-      $("#username").focusout(() => preLogin())
-
-      // register the event of the login button
-      // get the authentication token, and then execute the login click callback
-      $("#login-button").click(() => {
-        getAuthenticateToken(afterAuthenticate)
-      })
-    })
-    .fail((responce) => loginSelector.html("<p class='error'>Cannot Load Login page. Please Refresh</p>"))
-}
-
-/**
  * pre login process
  * - validate the username
  * - change the avatar
@@ -82,8 +54,9 @@ function getLoginHtml ({afterAuthenticate}) {
 function preLogin() {
   const username = $("#username").val()
 
-  $.ajax(`php/preLogin.php?username=${username}`)
+  $.ajax(`php/pre_login.php?username=${username}`)
     .done((response) => handlePareLoginResponse(JSON.parse(response)))
+    .fail(() => $("#login-error").text("login failed, please try again later"))
 }
 
 /**
@@ -107,3 +80,9 @@ function handlePareLoginResponse (responseObj){
     $("#login-avatar").attr("src", "img_resource/fotofan.png")
   }
 }
+
+$(() => {
+  $("#username").focusout(preLogin)
+
+  $("#login-button").click(getAuthenticateToken)
+})
