@@ -13,10 +13,6 @@ img.fanlogo {
     padding-right: 20px;
 }
 
-#fotofan-page {
-    display: none;
-}
-
 #search-box-form {
     display: flex;
     float: left;
@@ -73,7 +69,6 @@ img.fanlogo {
 .photo-view img:hover {
     opacity: 0.8;
     transition: opacity 0.3s;
-
 }
 
 #search-photos {
