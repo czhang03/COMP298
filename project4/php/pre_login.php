@@ -6,10 +6,10 @@ This file handles the pre-login process:
 - display the welcome message for that username
 */
 
-const pre_login_data_file_path = "../database/preLogin.json";
+const login_data_file_path = "../database/login.json";
 
-if (file_exists(pre_login_data_file_path)) {
-    $json_str = file_get_contents(pre_login_data_file_path);
+if (file_exists(login_data_file_path)) {
+    $json_str = file_get_contents(login_data_file_path);
     $json_array = json_decode($json_str, true);
     $username = $_GET["username"];
 
