@@ -68,9 +68,8 @@ function preLogin() {
  */
 function handlePareLoginResponse (responseObj){
   if (responseObj.success === true) {
-    const data = responseObj.data;
-    const avatarSrc = data.avatar;
-    const name = data.name;
+    const avatarSrc = responseObj.avatar;
+    const name = responseObj.name;
     $("#welcome-user").html(`Hi, ${name}`)
     $("#login-avatar").attr("src", avatarSrc)
   }
