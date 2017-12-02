@@ -1,85 +1,16 @@
-*:focus {
-    outline: none;
-}
-
-body {
-    font-family: "Comfortaa", sans-serif;
-    margin: 0 auto;
-}
-
-.all {
-    width: 100%;
-    height: 100%;
-}
-
 nav {
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
     padding: 0 30px;
     height: 80px;
     background-color: whitesmoke;
     color: whitesmoke;
-    /*box-shadow: 0 0 10px black;*/
 }
 
-form {
-    text-align: center;
-}
-
-#username, #password {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: none;
-    background-color: #e6f7ff;
-    box-sizing: border-box;
-}
-
-#username:focus, #password:focus {
-    border-bottom: 3px solid #4286f4;
-    margin-bottom: 5px;
-    transition: border-bottom 0.3s, margin-bottom 0.3s;
-}
-
-#login-button {
-    background-color: #4286f4;
-    font-family: "Comfortaa", sans-serif;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 30%;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-
-}
-
-img.logo {
-    width:300px;
-}
 
 img.fanlogo {
     width: 120px;
     padding-right: 20px;
-}
-
-.material-icons {
-    color: black;
-    padding-left: 10px;
-}
-
-.material-icons:hover {
-    cursor: pointer;
 }
 
 #fotofan-page {

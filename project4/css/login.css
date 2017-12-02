@@ -1,0 +1,34 @@
+form {
+    text-align: center;
+}
+
+#username, #password {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    background-color: #e6f7ff;
+    box-sizing: border-box;
+}
+
+#username:focus, #password:focus {
+    border-bottom: 3px solid #4286f4;
+    margin-bottom: 5px;
+    transition: border-bottom 0.3s, margin-bottom 0.3s;
+}
+
+#login-button {
+    background-color: #4286f4;
+    font-family: "Comfortaa", sans-serif;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+button:hover {
+    opacity: 0.8;
+}

@@ -137,6 +137,10 @@ img.avatar {
     animation: fadeIn 0.6s;
 }
 
+img.logo {
+    width:300px;
+}
+
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
     from {
