@@ -1,7 +1,7 @@
 [
   {
     "description": "(photo provided by the Wildlife Conservation Research Unit)Cecil the lion rests in Hwange National Park,",
-    "srcUrl": "../img_source/img1.jpg",
+    "srcUrl": "./img_resource/img1.jpg",
     "yearTaken":"2015",
     "country":"Zimbabwe",
     "state":"Hwange",
@@ -9,7 +9,7 @@
   },
   {
     "description": "grizzly bearse,",
-    "srcUrl": "../img_source/img2.jpg",
+    "srcUrl": "./img_resource/img2.jpg",
     "yearTaken":"2017",
     "country":"United States",
     "state":"MONTANA",
@@ -17,7 +17,7 @@
   },
   {
     "description": "MingMing the siamese cat laying on the sofa,",
-    "srcUrl": "../img_source/img3.jpg",
+    "srcUrl": "./img_resource/img3.jpg",
     "yearTaken":"2016",
     "country":"United States",
     "state":"MA",
@@ -25,7 +25,7 @@
   },
   {
     "description": "Sea cucumber cat,",
-    "srcUrl": "../img_source/img4.jpg",
+    "srcUrl": "./img_resource/img4.jpg",
     "yearTaken":"2017",
     "country":"China",
     "state":"Guangdong",
@@ -33,7 +33,7 @@
   },
   {
     "description": "Animal Portraits from Ukrainian Photographer Sergey Polyushko,",
-    "srcUrl": "../img_source/img5.jpg",
+    "srcUrl": "./img_resource/img5.jpg",
     "yearTaken":"2017",
     "country":"Ukraine",
     "state":"Kiev",
