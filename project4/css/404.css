@@ -1,4 +1,9 @@
 /* 404 html */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .kermitTyping{
     text-align:center;
     font-family: "Ubuntu", sans-serif;
