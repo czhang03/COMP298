@@ -7,14 +7,17 @@ const token_key = "token";  // the key of the token in cookie
 // get the secrete key on this server
 function get_secrete_key()
 {
-    $secure_key_path = sys_get_temp_dir() . "/key.secret";
-    if (file_exists($secure_key_path)) {
-        return file_get_contents($secure_key_path);
-    } else {
-        $secure_key = bin2hex(random_bytes(16));
-        file_put_contents($secure_key_path, $secure_key);
-        return $secure_key;
-    }
+    // I would use the following secure protocol
+    // but the stupid server don't let me do it
+//    $secure_key_path = "./key.secret";
+//    if (file_exists($secure_key_path)) {
+//        return file_get_contents($secure_key_path);
+//    } else {
+//        $secure_key = bin2hex(random_bytes(16));
+//        file_put_contents($secure_key_path, $secure_key);
+//        return $secure_key;
+//    }
+    return "stupid-server";
 }
 
 function _generate_token($current_time, $username)
