@@ -45,6 +45,10 @@ img.fanlogo {
     padding-right: 10px;
     padding-left: 10px;
 }
+#login-avatar{
+    width:50px;
+    right:0;
+}
 
 #login-name {
     font-size: larger;
