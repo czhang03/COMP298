@@ -107,8 +107,7 @@ img.fanlogo {
 #search-photos {
     display: none;
     list-style: none;
-    padding: 0;
-    margin: 0 20px;
+    margin: 0;
 }
 
 #search-photos img {
