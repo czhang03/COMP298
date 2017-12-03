@@ -17,21 +17,8 @@ form {
 button:hover {
     opacity: 0.8;
 }
-/*
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-*/
 
-.material-icons {
-    color: black;
-    padding-left: 10px;
-}
 
-.material-icons:hover {
-    cursor: pointer;
-}
 
 
 
