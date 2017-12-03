@@ -23,6 +23,7 @@ img.fanlogo {
 #search-icon {
     font-size: 20pt;
     padding-right: 5px;
+    vertical-align: middle;
 }
 
 #search-icon:hover {
