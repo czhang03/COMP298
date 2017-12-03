@@ -25,9 +25,13 @@ body {
     height: 200px;
 }
 
-#login-placeholder {
+#placeholder-img {
     align-self: flex-end;
     height: 150px
+}
+
+#greet-user {
+    display: none;
 }
 
 #login-error{

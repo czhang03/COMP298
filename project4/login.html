@@ -18,9 +18,14 @@
 
   <form id="login-form">
     <div class="greeting">
-      <img src="img_resource/yippee_login.png" alt="user-avatar" class="logo" id="login-placeholder">
+      <div id="greeting-placeholder">
+        <img src="img_resource/yippee_login.png" alt="Yippee" class="logo" id="placeholder-img">
+      </div>
+      <div id="greet-user">
+        <img src="" alt="user-avatar" class="logo" id="login-avatar">
+        <div id="greeting-text">Hi! <span id="login-name"></span></div>
+      </div>
     </div>
-    <div id="welcome-user"></div>
 
     <div id="login-error"></div>
     <input type="text" placeholder="username" id="username"><br>

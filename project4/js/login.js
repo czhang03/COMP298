@@ -103,19 +103,44 @@ function preLogin () {
  */
 function handlePareLoginResponse (responseObj) {
   if (responseObj.success === true) {
-    const avatarSrc = responseObj.avatar
-    const name = responseObj.name
-    $('#welcome-user').html(`Hi, ${name}`)
-    $('#login-avatar').attr('src', avatarSrc)
+    // populate the greeting
+    $('#login-name').text(responseObj.name)
+    $('#login-avatar').attr('src', responseObj.avatar)
+    // display the greeting
+    $("#greeting-placeholder").css("display", "none")
+    $("#greet-user").css("display", "block")
   }
   else {
-    $('#login-error').html(responseObj.error)
-    $('#login-avatar').attr('src', 'img_resource/yippee_login.png')
+    $("#greeting-placeholder").css("display", "block")
+    $("#greet-user").css("display", "none")
   }
 }
 
-$(() => {
-  $('#username').focusout(preLogin)
+/**
+ * This function clears the greeting to user
+ */
+function clearGreeting () {
+  $("#greeting-placeholder").css("display", "block")
+  $("#greet-user").css("display", "none")
+}
 
+/**
+ * This function clears the greeting to user
+ */
+function clearError () {
+  $("#login-error").text("")
+}
+
+$(() => {
+  // pre display the greeting
+  const usernameInput = $("#username")
+  usernameInput.focusout(preLogin)
+  usernameInput.keyup(clearGreeting)
+
+  // clear the error message when user do any input
+  $("#login-form").find("input").keyup(clearError)
+
+  // login
   $('#login-button').click(getAuthenticateToken)
+
 })
