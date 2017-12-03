@@ -131,7 +131,6 @@ function handleFotoFanResponse (responseObj) {
     // plug the information into the page
     displayAllImage(responseObj.imageList)
     populateSearchView(responseObj.imageList)
-    $('#login-name').html(responseObj.username)
 
     // switch to the fotofun page
     $('#login-page').css({'display': 'none'})
@@ -166,10 +165,27 @@ function toggleSearch () {
   }
 }
 
+async function putInUserInfo () {
+  const info = await tryGetUserInfo();
+
+  if (info === null)
+    window.location.href = "./index.html"
+  else {
+    $("#login-name").text(info.name)
+    $("#login-avatar").attr("src", info.avatar)
+  }
+}
+
 $(() => {
   // populate fotofan page
   getFotoFan()
 
+  // populate the user information
+  putInUserInfo()
+
   // toggle the search field
   $('#search-field').keyup(toggleSearch)
+
+  // register the logout function
+  $('#logout').click(logout)
 })
