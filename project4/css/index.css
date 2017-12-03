@@ -1,11 +1,8 @@
 body {
-    margin-left: auto;
-    margin-right: auto;
     min-width: 200px;
     background: url("../img_resource/wallpaper.jpg") no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
-    font-family: "Comfortaa", sans-serif;
     color:white;
 }
 
@@ -25,7 +22,7 @@ body {
 }
 
 nav {
-    margin: 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     width: calc(100vw - 40px);
