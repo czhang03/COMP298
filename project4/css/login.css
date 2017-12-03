@@ -12,6 +12,7 @@ body {
 }
 
 #login-form {
+    padding-top: 25%;
     width: 100%;
 }
 
@@ -27,11 +28,20 @@ body {
 
 #placeholder-img {
     align-self: flex-end;
-    height: 150px
+    height: 100%
 }
 
 #greet-user {
     display: none;
+}
+
+#login-avatar {
+    height: 160px;
+    border-radius: 80px;
+}
+
+#greeting-text {
+    margin: 20px;
 }
 
 #login-error{
@@ -40,7 +50,7 @@ body {
 }
 
 #username, #password {
-    width: 50%;
+    width: 55%;
     padding: 12px 20px;
     margin: 5px 0;
     display: inline-block;
@@ -60,10 +70,10 @@ body {
     font-family: "Comfortaa", sans-serif;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 15px 0;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 55%;
 }
 
 button:hover {
