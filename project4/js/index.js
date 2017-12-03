@@ -4,7 +4,7 @@ async function get_login_info () {
 
   if (info.success === true){
     // display the user info
-    $("#user-info").css("display", "block")
+    $("#user-info").css("display", "flex")
     $("#login-div").css("display", "none")
 
     // set the login avatar and login
@@ -19,7 +19,7 @@ async function get_login_info () {
 
     // hide the user info
     $("#user-info").css("display", "none")
-    $("#login-div").css("display", "auto")
+    $("#login-div").css("display", "flex")
   }
 }
 

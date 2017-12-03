@@ -1,21 +1,14 @@
 body {
     margin-left: auto;
     margin-right: auto;
-    min-width: 800px;
-    min-height: 500px;
-    width: 1400px;
-    background-image:url("../img_resource/wallpaper.jpg");
-    -webkit-background-size: cover;
+    min-width: 200px;
+    background: url("../img_resource/wallpaper.jpg") no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
     font-family: "Comfortaa", sans-serif;
     color:white;
 }
-/*login*/
-.popup{
-    position: relative;
-    display: inline-block;
-    float:right;
-}
+
 #login-avatar{
     width:40px;
     border-radius: 50%;
@@ -31,23 +24,35 @@ body {
     cursor:pointer;
 }
 
-.navbar {
-    padding: 20px;
+nav {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100vw - 40px);
 }
 
-.navbar a {
+nav a {
     color: white;
     font-family: "Comfortaa", sans-serif;
     text-decoration: none;
-    padding: 20px 10px 10px 10px;
+    margin: 10px 20px;
     transition: background-color 0.5s;
 }
 
-.navbar a:hover {
+nav a:hover {
     text-decoration: underline;
 }
 
-#logo, input[type=search] {
+nav .nav-left {
+    display: flex;
+}
+
+nav .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
     width: 400px;
     display: block;
     margin-left: auto;
@@ -55,18 +60,22 @@ body {
 }
 
 .login {
-    margin-left: 1000px;
-    color: red;
     text-decoration: none;
-    padding: 20px 10px 10px 10px;
 }
+
+#login-avatar {
+    margin: 0 10px;
+}
+
 input::-webkit-input-placeholder {
     color:white;
 }
 input[type=search] {
-    width: 700px;
-    margin-top: 6px;
-    margin-bottom: 12px;
+    display: block;
+    width: 50%;
+    max-width: 700px;
+    min-width: 100px;
+    margin: 6px auto 12px;
     border: 3px solid white;
     box-sizing: border-box;
     border-radius: 5px;
