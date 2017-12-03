@@ -7,7 +7,7 @@ const token_key = "token";  // the key of the token in cookie
 // get the secrete key on this server
 function get_secrete_key()
 {
-//    $secure_key_path = sys_get_temp_dir() . "/key.secret";
+    //    $secure_key_path = sys_get_temp_dir() . "/key.secret";
 //    if (file_exists($secure_key_path)) {
 //        return file_get_contents($secure_key_path);
 //    } else {
@@ -20,6 +20,7 @@ function get_secrete_key()
     // but the stupid cs server wouldn't let me
     // so, here, a better protocol designed for cs server:
     return "stupid-server";
+
 }
 
 function _generate_token($current_time, $username)
