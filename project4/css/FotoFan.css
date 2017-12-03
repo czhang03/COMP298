@@ -1,6 +1,7 @@
 nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 30px;
     height: 80px;
     background-color: whitesmoke;
@@ -15,7 +16,7 @@ img.fanlogo {
 
 #search-box-form {
     display: flex;
-    float: left;
+    align-items: center;
 }
 
 
@@ -30,18 +31,24 @@ img.fanlogo {
 
 #search-field {
     width: 700px;
+    height: 35px;
     border-radius: 5px;
     border: none;
     padding-left:10px;
     font-weight: bold;
 }
 
-.right-nav {
+.nav-left {
     display: flex;
     align-items: center;
 }
 
-.right-nav div {
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right div {
     padding-right: 10px;
     padding-left: 20px;
 }
