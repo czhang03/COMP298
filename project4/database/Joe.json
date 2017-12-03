@@ -2,351 +2,561 @@
   {
     "description": "Baldy Mountain from Copper Park,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/baldyFromCopper.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Hiking the canyon,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/startOfTrail.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Looking up the canyon to the north,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/upTheCanyon.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Evening in the canyon,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/canyonLight.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Climbing a spar pole,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/sparPole.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Low clouds heading to Rich Cabin,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/lowClouds.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Baldy Mountain from meadow south of Miranda,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/baldyFromMeadow.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Where are we going?",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/trailSigns.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "The Tooth of Time,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/philmont/toothOfTime.jpg",
-    "location": "Philmont Scout Ranch, NM (2017)."
+    "yearTaken":"2017",
+    "country":"United States",
+    "state":"NM",
+    "location": "Philmont Scout Ranch"
   },
   {
     "description": "Lower Falls in the Grand Canyon of the Yellowstone,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/grandCanyon4.jpg",
-    "location": "Yellowstone National Park, WY (2016)."
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
-    "description": "Lower Falls, Yellowstone National Park, WY (2016).",
+    "description": "Lower Falls,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/grandCanyon6.jpg",
-    "location": ""
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
-    "description": "Grand Prismatic Spring, Yellowstone National Park, WY (2016).",
+    "description": "Grand Prismatic Spring",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/grandPrismatic1.jpg",
-    "location": ""
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
-    "description": "Bison in the way, Yellowstone National Park, WY (2016).",
+    "description": "Bison in the way,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/bison1.jpg",
-    "location": ""
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
     "description": "Looking towards Lake Yellowstone from the top of Mt. Washburn (10,243 ft.),",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/mtWashburn.jpg",
-    "location": "Yellowstone National Park, WY (2016)."
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
-    "description": "Mud pot, Yellowstone National Park, WY (2016).",
+    "description": "Mud pot,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/bisonMud.jpg",
-    "location": ""
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
-    "description": "Castle Geyser, Yellowstone National Park, WY (2016).",
+    "description": "Castle Geyser,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/castleGeyser.jpg",
-    "location": ""
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
-    "description": "Yellowstone Lake, Yellowstone National Park, WY (2016).",
+    "description": "Yellowstone Lake,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/yellowstoneWeb/yellowstoneLake.jpg",
-    "location": ""
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"WY",
+    "location": "Yellowstone National Park"
   },
   {
-    "description": "Paines Creek, Brewster, Cape Cod, MA (2016).",
+    "description": "Paines Creek,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/painesCreek.jpg",
-    "location": ""
+    "yearTaken":"2016",
+    "country":"United States",
+    "state":"MA",
+    "location": "Brewster,Cape Cod"
   },
   {
-    "description": "West Chop lighthouse, Martha\u0027s Vineyard, MA (2015).",
+    "description": "West Chop lighthouse,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/misc/westChop.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"MA",
+    "location": "Martha\u0027s Vineyard"
   },
   {
-    "description": "Jumping off the \"Jaws Bridge,\" Martha\u0027s Vineyard, MA (2015).",
+    "description": "Jumping off the \"Jaws Bridge,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/misc/jawsBridge.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"MA",
+    "location": "Martha\u0027s Vineyard"
   },
   {
-    "description": "Vineyard Haven harbor, Martha\u0027s Vineyard, MA (2015).",
+    "description": "Vineyard Haven harbor,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/misc/vineyardHaven.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"MA",
+    "location": "Martha\u0027s Vineyard"
   },
   {
-    "description": "West Chop, Martha\u0027s Vineyard, MA (2015).",
+    "description": "West Chop,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/misc/westChop2.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"MA",
+    "location": "Martha\u0027s Vineyard"
   },
   {
     "description": "MVCMA cottages,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/misc/mvcma.jpg",
-    "location": "Oak Bluffs, Martha\u0027s Vineyard, MA (2015)."
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"MA",
+    "location": "Oak Bluffs,Martha\u0027s Vineyard"
   },
   {
-    "description": "Boy Scout Sea Base, Islamorada, Florida Keys (2015).",
+    "description": "Boy Scout Sea Base,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/seabase/seabase.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"FL",
+    "location": "Islamorada, Florida Keys"
   },
   {
-    "description": "Sail boats, Islamorada, Florida Keys (2015).",
+    "description": "Sail boats,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/seabase/seabase4.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"FL",
+    "location": "Islamorada, Florida Keys"
   },
   {
-    "description": "At the dock at Sea Base, Islamorada, Florida Keys (2015).",
+    "description": "At the dock at Sea Base,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/seabase/seabase5.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"FL",
+    "location": "Islamorada, Florida Keys"
   },
   {
-    "description": "Under sail, Florida Keys (2015).",
+    "description": "Under sail,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/seabase/seabase8.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"FL",
+    "location": "Islamorada, Florida Keys"
   },
   {
-    "description": "Evening sets in, somewhere in the Gulf of Mexico off the Florida Keys (2015).",
+    "description": "Evening sets in,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/seabase/seabase11.jpg",
-    "location": ""
+    "yearTaken":"2015",
+    "country":"United States",
+    "state":"FL",
+    "location": "somewhere in the Gulf of Mexico off the Florida Key"
   },
   {
-    "description": "Neuschwanstein Castle, Bavaria, Germany (2010).",
+    "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/germany/neuschwanstein.jpg",
-    "location": ""
+    "yearTaken":"2010",
+    "country":"Germany",
+    "state":"Bavaria",
+    "location": "Neuschwanstein Castle"
   },
   {
-    "description": "The Old Town Hall, Bonn, Germany (2012).",
+    "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/germany/bonnAltesRathaus.jpg",
-    "location": ""
+    "yearTaken":"2012",
+    "country":"Germany",
+    "state":"Bonn",
+    "location": "The Old Town Hall"
   },
   {
     "description": "The university in Bonn, Germany (2012).",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/germany/bonnUniversity.jpg",
-    "location": ""
+    "yearTaken":"2012",
+    "country":"Germany",
+    "state":"Bonn",
+    "location": "University of Bonn"
   },
   {
-    "description": "Downtown Hof, Northern Bavaria, Germany (2012).  This is the home",
+    "description": "Downtown Hof,  This is the home",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/germany/hof2a.jpg",
+    "yearTaken":"2012",
+    "country":"Germany",
+    "state":"Northern Bavaria",
     "location": "of my mother\u0027s side of the family."
   },
   {
-    "description": "Festival in Wallgau, Bavaria, Germany (2010).",
+    "description": "Festival in Wallgau,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/germany/umzug.jpg",
-    "location": ""
+    "yearTaken":"2010",
+    "country":"Germany",
+    "state":"Bavaria",
+    "location": "Wallgau"
   },
   {
-    "description": "Children at the festival in Wallgau, Bavaria, Germany (2010).",
+    "description": "Children at the festival in Wallgau,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/germany/kinder.jpg",
-    "location": ""
+    "yearTaken":"2010",
+    "country":"Germany",
+    "state":"Bavaria",
+    "location": "Wallgau"
   },
   {
-    "description": "Bavarian Alps in Garmisch, Bavaria, Germany (2010).",
+    "description": "Bavarian Alps in Garmisch,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/germany/bayerischeAlpen.jpg",
-    "location": ""
+    "yearTaken":"2010",
+    "country":"Germany",
+    "state":"",
+    "location": "Garmisch"
   },
   {
-    "description": "View from Dartmouth, Devon, UK (2008).",
+    "description": "View from Dartmouth",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/dartmouth2.jpg",
-    "location": ""
+    "yearTaken":"2008",
+    "country":"United Kingdom",
+    "state":"Devon",
+    "location": "Dartmouth"
   },
   {
-    "description": "Rainbow over Dartmouth, Devon, UK (2008).",
+    "description": "Rainbow over Dartmouth",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/dartmouth4.jpg",
-    "location": ""
+    "yearTaken":"2008",
+    "country":"United Kingdom",
+    "state":"Devon",
+    "location": "Dartmouth"
   },
   {
-    "description": "Typical street in Dartmouth, Devon, UK (2008).",
+    "description": "Typical street in Dartmouth,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/dartmouth6.jpg",
-    "location": ""
+    "yearTaken":"2008",
+    "country":"United Kingdom",
+    "state":"Devon",
+    "location": "Dartmouth"
   },
   {
-    "description": "The site of the castle of the mythical King Arthur in Tintagel, Cornwall, UK (2008).",
+    "description": "The site of the castle of the mythical King Arthur in Tintagel,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/tintagel.jpg",
-    "location": ""
+    "yearTaken":"2008",
+    "country":"United Kingdom",
+    "state":"Cornwall",
+    "location": "Tintagel"
   },
   {
-    "description": "The Magic Fountain in Barcelona, Spain (2007).",
+    "description": "The Magic Fountain in Barcelona, ",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/barcelona/magicfountain.jpg",
-    "location": ""
+    "yearTaken":"2007",
+    "country":"Spain",
+    "state":"Barcelona",
+    "location": "Barcelona"
   },
   {
-    "description": "Roof of Gaudi\u0027s House of Bones, Barcelona, Spain (2007).",
+    "description": "Roof of Gaudi\u0027s House of Bones, Barcelona, ",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/barcelona/HouseBonesRoof.jpg",
-    "location": ""
+    "yearTaken":"2007",
+    "country":"Spain",
+    "state":"Barcelona",
+    "location": "Barcelona"
   },
   {
-    "description": "Covered bridge in Lincoln, NH (2007).",
+    "description": "Covered bridge in Lincoln,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/misc/NewHampshire1.jpg",
-    "location": ""
+    "yearTaken":"2007",
+    "country":"United States",
+    "state":"NH",
+    "location": "Lincoln"
   },
   {
-    "description": "Mts. Lincoln and Flume, Lincoln, NH (2007).",
+    "description": "Mts. Lincoln and Flume, Lincoln,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/misc/NewHampshire2.jpg",
-    "location": ""
+    "yearTaken":"2007",
+    "country":"United States",
+    "state":"NH",
+    "location": "Lincoln"
   },
   {
     "description": "Arundel Castle in West Sussex, UK, still inhabited by",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/arundel.jpg",
-    "location": "the Duke of Norfolk (2005)."
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"West Sussex",
+    "location": "the Duke of Norfolk"
   },
   {
-    "description": "A view of Kingston near Lewes, UK (2005).",
+    "description": "A view of Kingston near Lewes,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/kingstonHill.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"Lewes",
+    "location": "Kingston"
   },
   {
-    "description": "St. Pancras church (13th c.) in Kingston near Lewes, UK (2005).",
+    "description": "St. Pancras church (13th c.) in Kingston near Lewes, ",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/stPancras.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"Lewes",
+    "location": "St. Pancras church"
   },
   {
     "description": "A view of the South Downs at sunset.  The town of",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/southDowns.jpg",
-    "location": "Lewes, UK, is in the distance (2005)."
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"Lewes",
+    "location": "Lewes, UK, is in the distance"
   },
   {
-    "description": "Southover Grange Gardens, Lewes, UK (2005).",
+    "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/southover.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"Lewes",
+    "location": "Southover Grange Gardens"
   },
   {
-    "description": "Looking at the town from the top of Lewes Castle, Lewes, UK (2005).",
+    "description": "Looking at the town from the top of Lewes Castle,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/lewes2.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"Lewes",
+    "location": "Lewes Castle"
   },
   {
     "description": "Got sheep?",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/sheep.jpg",
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"",
     "location": ""
   },
   {
-    "description": "A view of Eastbourne, on the coast in East Sussex, UK (2005).",
+    "description": "A view of Eastbourne, on the coast in East Sussex,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/eastbourne.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"East Sussex",
+    "location": "Eastbourne"
   },
   {
-    "description": "The moated Bodiam Castle in East Sussex, UK (2005).",
+    "description": "The moated Bodiam Castle in East Sussex,",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/bodiam2.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"East Sussex",
+    "location": "The moated Bodiam Castle"
   },
   {
     "description": "Hever Castle in Kent, UK, childhood home of Anne Boleyn (2005).",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/hever.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"Kent",
+    "location": "childhood home of Anne Boleyn"
   },
   {
     "description": "Leeds Castle in Kent, UK, Henry VIII\u0027s favorite residence (2005).",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/england/leeds.jpg",
-    "location": ""
+    "yearTaken":"2005",
+    "country":"United Kingdom",
+    "state":"Kent",
+    "location": "Henry VIII\u0027s favorite residence"
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/stuckinCO.gif",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/powderski.gif",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/townOfBreck.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/breckBowls.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/meInBowl.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/steepTrees.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/gotSnow.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/jimSnowDay.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/topOfBreck.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/copper.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/resolutionBowl.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/jimResolution.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/stratton05.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/stratton01.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/jhsign.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   },
   {
     "description": "",
     "srcUrl": "http://cs.wheatoncollege.edu/mgousie/webimages/skiing/taosSign1.jpg",
+    "yearTaken":"",
+    "country":"",
+    "state":"",
     "location": ""
   }
 ]

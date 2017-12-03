@@ -4,8 +4,31 @@ body {
     min-width: 800px;
     min-height: 500px;
     width: 1400px;
-
+    background-image:url("../img_resource/wallpaper.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
     font-family: "Comfortaa", sans-serif;
+    color:white;
+}
+/*login*/
+.popup{
+    position: relative;
+    display: inline-block;
+    float:right;
+}
+#login-avatar{
+    width:40px;
+    border-radius: 50%;
+}
+#login-name{
+    display:inline;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+#logout{
+    font-weight:bold;
+    color:midnightblue;
+    cursor:pointer;
 }
 
 .navbar {
@@ -13,7 +36,7 @@ body {
 }
 
 .navbar a {
-    color: black;
+    color: white;
     font-family: "Comfortaa", sans-serif;
     text-decoration: none;
     padding: 20px 10px 10px 10px;
@@ -37,117 +60,25 @@ body {
     text-decoration: none;
     padding: 20px 10px 10px 10px;
 }
-
+input::-webkit-input-placeholder {
+    color:white;
+}
 input[type=search] {
     width: 700px;
     margin-top: 6px;
     margin-bottom: 12px;
-    border: 1px solid #aaa;
+    border: 3px solid white;
     box-sizing: border-box;
-    border-radius: 3px;
-    background: url("https://resources.zybooks.com/WebProgramming/searchiconv1.png") no-repeat 8px 14px;
+    border-radius: 5px;
+    background: url("../img_resource/search.png")no-repeat 8px 8px;
     padding: 15px 15px 15px 40px;
-
-    box-shadow: 0 3px 5px lightgray;
+    color:white;
 }
 
 input[type=search]:hover {
     cursor: text;
 }
-
-/*popup login*/
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #555;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4286f4;
-    font-family: "Comfortaa", sans-serif;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.imgcontainer {
+#copyright{
     text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-img.avatar {
-    width: 30%;
-    border-radius: 50%;
-}
-
-/* Popup container*/
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-/* The actual popup */
-.popup .popuptext {
-    visibility: hidden;
-    width: 300px;
-    background-color: #fff;
-    color: #555;
-    text-align: center;
-    border-radius: 6px;
-    padding: 15px 10px;
-    position: absolute;
-    z-index: 1;
-    top: 140%;
-    right: 0;
-    border: 5px silver solid;
-
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: -6%;
-    left: 90%;
-    margin-left: -10px;
-    border: 10px solid transparent;
-    border-bottom-color: silver;
-}
-
-#user-info {
-    display: none;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    bottom:0;
 }

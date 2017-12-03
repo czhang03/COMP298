@@ -9,7 +9,7 @@ nav {
 
 
 img.fanlogo {
-    width: 120px;
+    width: 100px;
     padding-right: 20px;
 }
 
@@ -43,15 +43,23 @@ img.fanlogo {
 
 .right-nav div {
     padding-right: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 #login-avatar{
     width:50px;
-    right:0;
+    border-radius: 50%;
 }
 
-#login-name {
+#login-name{
+    color:black;
+}
+#logout{
     font-size: larger;
+    color:rgb(80,184,245);
+    font-weight: bold;
+    cursor:pointer;
+    padding-left:30px;
+
 }
 /*photo page*/
 .photo-view {
@@ -60,7 +68,6 @@ img.fanlogo {
     align-items: flex-start;
     flex-wrap: wrap;
     overflow-y: auto;
-    white-space: nowrap;
 }
 
 .photo-view img {
