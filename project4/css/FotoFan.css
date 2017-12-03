@@ -63,6 +63,9 @@ img.fanlogo {
 }
 /*photo page*/
 .photo-view {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
     padding:30px;
     overflow-y: auto;
 }
@@ -78,9 +81,6 @@ img.fanlogo {
 }
 
 #all-photos {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
@@ -92,7 +92,7 @@ img.fanlogo {
     display: none;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 20px;
 }
 
 #search-photos img {
@@ -108,20 +108,35 @@ img.fanlogo {
 }
 /*search box*/
 #search-photos .search-item {
-    width: calc(30vw - 40px);
-    height:calc(25vw - 40px);
-    padding-left:10px;
+    width: calc(50% - 80px);
+    padding: 20px;
+    height: 250px;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 5px black;
-    float:left;
-
 }
+
+#search-photos .search-item .search-img-wrapper {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-photos .search-item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
 /*description in searchbox*/
 #search-photos .search-item .search-text {
     width:50%;
     margin: 20px;
-    text-decoration: none;
-    color: black;
-    float:left;
+    font-family: "consolas", sans-serif;
+    font-weight: bold;
+    font-size: 13pt;
+    color: #444444;
+    line-height: 35px;
 }

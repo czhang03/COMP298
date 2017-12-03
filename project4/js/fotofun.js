@@ -45,7 +45,7 @@ const imageToColorBoxHTML = (image) =>
 const imageToSearchItemHTML = (image) =>
   `<li class="search-item">
     <a href="${image.srcUrl}" class="photo" data-escaped-description="${imageToEscapedDescriptionHTML(image)}">
-     <img src="${image.srcUrl}" alt="${escapeHtml(image.description)}">
+     <div class="search-img-wrapper"><img src="${image.srcUrl}" alt="${escapeHtml(image.description)}"></div>
      <div class="search-text">
       ${nl2br(escapeHtml(image.description))}<br/>${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}
      </div>
