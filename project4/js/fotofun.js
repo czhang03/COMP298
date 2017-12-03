@@ -30,7 +30,7 @@ function nl2br (nlStr) {
 }
 
 const imageToDescriptionHTML = (image) =>
-  `<p>${escapeHtml(nl2br(image.description))}<a href="${image.src}">Open in a New Tab</a></p>
+  `<p>${escapeHtml(nl2br(image.description))}</p>
     <p>Taken in: ${escapeHtml(nl2br(image.location))}, ${escapeHtml(nl2br(image.state))} ${escapeHtml(nl2br(image.country))}, ${image.yearTaken}</p>`
 
 function imageToEscapedDescriptionHTML (image) {
@@ -156,11 +156,11 @@ function toggleSearch () {
   if (keyword === '') {
     // display all photos
     $('#search-photos').css({'display': 'none'})
-    $('#all-photos').css({'display': 'block'})
+    $('#all-photos').css({'display': 'flex'})
   }
   else {
     // enter search mode
-    $('#search-photos').css({'display': 'block'})
+    $('#search-photos').css({'display': 'flex'})
     $('#all-photos').css({'display': 'none'})
   }
 }

@@ -64,20 +64,24 @@ img.fanlogo {
 /*photo page*/
 .photo-view {
     padding:30px;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
     overflow-y: auto;
 }
 
 .photo-view img {
-    padding:10px;
+    margin: 10px 5px;
 
 }
 
 .photo-view img:hover {
     opacity: 0.8;
     transition: opacity 0.3s;
+}
+
+#all-photos {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 #all-photos img {
