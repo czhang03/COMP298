@@ -21,6 +21,10 @@ body {
     cursor:pointer;
 }
 
+#user-info {
+    display: none;
+}
+
 nav {
     padding: 20px;
     display: flex;
