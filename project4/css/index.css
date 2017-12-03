@@ -13,11 +13,12 @@ body {
 #login-name{
     display:inline;
     font-weight: bold;
-    color: cornflowerblue;
+    color:white;
+
 }
 #logout{
     font-weight:bold;
-    color:midnightblue;
+    color: cornflowerblue;
     cursor:pointer;
 }
 
