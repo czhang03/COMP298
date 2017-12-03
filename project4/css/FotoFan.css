@@ -63,16 +63,16 @@ img.fanlogo {
 }
 /*photo page*/
 .photo-view {
+    height: calc(100vh - 140px);
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding:30px;
+    padding: 30px;
     overflow-y: auto;
 }
 
 .photo-view img {
     margin: 10px 5px;
-
 }
 
 .photo-view img:hover {
