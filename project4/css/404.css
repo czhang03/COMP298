@@ -1,0 +1,18 @@
+/* 404 html */
+.kermitTyping{
+    text-align:center;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 10px;
+}
+.kermitTyping p, .kermitTyping a{
+    font-weight: bold;
+    font-size:50px;
+    text-decoration: none;
+    color:white;
+}
+.kermitTyping a>p:hover{
+    opacity:0.8;
+}
+/*end 404 html*/
+
+
