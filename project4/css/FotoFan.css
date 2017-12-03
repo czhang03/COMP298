@@ -38,6 +38,14 @@ img.fanlogo {
     padding-left:10px;
     font-weight: bold;
 }
+.material-icons {
+    color: black;
+    padding-left: 10px;
+}
+
+.material-icons:hover {
+    cursor: pointer;
+}
 
 .nav-left {
     display: flex;

@@ -32,7 +32,7 @@ nav a {
     color: white;
     font-family: "Comfortaa", sans-serif;
     text-decoration: none;
-    margin: 10px 20px;
+    margin: 10px 10px;
     transition: background-color 0.5s;
 }
 
@@ -56,6 +56,9 @@ nav .nav-right {
     margin-right: auto;
 }
 
+.material-icons{
+    color:white;
+}
 .login {
     text-decoration: none;
 }
