@@ -55,13 +55,12 @@ img.fanlogo {
 }
 /*photo page*/
 .photo-view {
+    padding:30px;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     overflow-y: auto;
-    padding-left:10px;
-    padding-right:10px;
-    height: calc(100vh - 80px);
+    white-space: nowrap;
 }
 
 .photo-view img {
@@ -75,7 +74,7 @@ img.fanlogo {
 }
 
 #all-photos img {
-    height: 300px;
+    height: 250px;
 }
 
 #search-photos {
