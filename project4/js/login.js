@@ -107,12 +107,12 @@ function handlePareLoginResponse (responseObj) {
     $('#login-name').text(responseObj.name)
     $('#login-avatar').attr('src', responseObj.avatar)
     // display the greeting
-    $("#greeting-placeholder").css("display", "none")
-    $("#greet-user").css("display", "block")
+    $('#greeting-placeholder').css('display', 'none')
+    $('#greet-user').css('display', 'block')
   }
   else {
-    $("#greeting-placeholder").css("display", "block")
-    $("#greet-user").css("display", "none")
+    $('#greeting-placeholder').css('display', 'block')
+    $('#greet-user').css('display', 'none')
   }
 }
 
@@ -120,25 +120,38 @@ function handlePareLoginResponse (responseObj) {
  * This function clears the greeting to user
  */
 function clearGreeting () {
-  $("#greeting-placeholder").css("display", "block")
-  $("#greet-user").css("display", "none")
+  $('#greeting-placeholder').css('display', 'block')
+  $('#greet-user').css('display', 'none')
 }
 
 /**
  * This function clears the greeting to user
  */
 function clearError () {
-  $("#login-error").text("")
+  $('#login-error').text('')
+}
+
+/**
+ * this function handles the functionality
+ * to press enter to login on the form
+ */
+function userEnterToLogin (keyupEvent) {
+  const keyCode = keyupEvent.which
+  if (keyCode === 32 || keyCode === 13 || keyCode === 188 || keyCode === 186) {
+    getAuthenticateToken()
+  }
 }
 
 $(() => {
   // pre display the greeting
-  const usernameInput = $("#username")
-  usernameInput.focusout(preLogin)
-  usernameInput.keyup(clearGreeting)
+  $('#username')
+    .focusout(preLogin)
+    .keyup(clearGreeting)
 
   // clear the error message when user do any input
-  $("#login-form").find("input").keyup(clearError)
+  $('#login-form')
+    .keyup(userEnterToLogin)
+    .find('input').keyup(clearError)
 
   // login
   $('#login-button').click(getAuthenticateToken)
