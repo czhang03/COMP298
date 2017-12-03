@@ -94,12 +94,14 @@ img.fanlogo {
 }
 /*search box*/
 #search-photos .search-item {
-    width: calc(40vw - 40px);
+    width: calc(30vw - 40px);
     height:calc(25vw - 40px);
+    padding-left:10px;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 5px black;
     float:left;
+
 }
 /*description in searchbox*/
 #search-photos .search-item .search-text {
@@ -107,5 +109,5 @@ img.fanlogo {
     margin: 20px;
     text-decoration: none;
     color: black;
-
+    float:left;
 }
