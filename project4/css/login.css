@@ -1,36 +1,40 @@
-body{
-    margin:0;
-    padding:0;
-    height:100%;
+body {
+    background: url("../img_resource/login.jpg") no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
 }
-form {
-    position: absolute;
-    left:0;
-    text-align: center;
-    width:40%;
-    height:100%;
 
+#login-div {
+    height: 100%;
+    width: 40%;
+    min-width: 400px;
+    background-color: white;
 }
-#login-avatar{
-    margin-left: -100px;
+
+#login-form {
+    width: 100%;
 }
+
 #welcome-user{
     font-weight: bold;
 }
-.slide{
-    position:absolute;
-    right:0;
-    width:60%;
-    height:100%;
-    background: url("../img_resource/login.jpg") repeat center center;
+
+.greeting {
+    display: flex;
+    justify-content: center;
+    height: 200px;
 }
+
+#login-placeholder {
+    align-self: flex-end;
+    height: 150px
+}
+
 #login-error{
+    height: 20px;
     color:rgb(80,184,245);
 }
-.imgcontainer{
-    /*border:1px darkred solid;*/
-    padding-left:100px;
-}
+
 #username, #password {
     width: 50%;
     padding: 12px 20px;
@@ -43,7 +47,7 @@ form {
 
 #username:focus, #password:focus {
     border-bottom: 3px solid #4286f4;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     transition: border-bottom 0.3s, margin-bottom 0.3s;
 }
 
@@ -60,8 +64,4 @@ form {
 
 button:hover {
     opacity: 0.8;
-}
-img.logo {
-    width:80%;
-    left:5px;
 }
