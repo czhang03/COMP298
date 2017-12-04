@@ -155,3 +155,9 @@ img.fanlogo {
     color: #444444;
     line-height: 35px;
 }
+
+/*the search highlight*/
+#search-photos .search-item .search-text mark {
+    color: rgb(13,153,235);
+    background-color: inherit;
+}
