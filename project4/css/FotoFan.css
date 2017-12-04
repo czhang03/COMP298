@@ -125,7 +125,7 @@ img.fanlogo {
 #search-photos .search-item {
     width: calc(50% - 80px);
     padding: 20px;
-    height: 250px;
+    height: 200px;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 5px black;
