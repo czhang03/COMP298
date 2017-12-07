@@ -89,8 +89,11 @@ const cookieKey = 'pisa!' // the key to all the json cookie data
 function _resetCookieExpire () {
   const result = Cookies.get(cookieKey)
 
-  // update the expire date
-  Cookies.set(key, result, {expires: expireDate})
+  if (result === undefined)
+    // update the expire date
+    Cookies.set(cookieKey, {}, {expires: expireDate})
+  else
+    Cookies.set(cookieKey, result, {expires: expireDate})
 }
 
 /**
@@ -100,12 +103,15 @@ function _resetCookieExpire () {
  */
 function _getJSONDataFromCookie () {
   // get the cookie data
-  const cookieObj = Cookies.getJSON(cookieKey)
+  const cookieObj = Cookies.get(cookieKey)
 
-  // update the expiration date
-  _resetCookieExpire()
-
-  return cookieObj
+  if (cookieObj === undefined)
+    return {}  // return an empty object
+  else {
+    // update the expiration date
+    _resetCookieExpire()
+    return JSON.parse(cookieObj)
+  }
 }
 
 /**
@@ -120,7 +126,7 @@ function _setValueInCookieObj (key, value) {
   // update the key value
   cookieObj[key] = value
   // save the object to cookie
-  Cookie.set(cookieObj)
+  Cookies.set(cookieKey, cookieObj)
 
   // update the expiration date
   _resetCookieExpire()
