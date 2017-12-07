@@ -225,7 +225,11 @@ function setAddress ({fullName, streetAddress, city, state, zipCode, phone}) {
 }
 
 function getAddress() {
-  return _getJSONDataFromCookie()[addressKey]
+  const cookieObj = _getJSONDataFromCookie()
+  if (cookieObj[addressKey] === undefined)
+    return null
+  else
+    return cookieObj[addressKey]
 }
 
 
