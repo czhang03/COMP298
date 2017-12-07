@@ -79,16 +79,10 @@ function _clearOrderData (orderData) {
   return new Map(clearedOrderDataArray)
 }
 
-function _getSubTotal(orderData) {
-  return Array.from(orderData)
-    .map(([pizzaID, orderCount]) => PizzaData[pizzaID].price * orderCount)
-    .reduce((x, y) => x + y)
-}
-
 /**
- *
- * @param orderData
- * @return {Array}
+ * return all the data related to the ordered pizza into a list of object
+ * @param {Map.<int, int>} orderData - the order data maps id to order count
+ * @return {Array} an array of object that cotain info about ordered pizza and count
  * @private
  */
 function _getObjList(orderData) {
@@ -214,13 +208,8 @@ function removeIdInCookie (id) {
   _setOrderDataToCookie(_removeId(orderData, id))
 }
 
-function getSubTotalFromCookie () {
-  const orderData = _getJSONDataFromCookie()
-  return _getSubTotal(orderData)
-}
-
 function getOrderObjectLists () {
-  const orderData = _getJSONDataFromCookie()
+  const orderData = _getOrderDataFromCookie()
   return _getObjList(orderData)
 }
 
@@ -233,7 +222,7 @@ function _checkExistingUser () {
   return !!cookieObj[existingUserKey]
 }
 
-function _setExistingUser () {
+function setExistingUser () {
   _setValueInCookieObj(existingUserKey, true)
 }
 
@@ -241,7 +230,7 @@ function checkAndSetExistingUser () {
   if (_checkExistingUser())
     return true
   else {
-    _setExistingUser()
+    setExistingUser()
     return false
   }
 }
