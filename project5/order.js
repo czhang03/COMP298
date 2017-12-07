@@ -25,6 +25,10 @@ function updateTotalNumItem () {
     $('#cart-badge').html()
 }
 
+function toastWhenAdd(id) {
+  Materialize.toast(`added one ${PizzaData[id].name} to cart`, 4000)
+}
+
 $(() => {
   setExistingUser()
 
@@ -34,5 +38,6 @@ $(() => {
     const id = Number($(event.currentTarget).data('id'))
     addOrderInCookie(id)
     updateTotalNumItem()
+    toastWhenAdd(id)
   })
 })
