@@ -1,0 +1,20 @@
+.slides .caption .sub-caption {
+    line-height: 150%
+}
+
+.special {
+    margin: 100px 0;
+}
+
+.special .special-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin: auto;
+}
+
+.special .special-img img {
+    max-height: 100%;
+    max-width: 100%;
+}
