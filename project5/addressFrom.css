@@ -1,0 +1,19 @@
+#address-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#address-form input {
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 2px;
+    padding: 3px 7px;
+}
+
+#address-form input:focus {
+    box-shadow: 0 0 3px 2px rgba(228,121,17,0.5);
+    border: 1px solid rgb(231, 118, 0);
+}
