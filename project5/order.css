@@ -1,3 +1,9 @@
+#pizza-order-area {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #pizza-order-area .order-button {
     text-transform: uppercase;
     width: 30%;
