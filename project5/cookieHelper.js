@@ -79,6 +79,22 @@ function _clearOrderData (orderData) {
   return new Map(clearedOrderDataArray)
 }
 
+function _getSubTotal(orderData) {
+  return Array.from(orderData)
+    .map(([pizzaID, orderCount]) => PizzaData[pizzaID].price * orderCount)
+    .reduce((x, y) => x + y)
+}
+
+/**
+ *
+ * @param orderData
+ * @return {Array}
+ * @private
+ */
+function _getObjList(orderData) {
+  return Array.from(orderData)
+    .map( ([pizzaID, orderCount]) => ({pizzaData: PizzaData[pizzaID], orderCount: orderCount}) )
+}
 // ================== global in dealing with cookies ====================
 const expireDate = 7 // all of the cookie data will expire after 7 days
 const cookieKey = 'pisa!' // the key to all the json cookie data
@@ -196,6 +212,16 @@ function setOrderInCookie (id, orderCount) {
 function removeIdInCookie (id) {
   const orderData = _getOrderDataFromCookie()
   _setOrderDataToCookie(_removeId(orderData, id))
+}
+
+function getSubTotalFromCookie () {
+  const orderData = _getJSONDataFromCookie()
+  return _getSubTotal(orderData)
+}
+
+function getOrderObjectLists () {
+  const orderData = _getJSONDataFromCookie()
+  return _getObjList(orderData)
 }
 
 // ================= dealing with existing user =====================
