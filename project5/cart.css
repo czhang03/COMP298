@@ -1,3 +1,26 @@
+/*css for the order list*/
+#order-list .order-div {
+    display: flex;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#order-list .order-div .order-image {
+    width: 20%;
+}
+
+#order-list .order-div .order-name {
+    width: 60%;
+}
+
+#order-list .order-div .order-action {
+    width: 20%;
+}
+
+
 /*info rows*/
 .info-row {
     margin-top: 20px;
@@ -22,25 +45,4 @@
 #payment-total-row {
     font-weight: bolder;
     border-top: 2px solid black;
-}
-
-#order-list .order-div {
-    display: flex;
-    border-radius: 20px;
-    max-width: 1000px;
-    margin: 20px auto;
-    border: 1px solid black;
-    padding: 20px;
-}
-
-#order-list .order-div .order-image {
-    width: 20%;
-}
-
-#order-list .order-div .order-name {
-    width: 60%;
-}
-
-#order-list .order-div .order-action {
-    width: 20%;
 }
