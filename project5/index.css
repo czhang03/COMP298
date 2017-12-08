@@ -2,6 +2,20 @@
     line-height: 150%
 }
 
+/*Nav bar*/
+
+nav{
+    color:red;
+}
+.navbar-fixed{
+    box-shadow: none;
+
+}
+.brand-logo {
+    font-family: lobster, cursive;
+    margin-left: 2%;
+}
+
 .special {
     margin: 100px 0;
 }
@@ -18,3 +32,4 @@
     max-height: 100%;
     max-width: 100%;
 }
+
