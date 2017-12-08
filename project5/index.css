@@ -5,7 +5,7 @@
 /*Nav bar*/
 
 nav{
-    color:red;
+    background-color: #e12626;
 }
 .navbar-fixed{
     box-shadow: none;
@@ -15,6 +15,13 @@ nav{
     font-family: lobster, cursive;
     margin-left: 2%;
 }
+:focus {
+    outline: none;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 0;
+}
+/*end Nav*/
 
 .special {
     margin: 100px 0;
