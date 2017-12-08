@@ -9,17 +9,16 @@ nav{
 }
 .navbar-fixed{
     box-shadow: none;
-
 }
 .brand-logo {
     font-family: lobster, cursive;
     margin-left: 2%;
 }
-:focus {
-    outline: none;
-    outline-color: -webkit-focus-ring-color;
-    outline-style: auto;
-    outline-width: 0;
+nav ul a{
+    padding:30% 30% 0 0;
+}
+nav ul a:hover{
+    background-color:transparent;
 }
 /*end Nav*/
 
