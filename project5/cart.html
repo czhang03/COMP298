@@ -25,63 +25,69 @@
   </nav>
 </div>
 
-<div class="row">
-  <div class="col xl4 l4 m12 s12 info-div">
-    <h2>Delivery Time</h2>
-    <form>
-      <p>
-        <input type="radio" name="time" value="now" id="time-now">
-        <label for="time-now">Now</label>
-      </p>
-      <div class="sub-time" id="sub-time-now">Waiting time about 10 years. After I learn how to make pizza.</div>
-      <p>
-        <input type="radio" name="time" value="later" id="time-later">
-        <label for="time-later">Later</label>
-      </p>
-      <div class="sub-time" id="sub-time-later">
-        Please pick a time and date. <b>Guaranteed</b> non-delivery.
-        <div>
-          <label for="deliver-date">Pizza Date!</label><input type="text" class="datepicker" id="deliver-date">
-          <label for="deliver-time">Pizza Time!</label><input type="text" class="timepicker" id="deliver-time">
+<div class="row info-row">
+  <div class="col xl4 l4 m12 s12 info-div-wrapper">
+    <div class="info-div z-depth-2">
+      <h2>Time</h2>
+      <form>
+        <p>
+          <input type="radio" name="time" value="now" id="time-now" class="delivery-time-radio" checked>
+          <label for="time-now">Now</label>
+        </p>
+        <div class="sub-time" id="sub-time-now">Waiting time about 10 years. After I learn how to make pizza.</div>
+        <p>
+          <input type="radio" name="time" value="later" id="time-later" class="delivery-time-radio" >
+          <label for="time-later">Later</label>
+        </p>
+        <div class="sub-time" id="sub-time-later">
+          Please pick a time and date. <b>Guaranteed</b> non-delivery.
+          <div>
+            <label for="deliver-date">Pizza Date!</label><input type="text" class="datepicker" id="deliver-date">
+            <label for="deliver-time">Pizza Time!</label><input type="text" class="timepicker" id="deliver-time">
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 
-  <div class="col xl4 l4 m12 s12">
-    <h2>Note</h2>
-    <form action="">
+  <div class="col xl4 l4 m12 s12 info-div-wrapper">
+    <div class="info-div z-depth-2">
+      <h2>Note</h2>
+      <form action="">
 
-      <div class="input-field">
-        <i class="material-icons prefix">phone</i>
-        <label for="icon_telephone">Telephone</label>
-        <input id="icon_telephone" type="tel" class="validate">
-      </div>
+        <div class="input-field">
+          <i class="material-icons prefix">phone</i>
+          <label for="icon_telephone">Telephone</label>
+          <input id="icon_telephone" type="tel" class="validate">
+        </div>
 
-      <div class="input-field">
-        <textarea id="note" class="materialize-textarea" data-length="240"></textarea>
-        <label for="note">Note</label>
-      </div>
+        <div class="input-field">
+          <textarea id="note" class="materialize-textarea" data-length="240"></textarea>
+          <label for="note">Note</label>
+        </div>
 
-    </form>
+      </form>
+    </div>
   </div>
 
-  <div class="col xl4 l4 m12 s12">
-    <h2>Payment</h2>
-    <table class="highlight">
-      <tr id="payment-subtotal-row">
-        <td>Subtotal</td>
-        <td id="payment-subtotal-value">$13.21</td>
-      </tr>
-      <tr id="payment-tax-row">
-        <td>Tax</td>
-        <td id="payment-tax-value">$0.32</td>
-      </tr>
-      <tr id="payment-total-row">
-        <td>Total</td>
-        <td id="payment-total-value">$0.12</td>
-      </tr>
-    </table>
+  <div class="col xl4 l4 m12 s12 info-div-wrapper">
+    <div class="info-div z-depth-2">
+      <h2>Payment</h2>
+      <table class="highlight" id="payment-table">
+        <tr id="payment-subtotal-row">
+          <td>Subtotal</td>
+          <td id="payment-subtotal-value">$13.21</td>
+        </tr>
+        <tr id="payment-tax-row">
+          <td>Tax</td>
+          <td id="payment-tax-value">$0.32</td>
+        </tr>
+        <tr id="payment-total-row">
+          <td>Total</td>
+          <td id="payment-total-value">$0.12</td>
+        </tr>
+      </table>
+    </div>
   </div>
 
 </div>

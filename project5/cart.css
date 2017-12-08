@@ -1,0 +1,24 @@
+.info-row {
+    margin-top: 20px;
+    max-width: 1300px;
+}
+
+.row > .info-div-wrapper {
+    padding: 20px;
+}
+
+.row .info-div {
+    padding: 0 40px;
+    border: 2px solid darkgray;
+    border-radius: 20px;
+    height: 450px;
+}
+
+#payment-table {
+    max-width: 250px;
+}
+
+#payment-total-row {
+    font-weight: bolder;
+    border-top: 2px solid black;
+}

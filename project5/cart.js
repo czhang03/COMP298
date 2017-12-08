@@ -1,4 +1,17 @@
+function updateSubTime() {
+  if ($("#time-later").prop("checked")) {
+    $(".sub-time").hide()
+    $("#sub-time-later").show()
+  }
+  else if ($("#time-now").prop("checked")) {
+    $(".sub-time").hide()
+    $("#sub-time-now").show()
+  }
+}
+
 $(() => {
+  updateSubTime()
+  $(".delivery-time-radio").change(updateSubTime)
 
   // init date time picker
   $(".timepicker").pickatime({
