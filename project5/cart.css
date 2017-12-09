@@ -33,6 +33,11 @@ nav ul a:hover{
     margin-left: auto;
 }
 
+#order-list #no-pizza-image {
+    width: 100vw;
+    max-width: 500px;
+}
+
 #order-list .order-div {
     display: flex;
     border-radius: 20px;
