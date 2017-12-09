@@ -25,14 +25,18 @@ nav ul a:hover{
     float:right;
     width:40%;
 }
+#place-order-button img:hover {
+    opacity:0.8;
+}
 /*end Nav*/
 #order-list {
     width: max-content;
     width: -moz-max-content;
     margin-right: auto;
     margin-left: auto;
+    font-family: "Audiowide",sans-serif;
 }
-
+}
 #order-list #no-pizza-image {
     width: 100vw;
     max-width: 500px;
@@ -69,6 +73,7 @@ nav ul a:hover{
 }
 
 .row .info-div {
+    font-family: "Audiowide",sans-serif;
     padding: 0 40px;
     border: 2px solid darkgray;
     border-radius: 20px;
