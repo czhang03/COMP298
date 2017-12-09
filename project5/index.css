@@ -17,6 +17,7 @@ nav{
 }
 nav ul a{
     margin-right: 15px;
+    font-weight: bolder;
 }
 nav ul a:hover{
     background-color:transparent;

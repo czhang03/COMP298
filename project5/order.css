@@ -12,7 +12,13 @@ nav{
 }
 nav ul a{
     margin-right: 15px;
+    font-weight: bolder;
 }
+
+#cart-badge {
+    margin: 0 5px;
+}
+
 nav ul a:hover{
     background-color:transparent;
 }

@@ -12,7 +12,7 @@ function getTotalNumItem () {
 function updateTotalNumItem () {
   const totalNumItem = getTotalNumItem()
   if (totalNumItem !== 0)
-    $('#cart-badge').html(`<span class="new badge red" id="cart-badge" data-badge-caption="">${totalNumItem}</span>`)
+    $('#cart-badge').html(`<span class="new badge amber darken-3" id="cart-badge" data-badge-caption="">${totalNumItem}</span>`)
   else
     $('#cart-badge').html()
 }
