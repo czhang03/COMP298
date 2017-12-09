@@ -1,11 +1,3 @@
-function _getSubTotal () {
-  const orderObjList = getOrderObjectLists()
-
-  return orderObjList
-    .map((pizzaType) => pizzaType.pizzaData.price * pizzaType.orderCount)
-    .reduce((x, y) => x + y)
-}
-
 function getTotalNumItem () {
   const orderObjList = getOrderObjectLists()
 

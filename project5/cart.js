@@ -53,6 +53,7 @@ function updateOrderListHtml() {
     const pizzaId = Number($(event.currentTarget).data("id"))
     const orderCount = Number($(event.currentTarget).val())
     setOrderCountInCookie(pizzaId, orderCount)
+    updatePaymentHTML()
     Materialize.toast("your order has been updated", orderActionToastDuration)
   })
 
@@ -61,8 +62,29 @@ function updateOrderListHtml() {
     const pizzaId = Number($(event.currentTarget).data("id"))
     removeIdInCookie(pizzaId)
     updateOrderListHtml()
+    updatePaymentHTML()
     Materialize.toast("your order has been removed", orderActionToastDuration)
   })
+}
+
+function _getPaymentSubTotal () {
+  const orderObjList = getOrderObjectLists()
+
+  return orderObjList
+    .map((pizzaType) => pizzaType.pizzaData.price * pizzaType.orderCount)
+    .reduce((x, y) => x + y)
+}
+
+
+function updatePaymentHTML () {
+  const taxRate = 0.07
+  const paymentSubTotal = _getPaymentSubTotal()
+  const tax = paymentSubTotal * taxRate
+  const totalPayment = tax + paymentSubTotal
+  $("#payment-subtotal-value").text(`$ ${paymentSubTotal.toFixed(2)}`)
+  $("#payment-tax-value").text(`$ ${tax.toFixed(2)}`)
+  $("#payment-total-value").text(`$ ${totalPayment.toFixed(2)}`)
+
 }
 
 
@@ -94,6 +116,9 @@ $(() => {
     close: 'Ok',
     closeOnSelect: false // Close upon selecting a date,
   })
+
+  // set the payment html
+  updatePaymentHTML()
 
   // ================== order section ===================
   // load the order list
