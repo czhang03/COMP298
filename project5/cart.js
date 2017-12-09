@@ -111,4 +111,9 @@ $(() => {
   $("#place-order-button").click(() => {
     $("#address-modal").modal("open")
   })
+
+  $("#address-okay-button").click(() =>
+    Materialize.toast("Your order have been placed. " +
+      "We will deliver it when we want to, because we are just that chill.", 4000)
+  )
 })
