@@ -2,7 +2,7 @@
 /*Nav bar*/
 
 nav{
-    background-color: #e12626;
+    background-color: #b71c1c;
 }
 .navbar-fixed{
     box-shadow: none;
@@ -73,8 +73,4 @@ nav ul a:hover{
 #payment-total-row {
     font-weight: bolder;
     border-top: 2px solid black;
-}
-#order-list{
-    display: flex;
-    justify-content: center;
 }
