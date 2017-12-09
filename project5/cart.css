@@ -1,4 +1,27 @@
 /*css for the order list*/
+/*Nav bar*/
+
+nav{
+    background-color: #e12626;
+}
+.navbar-fixed{
+    box-shadow: none;
+}
+.brand-logo {
+    font-family: lobster, cursive;
+    margin-left: 2%;
+}
+nav ul a{
+    padding:15% 0 15% 0;
+    margin-right: 10px;
+}
+nav ul a:hover{
+    background-color:transparent;
+}
+.place-order-button img{
+    width:5%;
+}
+/*end Nav*/
 #order-list .order-div {
     display: flex;
     border-radius: 20px;
