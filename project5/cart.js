@@ -38,7 +38,7 @@ function updateSubTime () {
   }
 }
 
-function updateOrderListHtml() {
+function updateOrderListHtml () {
   // load all the orders
   $('#order-list').html(getOrderListHTML())
 
@@ -49,44 +49,45 @@ function updateOrderListHtml() {
   const orderActionToastDuration = 800
 
   // when order update order count
-  $(".order-action .order-count-number").change((event) => {
-    const pizzaId = Number($(event.currentTarget).data("id"))
+  $('.order-action .order-count-number').change((event) => {
+    const pizzaId = Number($(event.currentTarget).data('id'))
     const orderCount = Number($(event.currentTarget).val())
     setOrderCountInCookie(pizzaId, orderCount)
     updatePaymentHTML()
-    Materialize.toast("your order has been updated", orderActionToastDuration)
+    Materialize.toast('your order has been updated', orderActionToastDuration)
   })
 
   // when order removed
-  $(".order-action .order-delete-button").click((event) => {
-    const pizzaId = Number($(event.currentTarget).data("id"))
+  $('.order-action .order-delete-button').click((event) => {
+    const pizzaId = Number($(event.currentTarget).data('id'))
     removeIdInCookie(pizzaId)
     updateOrderListHtml()
     updatePaymentHTML()
-    Materialize.toast("your order has been removed", orderActionToastDuration)
+    Materialize.toast('your order has been removed', orderActionToastDuration)
   })
 }
 
 function _getPaymentSubTotal () {
   const orderObjList = getOrderObjectLists()
 
-  return orderObjList
-    .map((pizzaType) => pizzaType.pizzaData.price * pizzaType.orderCount)
-    .reduce((x, y) => x + y)
+  if (orderObjList.length === 0)
+    return 0
+  else
+    return orderObjList
+      .map((pizzaType) => pizzaType.pizzaData.price * pizzaType.orderCount)
+      .reduce((x, y) => x + y)
 }
-
 
 function updatePaymentHTML () {
   const taxRate = 0.07
   const paymentSubTotal = _getPaymentSubTotal()
   const tax = paymentSubTotal * taxRate
   const totalPayment = tax + paymentSubTotal
-  $("#payment-subtotal-value").text(`$ ${paymentSubTotal.toFixed(2)}`)
-  $("#payment-tax-value").text(`$ ${tax.toFixed(2)}`)
-  $("#payment-total-value").text(`$ ${totalPayment.toFixed(2)}`)
+  $('#payment-subtotal-value').text(`$ ${paymentSubTotal.toFixed(2)}`)
+  $('#payment-tax-value').text(`$ ${tax.toFixed(2)}`)
+  $('#payment-total-value').text(`$ ${totalPayment.toFixed(2)}`)
 
 }
-
 
 $(() => {
   // set the user as existing user
@@ -133,14 +134,14 @@ $(() => {
       startingTop: '4%', // Starting top style attribute
       endingTop: '10%', // Ending top style attribute
     }
-  );
+  )
 
-  $("#place-order-button").click(() => {
-    $("#address-modal").modal("open")
+  $('#place-order-button').click(() => {
+    $('#address-modal').modal('open')
   })
 
-  $("#address-okay-button").click(() =>
-    Materialize.toast("Your order have been placed. " +
-      "We will deliver it when we want to, because we are just that chill.", 4000)
+  $('#address-okay-button').click(() =>
+    Materialize.toast('Your order have been placed. ' +
+      'We will deliver it when we want to, because we are just that chill.', 4000)
   )
 })
