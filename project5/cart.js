@@ -89,6 +89,33 @@ function updatePaymentHTML () {
 
 }
 
+function updateAddressModal () {
+  const addressObj = getAddressFromCookies()
+  if (addressObj === null) {
+    $('#address-modal-header').text('Input Your Address')
+  }
+  else {
+    $('#address-modal-header').text('Confirm Your Address')
+    $('#full-name').val(addressObj.fullName)
+    $('#street-address').val(addressObj.streetAddress)
+    $('#city').val(addressObj.streetAddress)
+    $('#state').val(addressObj.state)
+    $('#zip-code').val(addressObj.zipCode)
+    $('#phone').val(addressObj.phone)
+  }
+}
+
+function saveAddress () {
+  setAddressInCookies({
+    fullName: $('#full-name').val(),
+    streetAddress: $('#street-address').val(),
+    city: $('#city').val(),
+    state: $('#state').val(),
+    zipCode: $('#zip-code').val(),
+    phone: $('#phone').val()
+  })
+}
+
 $(() => {
   // set the user as existing user
   setExistingUser()
@@ -126,6 +153,10 @@ $(() => {
   updateOrderListHtml()
 
   // ================= place order section ================
+  // load the content of address modal from cookie
+  updateAddressModal()
+
+  // init the modal
   $('.modal').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
@@ -135,13 +166,16 @@ $(() => {
       endingTop: '10%', // Ending top style attribute
     }
   )
-
+  // open the modal
   $('#place-order-button').click(() => {
     $('#address-modal').modal('open')
+    updateAddressModal()
   })
 
-  $('#address-okay-button').click(() =>
+  // when an order is placed
+  $('#address-okay-button').click(() => {
     Materialize.toast('Your order have been placed. ' +
       'We will deliver it when we want to, because we are just that chill.', 4000)
-  )
+    saveAddress()
+  })
 })
