@@ -23,6 +23,11 @@ nav ul a:hover{
 }
 /*end Nav*/
 
+/*slider*/
+#slider-phone-img {
+    width: 100vw;
+}
+
 .special {
     margin: 100px 0;
 }
