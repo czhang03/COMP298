@@ -10,7 +10,7 @@ function getSingleOrderHTML (orderObj) {
     <form class="order-action col xl3 l3 m12 s12">
       <label for="order-number-${orderObj.pizzaData.id}">Order Number</label>
       <input type="number" id="order-number-${orderObj.pizzaData.id}" class="order-count-number" data-id="${orderObj.pizzaData.id}" value="${orderObj.orderCount}">
-      <input type="button" class="waves-effect waves-light btn order-delete-button amber" data-id="${orderObj.pizzaData.id}" value="Delete">
+      <input type="button" class="waves-effect waves-light btn order-delete-button amber darken-2" data-id="${orderObj.pizzaData.id}" value="Delete">
      </form>
 </div>
   `
