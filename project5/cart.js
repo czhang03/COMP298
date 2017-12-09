@@ -38,6 +38,11 @@ function updateSubTime () {
   }
 }
 
+function applyChangesWhenOrderChange() {
+  updateOrderListHtml()
+  updatePaymentHTML()
+}
+
 function updateOrderListHtml () {
   // load all the orders
   $('#order-list').html(getOrderListHTML())
@@ -53,7 +58,7 @@ function updateOrderListHtml () {
     const pizzaId = Number($(event.currentTarget).data('id'))
     const orderCount = Number($(event.currentTarget).val())
     setOrderCountInCookie(pizzaId, orderCount)
-    updatePaymentHTML()
+    applyChangesWhenOrderChange()
     Materialize.toast('your order has been updated', orderActionToastDuration)
   })
 
@@ -61,8 +66,7 @@ function updateOrderListHtml () {
   $('.order-action .order-delete-button').click((event) => {
     const pizzaId = Number($(event.currentTarget).data('id'))
     removeIdInCookie(pizzaId)
-    updateOrderListHtml()
-    updatePaymentHTML()
+    applyChangesWhenOrderChange()
     Materialize.toast('your order has been removed', orderActionToastDuration)
   })
 }
