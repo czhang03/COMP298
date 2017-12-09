@@ -178,8 +178,10 @@ $(() => {
 
   // when an order is placed
   $('#address-okay-button').click(() => {
+    saveAddress()
+    removeAllOrders()
+    applyChangesWhenOrderChange()
     Materialize.toast('Your order have been placed. ' +
       'We will deliver it when we want to, because we are just that chill.', 4000)
-    saveAddress()
   })
 })

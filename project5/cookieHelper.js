@@ -213,6 +213,10 @@ function getOrderObjectLists () {
   return _getObjList(orderData)
 }
 
+function removeAllOrders() {
+  _setOrderDataToCookie(new Map())
+}
+
 // ================= dealing with existing user =====================
 const existingUserKey = 'existingUser'
 
