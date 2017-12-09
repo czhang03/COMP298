@@ -18,8 +18,12 @@ nav ul a{
 nav ul a:hover{
     background-color:transparent;
 }
-.place-order-button img{
-    width:5%;
+#place-order-button{
+    padding:0;
+}
+#place-order-button img{
+    float:right;
+    width:40%;
 }
 /*end Nav*/
 #order-list .order-div {
@@ -69,4 +73,8 @@ nav ul a:hover{
 #payment-total-row {
     font-weight: bolder;
     border-top: 2px solid black;
+}
+#order-list{
+    display: flex;
+    justify-content: center;
 }
