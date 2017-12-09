@@ -1,16 +1,16 @@
 function getEmptyOrderHTML () {
-  return `<img  src="img/empty-cart.gif">`
+  return `<img  src="img/empty-cart.gif" alt="no pizzas ordered" id="no-pizza-image">`
 }
 
 function getSingleOrderHTML (orderObj) {
   return `
-<div class="order-div">
-    <img src="${orderObj.pizzaData.image}" alt="${orderObj.pizzaData.name}" class="order-image">
-    <div class="order-name">${orderObj.pizzaData.name}</div>
-    <form class="order-action">
+<div class="order-div row">
+    <img src="${orderObj.pizzaData.image}" alt="${orderObj.pizzaData.name}" class="col xl3 l3 m4 s12 order-image">
+    <div class="order-name col xl6 l6 m8 s12">${orderObj.pizzaData.name}</div>
+    <form class="order-action col xl3 l3 m12 s12">
       <label for="order-number-${orderObj.pizzaData.id}">Order Number</label>
       <input type="number" id="order-number-${orderObj.pizzaData.id}" class="order-count-number" data-id="${orderObj.pizzaData.id}" value="${orderObj.orderCount}">
-      <input type="button" class="waves-effect waves-light btn order-delete-button" data-id="${orderObj.pizzaData.id}" value="Delete">
+      <input type="button" class="waves-effect waves-light btn order-delete-button amber" data-id="${orderObj.pizzaData.id}" value="Delete">
      </form>
 </div>
   `
@@ -67,6 +67,8 @@ function updateOrderListHtml() {
 
 
 $(() => {
+  // set the user as existing user
+  setExistingUser()
 
   // ===================== info section =====================
   // update the sub-time element

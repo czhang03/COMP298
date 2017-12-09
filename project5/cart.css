@@ -39,7 +39,7 @@ nav ul a:hover{
 }
 
 #order-list .order-div {
-    display: flex;
+    width: calc(100vw - 40px);
     border-radius: 20px;
     max-width: 1000px;
     margin: 20px 0;
@@ -48,16 +48,13 @@ nav ul a:hover{
 }
 
 #order-list .order-div .order-image {
-    width: 20%;
     height: 100%;
 }
 
 #order-list .order-div .order-name {
-    width: 60%;
 }
 
 #order-list .order-div .order-action {
-    width: 20%;
 }
 
 
