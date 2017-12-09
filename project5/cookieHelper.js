@@ -194,7 +194,7 @@ function addOrderInCookie (id) {
  * @param {number} id - the id to set the order count
  * @param {number} orderCount - the order count to set to
  */
-function setOrderInCookie (id, orderCount) {
+function setOrderCountInCookie (id, orderCount) {
   const orderData = _getOrderDataFromCookie()
   _setOrderDataToCookie(_setOrderCount(orderData, id, orderCount))
 }
