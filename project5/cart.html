@@ -28,6 +28,45 @@
 </div>
 
 
+<div id="address-modal" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4 id="address-modal-header"></h4>
+
+    <form id="address-form">
+      <div class="row">
+        <div class="input-field col xl12 l12 m12 s12">
+          <label for="full-name">Full Name</label><input type="text" id="full-name" autocomplete="name">
+        </div>
+        <div class="input-field col xl12 l12 m12 s12">
+          <label for="street-address">Street
+            Address </label><input type="text" id="street-address" autocomplete="street-address">
+        </div>
+
+        <div class="input-field col xl4 l4 m6 s12">
+          <label for="city">City</label><input type="text" id="city" autocomplete="city">
+        </div>
+        <div class="input-field col xl4 l4 m6 s12">
+          <label for="state">State / Province /
+            Region</label><input type="text" id="state" autocomplete="address-level1">
+        </div>
+        <div class="input-field col xl4 l4 m12 s12">
+          <label for="zip-code">Zip Code</label><input type="text" id="zip-code" autocomplete='postal-code'>
+        </div>
+
+        <div class="input-field col xl12 l12 m12 s12">
+          <label for="phone">Phone</label><input type="text" id="phone" autocomplete="tel">
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
+  </div>
+</div>
+
+
 <div id="order-list">
 
 </div>
@@ -44,7 +83,7 @@
         </p>
         <div class="sub-time" id="sub-time-now">Waiting time about 10 years. After I learn how to make pizza.</div>
         <p>
-          <input type="radio" name="time" value="later" id="time-later" class="delivery-time-radio" >
+          <input type="radio" name="time" value="later" id="time-later" class="delivery-time-radio">
           <label for="time-later">Later</label>
         </p>
         <div class="sub-time" id="sub-time-later">
