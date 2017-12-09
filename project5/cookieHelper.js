@@ -238,14 +238,14 @@ function checkAndSetExistingUser () {
 // ===================== dealing with address =======================
 const addressKey = 'address'
 
-function setAddress ({fullName, streetAddress, city, state, zipCode, phone}) {
+function setAddressInCookies ({fullName, streetAddress, city, state, zipCode, phone}) {
   _setValueInCookieObj(
     addressKey,
     {fullName: fullName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, phone: phone}
   )
 }
 
-function getAddress() {
+function getAddressFromCookies() {
   const cookieObj = _getJSONDataFromCookie()
   if (cookieObj[addressKey] === undefined)
     return null

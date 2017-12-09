@@ -38,6 +38,11 @@ function updateSubTime () {
   }
 }
 
+function applyChangesWhenOrderChange() {
+  updateOrderListHtml()
+  updatePaymentHTML()
+}
+
 function updateOrderListHtml () {
   // load all the orders
   $('#order-list').html(getOrderListHTML())
@@ -53,7 +58,7 @@ function updateOrderListHtml () {
     const pizzaId = Number($(event.currentTarget).data('id'))
     const orderCount = Number($(event.currentTarget).val())
     setOrderCountInCookie(pizzaId, orderCount)
-    updatePaymentHTML()
+    applyChangesWhenOrderChange()
     Materialize.toast('your order has been updated', orderActionToastDuration)
   })
 
@@ -61,8 +66,7 @@ function updateOrderListHtml () {
   $('.order-action .order-delete-button').click((event) => {
     const pizzaId = Number($(event.currentTarget).data('id'))
     removeIdInCookie(pizzaId)
-    updateOrderListHtml()
-    updatePaymentHTML()
+    applyChangesWhenOrderChange()
     Materialize.toast('your order has been removed', orderActionToastDuration)
   })
 }
@@ -87,6 +91,33 @@ function updatePaymentHTML () {
   $('#payment-tax-value').text(`$ ${tax.toFixed(2)}`)
   $('#payment-total-value').text(`$ ${totalPayment.toFixed(2)}`)
 
+}
+
+function updateAddressModal () {
+  const addressObj = getAddressFromCookies()
+  if (addressObj === null) {
+    $('#address-modal-header').text('Input Your Address')
+  }
+  else {
+    $('#address-modal-header').text('Confirm Your Address')
+    $('#full-name').val(addressObj.fullName)
+    $('#street-address').val(addressObj.streetAddress)
+    $('#city').val(addressObj.streetAddress)
+    $('#state').val(addressObj.state)
+    $('#zip-code').val(addressObj.zipCode)
+    $('#phone').val(addressObj.phone)
+  }
+}
+
+function saveAddress () {
+  setAddressInCookies({
+    fullName: $('#full-name').val(),
+    streetAddress: $('#street-address').val(),
+    city: $('#city').val(),
+    state: $('#state').val(),
+    zipCode: $('#zip-code').val(),
+    phone: $('#phone').val()
+  })
 }
 
 $(() => {
@@ -126,6 +157,10 @@ $(() => {
   updateOrderListHtml()
 
   // ================= place order section ================
+  // load the content of address modal from cookie
+  updateAddressModal()
+
+  // init the modal
   $('.modal').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
@@ -135,13 +170,16 @@ $(() => {
       endingTop: '10%', // Ending top style attribute
     }
   )
-
+  // open the modal
   $('#place-order-button').click(() => {
     $('#address-modal').modal('open')
+    updateAddressModal()
   })
 
-  $('#address-okay-button').click(() =>
+  // when an order is placed
+  $('#address-okay-button').click(() => {
     Materialize.toast('Your order have been placed. ' +
       'We will deliver it when we want to, because we are just that chill.', 4000)
-  )
+    saveAddress()
+  })
 })
