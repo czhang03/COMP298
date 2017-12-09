@@ -26,11 +26,18 @@ nav ul a:hover{
     width:40%;
 }
 /*end Nav*/
+#order-list {
+    width: max-content;
+    width: -moz-max-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #order-list .order-div {
     display: flex;
     border-radius: 20px;
     max-width: 1000px;
-    margin: 20px auto;
+    margin: 20px 0;
     border: 1px solid black;
     padding: 20px;
 }
@@ -73,8 +80,4 @@ nav ul a:hover{
 #payment-total-row {
     font-weight: bolder;
     border-top: 2px solid black;
-}
-#order-list{
-    margin-left:auto;
-    margin-right: auto;
 }
