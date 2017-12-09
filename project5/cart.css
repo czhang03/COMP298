@@ -35,7 +35,7 @@ nav ul a:hover{
     margin-right: auto;
     margin-left: auto;
     font-family: "Audiowide",sans-serif;
-}
+    font-size: 200%;
 }
 #order-list #no-pizza-image {
     width: 100vw;
@@ -73,6 +73,7 @@ nav ul a:hover{
 }
 
 .row .info-div {
+    font-size:80%;
     font-family: "Audiowide",sans-serif;
     padding: 0 40px;
     border: 2px solid darkgray;

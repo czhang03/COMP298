@@ -1,7 +1,11 @@
-.slides .caption .sub-caption {
-    line-height: 150%
-}
 
+.slides, .caption, .sub-caption, h3 {
+    line-height: 100%;
+    font-family: "Audiowide",sans-serif;
+}
+h3{
+
+}
 /*Nav bar*/
 
 nav{
