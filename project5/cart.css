@@ -12,7 +12,6 @@ nav{
     margin-left: 2%;
 }
 nav ul a{
-    margin-right: 15px;
     font-weight: bolder;
 }
 nav ul a:hover{
@@ -80,7 +79,7 @@ nav ul a:hover{
 }
 
 #payment-table {
-    max-width: 250px;
+    max-width: 300px;
 }
 
 #payment-total-row {
