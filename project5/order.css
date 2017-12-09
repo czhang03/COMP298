@@ -1,13 +1,23 @@
+/*Nav bar*/
+
 nav{
     background-color: #e12626;
 }
-ul:hover{
-    opacity:1;
+.navbar-fixed{
+    box-shadow: none;
 }
 .brand-logo {
     font-family: lobster, cursive;
     margin-left: 2%;
 }
+nav ul a{
+    padding:15% 0 15% 0;
+    margin-right: 10px;
+}
+nav ul a:hover{
+    background-color:transparent;
+}
+/*end Nav*/
 #pizza-order-area {
     max-width: 1200px;
     margin-right: auto;

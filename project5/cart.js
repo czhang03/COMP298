@@ -1,5 +1,5 @@
 function getEmptyOrderHTML () {
-  return `<img  src="img/csSlide.png">`
+  return `<img  src="img/empty-cart.gif">`
 }
 
 function getSingleOrderHTML (orderObj) {
