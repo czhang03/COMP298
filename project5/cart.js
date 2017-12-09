@@ -9,8 +9,8 @@ function getSingleOrderHTML (orderObj) {
     <div class="order-name">${orderObj.pizzaData.name}</div>
     <form class="order-action">
       <label for="order-number-${orderObj.pizzaData.id}">Order Number</label>
-      <input type="number" id="order-number-${orderObj.pizzaData.id}" class="order-count-number" value="${orderObj.orderCount}">
-      <input type="button" class="order-delete-button" value="Delete">
+      <input type="number" id="order-number-${orderObj.pizzaData.id}" class="order-count-number" data-id="${orderObj.pizzaData.id}" value="${orderObj.orderCount}">
+      <input type="button" class="waves-effect waves-light btn order-delete-button" data-id="${orderObj.pizzaData.id}" value="Delete">
      </form>
 </div>
   `
@@ -38,8 +38,37 @@ function updateSubTime () {
   }
 }
 
+function updateOrderListHtml() {
+  // load all the orders
+  $('#order-list').html(getOrderListHTML())
+
+  // ============ register event for html ==================
+
+  // the toast duration after user apply an order action
+  // in ms
+  const orderActionToastDuration = 800
+
+  // when order update order count
+  $(".order-action .order-count-number").change((event) => {
+    const pizzaId = Number($(event.currentTarget).data("id"))
+    const orderCount = Number($(event.currentTarget).val())
+    setOrderCountInCookie(pizzaId, orderCount)
+    Materialize.toast("your order has been updated", orderActionToastDuration)
+  })
+
+  // when order removed
+  $(".order-action .order-delete-button").click((event) => {
+    const pizzaId = Number($(event.currentTarget).data("id"))
+    removeIdInCookie(pizzaId)
+    updateOrderListHtml()
+    Materialize.toast("your order has been removed", orderActionToastDuration)
+  })
+}
+
+
 $(() => {
 
+  // ===================== info section =====================
   // update the sub-time element
   updateSubTime()
   $('.delivery-time-radio').change(updateSubTime)
@@ -64,6 +93,8 @@ $(() => {
     closeOnSelect: false // Close upon selecting a date,
   })
 
-  // load all the orders
-  $('#order-list').html(getOrderListHTML())
+  // ================== order section ===================
+  // load the order list
+  updateOrderListHtml()
+
 })
